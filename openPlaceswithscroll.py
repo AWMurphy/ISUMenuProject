@@ -14,11 +14,11 @@ def GetOpenRestaurants():
     element = driver.find_element("xpath", '//*[@id="hours-and-menus"]/div/div/div[1]/div[2]/div[1]/div/span[2]') # clicking the open now button
     elementHTML = element.get_attribute('innerHTML')
     element.click()
-    time.sleep(5)
+    time.sleep(2)
 
     try:
     # finding the element we wanna click
-        element = WebDriverWait(driver, 2).until(
+        element = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((
             By.XPATH, '//*[@id="hours-and-menus"]/div/div/div[1]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div/ul/li[55]'))
         )
@@ -38,15 +38,15 @@ def GetOpenRestaurants():
 
         # Find the element you want to scroll to: in this case its about 12:30 so that 1:30 is still visible
         element2 = driver.find_element("xpath", '//*[@id="hours-and-menus"]/div/div/div[1]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div/ul/li[53]')
-        time.sleep(5)
+        time.sleep(2)
 
         # Scroll the page until the element is in view: scrolls down to 12:30, 1:30 should still be visible
         driver.execute_script("arguments[0].scrollIntoView();", element2)
-        time.sleep(5)
+        time.sleep(2)
 
         element = driver.find_element("xpath", '//*[@id="hours-and-menus"]/div/div/div[1]/div[2]/div[1]/div[2]/div/div[3]/div[2]/div/ul/li[55]')
         element.click()
-        time.sleep(5)
+        time.sleep(2)
 
         element = driver.find_element("xpath", '//*[@id="hours-and-menus"]/div/div/div[1]/div[2]/div[2]/div[2]')
         elementHTML = element.get_attribute('innerHTML')
@@ -75,4 +75,3 @@ def GetOpenRestaurants():
 
     return restaurants
 
-print(GetOpenRestaurants())
