@@ -75,4 +75,3 @@ def GetOpenRestaurants():
 
     return restaurants
 
-print(GetOpenRestaurants())
