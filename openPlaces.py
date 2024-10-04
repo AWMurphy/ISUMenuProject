@@ -8,8 +8,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException
 
-def GetOpenRestaurants():
-    driver = webdriver.Edge()  # or webdriver.Firefox() / assigning our driver to Microsoft Edge
+def GetOpenRestaurants(Driver):
+    driver = Driver  # or webdriver.Firefox() / assigning our driver to Microsoft Edge
     driver.get("https://www.dining.iastate.edu/hours-menus")
     element = driver.find_element("xpath", '//*[@id="hours-and-menus"]/div/div/div[1]/div[2]/div[1]/div/span[2]') # clicking the open now button
     elementHTML = element.get_attribute('innerHTML')
@@ -71,7 +71,6 @@ def GetOpenRestaurants():
         restaurants.append(tag.text.strip())
         #print(tag.text.strip())  # Use .strip() to clean up extra spaces or newlines
 
-    driver.quit()
-
     return restaurants
 
+#print(GetOpenRestaurants())
