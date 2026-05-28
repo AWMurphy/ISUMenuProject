@@ -1,0 +1,1114 @@
+{
+    "281564759": {
+        "name": "Sausage Gravy",
+        "time_of_day": "breakfast",
+        "calories": "123",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564758": {
+        "name": "Biscuit",
+        "time_of_day": "breakfast",
+        "calories": "200",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564760": {
+        "name": "Southwestern Tofu Hash Scramble",
+        "time_of_day": "breakfast",
+        "calories": "95",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564761": {
+        "name": "Turkey Bacon",
+        "time_of_day": "breakfast",
+        "calories": "24",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564762": {
+        "name": "Roasted Red Potatoes",
+        "time_of_day": "breakfast",
+        "calories": "105",
+        "category": "Sides",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564413": {
+        "name": "Scrambled Eggs",
+        "time_of_day": "breakfast",
+        "calories": "68",
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564414": {
+        "name": "Turkey Bacon",
+        "time_of_day": "breakfast",
+        "calories": "24",
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564415": {
+        "name": "Potato Rounds",
+        "time_of_day": "breakfast",
+        "calories": "307",
+        "category": "Sides",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564324": {
+        "name": "Scrambled Eggs",
+        "time_of_day": "breakfast",
+        "calories": "68",
+        "category": "Entree",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564325": {
+        "name": "Turkey Bacon",
+        "time_of_day": "breakfast",
+        "calories": "24",
+        "category": "Entree",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564326": {
+        "name": "Potato Rounds",
+        "time_of_day": "breakfast",
+        "calories": "307",
+        "category": "Sides",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564582": {
+        "name": "Sausage Gravy",
+        "time_of_day": "breakfast",
+        "calories": "123",
+        "category": "Entree",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564581": {
+        "name": "Biscuit",
+        "time_of_day": "breakfast",
+        "calories": "200",
+        "category": "Entree",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564583": {
+        "name": "Southwestern Tofu Hash Scramble",
+        "time_of_day": "breakfast",
+        "calories": "95",
+        "category": "Entree",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564584": {
+        "name": "Roasted Red Potatoes",
+        "time_of_day": "breakfast",
+        "calories": "105",
+        "category": "Sides",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "283237329": {
+        "name": "Old Fashioned Cottage Cheese 4%",
+        "time_of_day": "breakfast",
+        "calories": "110",
+        "category": "Sides",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "283237330": {
+        "name": "Hard Cooked Egg",
+        "time_of_day": "breakfast",
+        "calories": "68",
+        "category": "Sides",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565181": {
+        "name": "Blueberry Muffin",
+        "time_of_day": "breakfast",
+        "calories": "218",
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    },
+    "281565179": {
+        "name": "Lemon Strawberry Bread",
+        "time_of_day": "breakfast",
+        "calories": "249",
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    },
+    "281565180": {
+        "name": "Glazed Yeast Donut Holes",
+        "time_of_day": "breakfast",
+        "calories": "87",
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    },
+    "281565178": {
+        "name": "Plain Bagel",
+        "time_of_day": "breakfast",
+        "calories": "269",
+        "category": "Bagels",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    },
+    "281565177": {
+        "name": "Parmesan Herb Bagel",
+        "time_of_day": "breakfast",
+        "calories": "348",
+        "category": "Bagels",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    },
+    "281564763": {
+        "name": "Jerk Chicken Thigh",
+        "time_of_day": "lunch",
+        "calories": "555",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564765": {
+        "name": "Jerk Tofu",
+        "time_of_day": "lunch",
+        "calories": "65",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564775": {
+        "name": "Jerk Sauce",
+        "time_of_day": "lunch",
+        "calories": "36",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564764": {
+        "name": "6\" Flour Tortilla Shell",
+        "time_of_day": "lunch",
+        "calories": "90",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564767": {
+        "name": "Cumin & Roasted Red Pepper Rice",
+        "time_of_day": "lunch",
+        "calories": "137",
+        "category": "Sides",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564766": {
+        "name": "Yellow Tortilla Chips",
+        "time_of_day": "lunch",
+        "calories": "140",
+        "category": "Sides",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564768": {
+        "name": "Nacho Cheese Sauce",
+        "time_of_day": "lunch",
+        "calories": "32",
+        "category": "Sides",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564769": {
+        "name": "Mild Cheddar Cheese",
+        "time_of_day": "lunch",
+        "calories": "28",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564770": {
+        "name": "Guacamole Dip",
+        "time_of_day": "lunch",
+        "calories": "24",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564771": {
+        "name": "Shredded Lettuce",
+        "time_of_day": "lunch",
+        "calories": "2",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564772": {
+        "name": "Sliced Black Olives",
+        "time_of_day": "lunch",
+        "calories": "12",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564773": {
+        "name": "Sliced Jalapeno Peppers",
+        "time_of_day": "lunch",
+        "calories": "1",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564774": {
+        "name": "Medium Salsa",
+        "time_of_day": "lunch",
+        "calories": "5",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564776": {
+        "name": "Sour Cream Sauce",
+        "time_of_day": "lunch",
+        "calories": "35",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564417": {
+        "name": "Stir Fry Beef Teriyaki",
+        "time_of_day": "lunch",
+        "calories": "184",
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564418": {
+        "name": "Tofu Veggie Stir Fry",
+        "time_of_day": "lunch",
+        "calories": "134",
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564416": {
+        "name": "Nishiki Brown Rice",
+        "time_of_day": "lunch",
+        "calories": "128",
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564419": {
+        "name": "Shredded Green Cabbage",
+        "time_of_day": "lunch",
+        "calories": "2",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564420": {
+        "name": "Shredded Carrots",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564421": {
+        "name": "Gluten Free Soy Sauce",
+        "time_of_day": "lunch",
+        "calories": "10",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564422": {
+        "name": "RES Yum Yum Sauce",
+        "time_of_day": "lunch",
+        "calories": "79",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564423": {
+        "name": "Chili Vinaigrette",
+        "time_of_day": "lunch",
+        "calories": "24",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564327": {
+        "name": "Lemon Spiced Baked Cod",
+        "time_of_day": "lunch",
+        "calories": "197",
+        "category": "Entree",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564328": {
+        "name": "Rotini Mac and Cheese",
+        "time_of_day": "lunch",
+        "calories": "275",
+        "category": "Entree",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564329": {
+        "name": "Roasted Corn and Poblano Peppers",
+        "time_of_day": "lunch",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564330": {
+        "name": "Krinkle Kut Fries",
+        "time_of_day": "lunch",
+        "calories": "254",
+        "category": "Sides",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564331": {
+        "name": "Lemon Wedges",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Condiments",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564332": {
+        "name": "Tartar Sauce",
+        "time_of_day": "lunch",
+        "calories": "70",
+        "category": "Condiments",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564602": {
+        "name": "Lemon Spiced Baked Cod",
+        "time_of_day": "lunch",
+        "calories": "197",
+        "category": "Entree",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564605": {
+        "name": "Cheese Pizza",
+        "time_of_day": "lunch",
+        "calories": "159",
+        "category": "Pizza",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564606": {
+        "name": "Italian Sausage Pizza",
+        "time_of_day": "lunch",
+        "calories": "205",
+        "category": "Pizza",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564603": {
+        "name": "Roasted Corn and Poblano Peppers",
+        "time_of_day": "lunch",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564604": {
+        "name": "Rotini Mac and Cheese",
+        "time_of_day": "lunch",
+        "calories": "275",
+        "category": "Sides",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564607": {
+        "name": "Lemon Wedges",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Condiments",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564608": {
+        "name": "Tartar Sauce",
+        "time_of_day": "lunch",
+        "calories": "70",
+        "category": "Condiments",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281565008": {
+        "name": "Minestrone Soup",
+        "time_of_day": "lunch",
+        "calories": "63",
+        "category": "Soups",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565021": {
+        "name": "Chopped Romaine Lettuce",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565022": {
+        "name": "Spring Lettuce Mix",
+        "time_of_day": "lunch",
+        "calories": "3",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565015": {
+        "name": "Shredded Carrots",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565024": {
+        "name": "Grape Tomatoes",
+        "time_of_day": "lunch",
+        "calories": "5",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565018": {
+        "name": "Sliced Cucumbers",
+        "time_of_day": "lunch",
+        "calories": "6",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565014": {
+        "name": "Chopped Broccoli",
+        "time_of_day": "lunch",
+        "calories": "12",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565023": {
+        "name": "Sliced Red Onions",
+        "time_of_day": "lunch",
+        "calories": "6",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565019": {
+        "name": "Chopped Eggs",
+        "time_of_day": "lunch",
+        "calories": "16",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565016": {
+        "name": "Mild Cheddar Cheese",
+        "time_of_day": "lunch",
+        "calories": "28",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565020": {
+        "name": "Classic Hummus",
+        "time_of_day": "lunch",
+        "calories": "40",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565017": {
+        "name": "Butter Garlic Croutons",
+        "time_of_day": "lunch",
+        "calories": "121",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565012": {
+        "name": "Vanilla Greek Yogurt",
+        "time_of_day": "lunch",
+        "calories": "98",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565013": {
+        "name": "Strawberry Yogurt",
+        "time_of_day": "lunch",
+        "calories": "110",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565009": {
+        "name": "Lowfat Cottage Cheese 2%",
+        "time_of_day": "lunch",
+        "calories": "90",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565011": {
+        "name": "Hard Cooked Egg",
+        "time_of_day": "lunch",
+        "calories": "68",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565010": {
+        "name": "Lay's Classic Potato Chips",
+        "time_of_day": "lunch",
+        "calories": "160",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565025": {
+        "name": "Cubed Cantaloupe",
+        "time_of_day": "lunch",
+        "calories": "29",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565026": {
+        "name": "Cubed Honeydew",
+        "time_of_day": "lunch",
+        "calories": "31",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565027": {
+        "name": "Pineapple Tidbits",
+        "time_of_day": "lunch",
+        "calories": "80",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565184": {
+        "name": "Sugar Cookie",
+        "time_of_day": "lunch",
+        "calories": "178",
+        "category": "Desserts",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    },
+    "281565183": {
+        "name": "Fruity Pebbles Bar",
+        "time_of_day": "lunch",
+        "calories": "96",
+        "category": "Desserts",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    },
+    "281564867": {
+        "name": "Beef Taco Meat",
+        "time_of_day": "dinner",
+        "calories": "127",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564868": {
+        "name": "Nacho Cheese Chips",
+        "time_of_day": "dinner",
+        "calories": "150",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564869": {
+        "name": "Blanco Cheese Sauce",
+        "time_of_day": "dinner",
+        "calories": "91",
+        "category": "Entree",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564870": {
+        "name": "Fiesta Rice",
+        "time_of_day": "dinner",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564871": {
+        "name": "Mild Cheddar Cheese",
+        "time_of_day": "dinner",
+        "calories": "28",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564872": {
+        "name": "Guacamole Dip",
+        "time_of_day": "dinner",
+        "calories": "24",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564873": {
+        "name": "Shredded Lettuce",
+        "time_of_day": "dinner",
+        "calories": "2",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564874": {
+        "name": "Sliced Jalapeno Peppers",
+        "time_of_day": "dinner",
+        "calories": "1",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564875": {
+        "name": "Medium Salsa",
+        "time_of_day": "dinner",
+        "calories": "5",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564876": {
+        "name": "Sour Cream Sauce",
+        "time_of_day": "dinner",
+        "calories": "35",
+        "category": "Condiments",
+        "station": "Sear",
+        "venue": "Sear"
+    },
+    "281564426": {
+        "name": "Sesame Sweet Chili Salmon",
+        "time_of_day": "dinner",
+        "calories": "366",
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564427": {
+        "name": "Sweet Chili Crispy Tofu",
+        "time_of_day": "dinner",
+        "calories": "392",
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564425": {
+        "name": "Long Grain White Rice",
+        "time_of_day": "dinner",
+        "calories": "107",
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564428": {
+        "name": "Vegetable Spring Roll",
+        "time_of_day": "dinner",
+        "calories": "104",
+        "category": "Sides",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564429": {
+        "name": "Shredded Green Cabbage",
+        "time_of_day": "dinner",
+        "calories": "2",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564430": {
+        "name": "Shredded Carrots",
+        "time_of_day": "dinner",
+        "calories": "4",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564431": {
+        "name": "Gluten Free Soy Sauce",
+        "time_of_day": "dinner",
+        "calories": "10",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564432": {
+        "name": "Kikkoman Sweet and Sour Sauce",
+        "time_of_day": "dinner",
+        "calories": "20",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564433": {
+        "name": "RES Yum Yum Sauce",
+        "time_of_day": "dinner",
+        "calories": "79",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564434": {
+        "name": "Chili Vinaigrette",
+        "time_of_day": "dinner",
+        "calories": "24",
+        "category": "Condiments",
+        "station": "Fuse",
+        "venue": "Fuse"
+    },
+    "281564333": {
+        "name": "Chicken Tenders",
+        "time_of_day": "dinner",
+        "calories": "528",
+        "category": "Entree",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564334": {
+        "name": "Breaded Gardein Tenders",
+        "time_of_day": "dinner",
+        "calories": "148",
+        "category": "Entree",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564335": {
+        "name": "Roasted Garlic Broccoli",
+        "time_of_day": "dinner",
+        "calories": "79",
+        "category": "Sides",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564337": {
+        "name": "Mashed Potatoes",
+        "time_of_day": "dinner",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564336": {
+        "name": "Country Gravy",
+        "time_of_day": "dinner",
+        "calories": "17",
+        "category": "Sides",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564338": {
+        "name": "Dijon Honey Mustard Dressing",
+        "time_of_day": "dinner",
+        "calories": "65",
+        "category": "Condiments",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564339": {
+        "name": "Ranch Dressing",
+        "time_of_day": "dinner",
+        "calories": "50",
+        "category": "Condiments",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564340": {
+        "name": "Sweet Baby Ray's BBQ Sauce",
+        "time_of_day": "dinner",
+        "calories": "34",
+        "category": "Condiments",
+        "station": "Dash",
+        "venue": "Dash"
+    },
+    "281564624": {
+        "name": "Chicken Tenders",
+        "time_of_day": "dinner",
+        "calories": "528",
+        "category": "Entree",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564625": {
+        "name": "Breaded Gardein Tenders",
+        "time_of_day": "dinner",
+        "calories": "148",
+        "category": "Entree",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564629": {
+        "name": "Cheese Pizza",
+        "time_of_day": "dinner",
+        "calories": "159",
+        "category": "Pizza",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564630": {
+        "name": "Italian Sausage Pizza",
+        "time_of_day": "dinner",
+        "calories": "205",
+        "category": "Pizza",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564626": {
+        "name": "Roasted Garlic Broccoli",
+        "time_of_day": "dinner",
+        "calories": "79",
+        "category": "Sides",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564628": {
+        "name": "Mashed Potatoes",
+        "time_of_day": "dinner",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564627": {
+        "name": "Country Gravy",
+        "time_of_day": "dinner",
+        "calories": "17",
+        "category": "Sides",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564631": {
+        "name": "Dijon Honey Mustard Dressing",
+        "time_of_day": "dinner",
+        "calories": "65",
+        "category": "Condiments",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564632": {
+        "name": "Ranch Dressing",
+        "time_of_day": "dinner",
+        "calories": "50",
+        "category": "Condiments",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281564633": {
+        "name": "Sweet Baby Ray's BBQ Sauce",
+        "time_of_day": "dinner",
+        "calories": "34",
+        "category": "Condiments",
+        "station": "Parma",
+        "venue": "Parma"
+    },
+    "281565030": {
+        "name": "Minestrone Soup",
+        "time_of_day": "dinner",
+        "calories": "63",
+        "category": "Soups",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565043": {
+        "name": "Chopped Romaine Lettuce",
+        "time_of_day": "dinner",
+        "calories": "4",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565044": {
+        "name": "Spring Lettuce Mix",
+        "time_of_day": "dinner",
+        "calories": "3",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565037": {
+        "name": "Shredded Carrots",
+        "time_of_day": "dinner",
+        "calories": "4",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565046": {
+        "name": "Grape Tomatoes",
+        "time_of_day": "dinner",
+        "calories": "5",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565040": {
+        "name": "Sliced Cucumbers",
+        "time_of_day": "dinner",
+        "calories": "6",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565036": {
+        "name": "Chopped Broccoli",
+        "time_of_day": "dinner",
+        "calories": "12",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565045": {
+        "name": "Sliced Red Onions",
+        "time_of_day": "dinner",
+        "calories": "6",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565041": {
+        "name": "Chopped Eggs",
+        "time_of_day": "dinner",
+        "calories": "16",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565038": {
+        "name": "Mild Cheddar Cheese",
+        "time_of_day": "dinner",
+        "calories": "28",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565042": {
+        "name": "Classic Hummus",
+        "time_of_day": "dinner",
+        "calories": "40",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565039": {
+        "name": "Butter Garlic Croutons",
+        "time_of_day": "dinner",
+        "calories": "121",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565034": {
+        "name": "Vanilla Greek Yogurt",
+        "time_of_day": "dinner",
+        "calories": "98",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565035": {
+        "name": "Strawberry Yogurt",
+        "time_of_day": "dinner",
+        "calories": "110",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565031": {
+        "name": "Lowfat Cottage Cheese 2%",
+        "time_of_day": "dinner",
+        "calories": "90",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565033": {
+        "name": "Hard Cooked Egg",
+        "time_of_day": "dinner",
+        "calories": "68",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565032": {
+        "name": "Lay's Classic Potato Chips",
+        "time_of_day": "dinner",
+        "calories": "160",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565047": {
+        "name": "Cubed Cantaloupe",
+        "time_of_day": "dinner",
+        "calories": "29",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565048": {
+        "name": "Cubed Honeydew",
+        "time_of_day": "dinner",
+        "calories": "31",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565049": {
+        "name": "Pineapple Tidbits",
+        "time_of_day": "dinner",
+        "calories": "80",
+        "category": "Salads",
+        "station": "Sprout",
+        "venue": "Sprout"
+    },
+    "281565242": {
+        "name": "Chocolate Chip Cookie",
+        "time_of_day": "dinner",
+        "calories": "188",
+        "category": "Desserts",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    },
+    "281565241": {
+        "name": "Rice Krispie Bar",
+        "time_of_day": "dinner",
+        "calories": "92",
+        "category": "Desserts",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar"
+    }
+}

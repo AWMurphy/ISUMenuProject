@@ -4,10 +4,14 @@ import time
 from bs4 import BeautifulSoup
 
 
-#driver = webdriver.Edge()  # or webdriver.Firefox()
+driver = webdriver.Edge()  # or webdriver.Firefox()
 
 
 def PrintMenus(Driver, link):
+    namelist = []
+    caloriesList = []
+    categoriesList = []
+
     index = 6
 
     driver = Driver
@@ -33,9 +37,19 @@ def PrintMenus(Driver, link):
                 categories = item.find_all('span', class_='mh-menu-item-category')
                 category_list = [category['aria-label'] for category in categories]
                 
-                print(f'Item: {name}, Calories: {calories}, Categories: {category_list}')
+                # print(f'Item: {name}, Calories: {calories}, Categories: {category_list}')
+                namelist.append(name)
+                if calories == None:
+                    caloriesList.append("0 cal")
+                else:
+                    caloriesList.append(calories)
+                categoriesList.append(category_list)
+                # print(categoriesList)
+
         except:
             failed = True
         index += 1
         print(" ")
-
+        return namelist, caloriesList, categoriesList
+    
+PrintMenus(driver, "https://www.dining.iastate.edu/location/friley-windows-2-2")

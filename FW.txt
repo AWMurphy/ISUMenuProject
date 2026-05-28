@@ -1,0 +1,962 @@
+{
+    "281562024": {
+        "name": "Jerk Chicken Thigh",
+        "time_of_day": "lunch",
+        "calories": "555",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562026": {
+        "name": "Jerk Tofu",
+        "time_of_day": "lunch",
+        "calories": "65",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562035": {
+        "name": "Jerk Sauce",
+        "time_of_day": "lunch",
+        "calories": "36",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562025": {
+        "name": "6\" Flour Tortilla Shell",
+        "time_of_day": "lunch",
+        "calories": "90",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562028": {
+        "name": "Cumin & Roasted Red Pepper Rice",
+        "time_of_day": "lunch",
+        "calories": "137",
+        "category": "Sides",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562027": {
+        "name": "Yellow Tortilla Chips",
+        "time_of_day": "lunch",
+        "calories": "140",
+        "category": "Sides",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562029": {
+        "name": "Nacho Cheese Sauce",
+        "time_of_day": "lunch",
+        "calories": "64",
+        "category": "Sides",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562030": {
+        "name": "Mild Cheddar Cheese",
+        "time_of_day": "lunch",
+        "calories": "28",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562031": {
+        "name": "Guacamole Dip",
+        "time_of_day": "lunch",
+        "calories": "24",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562032": {
+        "name": "Shredded Lettuce",
+        "time_of_day": "lunch",
+        "calories": "2",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562033": {
+        "name": "Sliced Jalapeno Peppers",
+        "time_of_day": "lunch",
+        "calories": "1",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562034": {
+        "name": "Medium Salsa",
+        "time_of_day": "lunch",
+        "calories": "5",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562036": {
+        "name": "Sour Cream Sauce",
+        "time_of_day": "lunch",
+        "calories": "35",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562410": {
+        "name": "Stir Fry Beef Teriyaki",
+        "time_of_day": "lunch",
+        "calories": "184",
+        "category": "Entree",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562411": {
+        "name": "Tofu Veggie Stir Fry",
+        "time_of_day": "lunch",
+        "calories": "134",
+        "category": "Entree",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562409": {
+        "name": "Nishiki Brown Rice",
+        "time_of_day": "lunch",
+        "calories": "128",
+        "category": "Entree",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562412": {
+        "name": "Shredded Green Cabbage",
+        "time_of_day": "lunch",
+        "calories": "2",
+        "category": "Condiments",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562413": {
+        "name": "Shredded Carrots",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Condiments",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562415": {
+        "name": "RES Yum Yum Sauce",
+        "time_of_day": "lunch",
+        "calories": "79",
+        "category": "Condiments",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562414": {
+        "name": "Gluten Free Soy Sauce",
+        "time_of_day": "lunch",
+        "calories": "10",
+        "category": "Condiments",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562416": {
+        "name": "Chili Vinaigrette",
+        "time_of_day": "lunch",
+        "calories": "24",
+        "category": "Condiments",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562500": {
+        "name": "Lemon Spiced Baked Cod",
+        "time_of_day": "lunch",
+        "calories": "197",
+        "category": "Entree",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562501": {
+        "name": "Roasted Corn and Poblano Peppers",
+        "time_of_day": "lunch",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562502": {
+        "name": "Long Grain White Rice",
+        "time_of_day": "lunch",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562504": {
+        "name": "Tartar Sauce",
+        "time_of_day": "lunch",
+        "calories": "70",
+        "category": "Condiments",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562503": {
+        "name": "Lemon Wedges",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Condiments",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281561509": {
+        "name": "Chopped Romaine Lettuce",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561510": {
+        "name": "Spring Lettuce Mix",
+        "time_of_day": "lunch",
+        "calories": "3",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561503": {
+        "name": "Shredded Carrots",
+        "time_of_day": "lunch",
+        "calories": "4",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561512": {
+        "name": "Grape Tomatoes",
+        "time_of_day": "lunch",
+        "calories": "5",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561506": {
+        "name": "Sliced Cucumbers",
+        "time_of_day": "lunch",
+        "calories": "6",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561502": {
+        "name": "Chopped Broccoli",
+        "time_of_day": "lunch",
+        "calories": "12",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561511": {
+        "name": "Sliced Red Onions",
+        "time_of_day": "lunch",
+        "calories": "6",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561507": {
+        "name": "Chopped Eggs",
+        "time_of_day": "lunch",
+        "calories": "16",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561504": {
+        "name": "Mild Cheddar Cheese",
+        "time_of_day": "lunch",
+        "calories": "28",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561508": {
+        "name": "Classic Hummus",
+        "time_of_day": "lunch",
+        "calories": "40",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561505": {
+        "name": "Butter Garlic Croutons",
+        "time_of_day": "lunch",
+        "calories": "121",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561514": {
+        "name": "Cubed Cantaloupe",
+        "time_of_day": "lunch",
+        "calories": "29",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561515": {
+        "name": "Cubed Honeydew",
+        "time_of_day": "lunch",
+        "calories": "31",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561513": {
+        "name": "Unsweetened Applesauce",
+        "time_of_day": "lunch",
+        "calories": "60",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561500": {
+        "name": "Vanilla Greek Yogurt",
+        "time_of_day": "lunch",
+        "calories": "98",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561501": {
+        "name": "Strawberry Yogurt",
+        "time_of_day": "lunch",
+        "calories": "110",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561497": {
+        "name": "Lowfat Cottage Cheese 2%",
+        "time_of_day": "lunch",
+        "calories": "90",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561499": {
+        "name": "Hard Cooked Egg",
+        "time_of_day": "lunch",
+        "calories": "68",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561498": {
+        "name": "Lay's Classic Potato Chips",
+        "time_of_day": "lunch",
+        "calories": "160",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561751": {
+        "name": "Cheese Pizza",
+        "time_of_day": "lunch",
+        "calories": "191",
+        "category": "Pizza",
+        "station": "Slice",
+        "venue": "Pizza"
+    },
+    "281561752": {
+        "name": "Italian Sausage Pizza",
+        "time_of_day": "lunch",
+        "calories": "259",
+        "category": "Pizza",
+        "station": "Slice",
+        "venue": "Pizza"
+    },
+    "281561667": {
+        "name": "Sugar Cookie",
+        "time_of_day": "lunch",
+        "calories": "178",
+        "category": "Desserts",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "281561666": {
+        "name": "Fruity Pebbles Bar",
+        "time_of_day": "lunch",
+        "calories": "96",
+        "category": "Desserts",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "281562366": {
+        "name": "Minestrone Soup",
+        "time_of_day": "lunch",
+        "calories": "63",
+        "category": "Soups",
+        "station": "Simmer",
+        "venue": "Simmer"
+    },
+    "281562091": {
+        "name": "Beef Taco Meat",
+        "time_of_day": "dinner",
+        "calories": "127",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562094": {
+        "name": "Diced Chipotle Tofu",
+        "time_of_day": "dinner",
+        "calories": "80",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562092": {
+        "name": "Nacho Cheese Chips",
+        "time_of_day": "dinner",
+        "calories": "150",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562093": {
+        "name": "Blanco Cheese Sauce",
+        "time_of_day": "dinner",
+        "calories": "91",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562095": {
+        "name": "Fiesta Rice",
+        "time_of_day": "dinner",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562096": {
+        "name": "Mild Cheddar Cheese",
+        "time_of_day": "dinner",
+        "calories": "28",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562097": {
+        "name": "Guacamole Dip",
+        "time_of_day": "dinner",
+        "calories": "24",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562098": {
+        "name": "Shredded Lettuce",
+        "time_of_day": "dinner",
+        "calories": "2",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562099": {
+        "name": "Sliced Jalapeno Peppers",
+        "time_of_day": "dinner",
+        "calories": "1",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562100": {
+        "name": "Medium Salsa",
+        "time_of_day": "dinner",
+        "calories": "5",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562101": {
+        "name": "Sour Cream Sauce",
+        "time_of_day": "dinner",
+        "calories": "35",
+        "category": "Condiments",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562418": {
+        "name": "Chicken Tenders",
+        "time_of_day": "dinner",
+        "calories": "528",
+        "category": "Entree",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562419": {
+        "name": "Breaded Gardein Tenders",
+        "time_of_day": "dinner",
+        "calories": "148",
+        "category": "Entree",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562420": {
+        "name": "Roasted Garlic Broccoli",
+        "time_of_day": "dinner",
+        "calories": "79",
+        "category": "Sides",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562422": {
+        "name": "Mashed Potatoes",
+        "time_of_day": "dinner",
+        "calories": "107",
+        "category": "Sides",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562421": {
+        "name": "Country Gravy",
+        "time_of_day": "dinner",
+        "calories": "17",
+        "category": "Sides",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562423": {
+        "name": "Dijon Honey Mustard Dressing",
+        "time_of_day": "dinner",
+        "calories": "65",
+        "category": "Condiments",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562424": {
+        "name": "Ranch Dressing",
+        "time_of_day": "dinner",
+        "calories": "50",
+        "category": "Condiments",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562425": {
+        "name": "Sweet Baby Ray's BBQ Sauce",
+        "time_of_day": "dinner",
+        "calories": "34",
+        "category": "Condiments",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562506": {
+        "name": "Sesame Sweet Chili Salmon",
+        "time_of_day": "dinner",
+        "calories": "366",
+        "category": "Entree",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562507": {
+        "name": "Sweet Chili Crispy Tofu",
+        "time_of_day": "dinner",
+        "calories": "392",
+        "category": "Entree",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562505": {
+        "name": "Long Grain White Rice",
+        "time_of_day": "dinner",
+        "calories": "107",
+        "category": "Entree",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562508": {
+        "name": "Vegetable Spring Roll",
+        "time_of_day": "dinner",
+        "calories": "104",
+        "category": "Sides",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562510": {
+        "name": "Shredded Carrots",
+        "time_of_day": "dinner",
+        "calories": "4",
+        "category": "Condiments",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562509": {
+        "name": "Shredded Green Cabbage",
+        "time_of_day": "dinner",
+        "calories": "2",
+        "category": "Condiments",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562511": {
+        "name": "Gluten Free Soy Sauce",
+        "time_of_day": "dinner",
+        "calories": "10",
+        "category": "Condiments",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562512": {
+        "name": "Kikkoman Sweet and Sour Sauce",
+        "time_of_day": "dinner",
+        "calories": "20",
+        "category": "Condiments",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562513": {
+        "name": "RES Yum Yum Sauce",
+        "time_of_day": "dinner",
+        "calories": "79",
+        "category": "Condiments",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562514": {
+        "name": "Chili Vinaigrette",
+        "time_of_day": "dinner",
+        "calories": "24",
+        "category": "Condiments",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281561530": {
+        "name": "Chopped Romaine Lettuce",
+        "time_of_day": "dinner",
+        "calories": "4",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561531": {
+        "name": "Spring Lettuce Mix",
+        "time_of_day": "dinner",
+        "calories": "3",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561524": {
+        "name": "Shredded Carrots",
+        "time_of_day": "dinner",
+        "calories": "4",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561533": {
+        "name": "Grape Tomatoes",
+        "time_of_day": "dinner",
+        "calories": "5",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561527": {
+        "name": "Sliced Cucumbers",
+        "time_of_day": "dinner",
+        "calories": "6",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561523": {
+        "name": "Chopped Broccoli",
+        "time_of_day": "dinner",
+        "calories": "12",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561532": {
+        "name": "Sliced Red Onions",
+        "time_of_day": "dinner",
+        "calories": "6",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561528": {
+        "name": "Chopped Eggs",
+        "time_of_day": "dinner",
+        "calories": "16",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561525": {
+        "name": "Mild Cheddar Cheese",
+        "time_of_day": "dinner",
+        "calories": "28",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561529": {
+        "name": "Classic Hummus",
+        "time_of_day": "dinner",
+        "calories": "40",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561526": {
+        "name": "Butter Garlic Croutons",
+        "time_of_day": "dinner",
+        "calories": "121",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561535": {
+        "name": "Cubed Cantaloupe",
+        "time_of_day": "dinner",
+        "calories": "29",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561536": {
+        "name": "Cubed Honeydew",
+        "time_of_day": "dinner",
+        "calories": "31",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561534": {
+        "name": "Unsweetened Applesauce",
+        "time_of_day": "dinner",
+        "calories": "60",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561521": {
+        "name": "Vanilla Greek Yogurt",
+        "time_of_day": "dinner",
+        "calories": "98",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561522": {
+        "name": "Strawberry Yogurt",
+        "time_of_day": "dinner",
+        "calories": "110",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561518": {
+        "name": "Lowfat Cottage Cheese 2%",
+        "time_of_day": "dinner",
+        "calories": "90",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561520": {
+        "name": "Hard Cooked Egg",
+        "time_of_day": "dinner",
+        "calories": "68",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561519": {
+        "name": "Lay's Classic Potato Chips",
+        "time_of_day": "dinner",
+        "calories": "160",
+        "category": "Salads",
+        "station": "Chopped",
+        "venue": "Chopped"
+    },
+    "281561754": {
+        "name": "Cheese Pizza",
+        "time_of_day": "dinner",
+        "calories": "191",
+        "category": "Pizza",
+        "station": "Slice",
+        "venue": "Pizza"
+    },
+    "281561755": {
+        "name": "Pepperoni Pizza",
+        "time_of_day": "dinner",
+        "calories": "210",
+        "category": "Pizza",
+        "station": "Slice",
+        "venue": "Pizza"
+    },
+    "281561674": {
+        "name": "Chocolate Chip Cookie",
+        "time_of_day": "dinner",
+        "calories": "188",
+        "category": "Desserts",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "281561673": {
+        "name": "Rice Krispie Bar",
+        "time_of_day": "dinner",
+        "calories": "92",
+        "category": "Desserts",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "281562367": {
+        "name": "Minestrone Soup",
+        "time_of_day": "dinner",
+        "calories": "63",
+        "category": "Soups",
+        "station": "Simmer",
+        "venue": "Simmer"
+    },
+    "281562020": {
+        "name": "Sausage Gravy",
+        "time_of_day": "breakfast",
+        "calories": "123",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562019": {
+        "name": "Biscuit",
+        "time_of_day": "breakfast",
+        "calories": "200",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562021": {
+        "name": "Southwestern Tofu Hash Scramble",
+        "time_of_day": "breakfast",
+        "calories": "95",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562022": {
+        "name": "Turkey Bacon",
+        "time_of_day": "breakfast",
+        "calories": "24",
+        "category": "Entree",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562023": {
+        "name": "Roasted Red Potatoes",
+        "time_of_day": "breakfast",
+        "calories": "105",
+        "category": "Sides",
+        "station": "Savor",
+        "venue": "Savor"
+    },
+    "281562406": {
+        "name": "Scrambled Eggs",
+        "time_of_day": "breakfast",
+        "calories": "68",
+        "category": "Entree",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562407": {
+        "name": "Turkey Bacon",
+        "time_of_day": "breakfast",
+        "calories": "24",
+        "category": "Entree",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562408": {
+        "name": "Potato Rounds",
+        "time_of_day": "breakfast",
+        "calories": "307",
+        "category": "Sides",
+        "station": "Slice",
+        "venue": "Slice"
+    },
+    "281562497": {
+        "name": "Scrambled Eggs",
+        "time_of_day": "breakfast",
+        "calories": "68",
+        "category": "Entree",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562498": {
+        "name": "Turkey Bacon",
+        "time_of_day": "breakfast",
+        "calories": "24",
+        "category": "Entree",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281562499": {
+        "name": "Roasted Red Potatoes",
+        "time_of_day": "breakfast",
+        "calories": "105",
+        "category": "Sides",
+        "station": "Zest",
+        "venue": "Zest"
+    },
+    "281561664": {
+        "name": "Blueberry Muffin",
+        "time_of_day": "breakfast",
+        "calories": "218",
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "281561662": {
+        "name": "Lemon Strawberry Bread",
+        "time_of_day": "breakfast",
+        "calories": "249",
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "281561663": {
+        "name": "Glazed Yeast Donut Holes",
+        "time_of_day": "breakfast",
+        "calories": "87",
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "281561661": {
+        "name": "Plain Bagel",
+        "time_of_day": "breakfast",
+        "calories": "269",
+        "category": "Bagels",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "281561660": {
+        "name": "Parmesan Herb Bagel",
+        "time_of_day": "breakfast",
+        "calories": "348",
+        "category": "Bagels",
+        "station": "Delish",
+        "venue": "Delish"
+    },
+    "282370647": {
+        "name": "Whipped Cream Cheese",
+        "time_of_day": "breakfast",
+        "calories": "36",
+        "category": "Condiments",
+        "station": "Delish",
+        "venue": "Delish"
+    }
+}
