@@ -3,6 +3,7 @@
         "name": "Jerk Chicken Thigh",
         "time_of_day": "lunch",
         "calories": "555",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -11,6 +12,7 @@
         "name": "Jerk Tofu",
         "time_of_day": "lunch",
         "calories": "65",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -19,6 +21,7 @@
         "name": "Jerk Sauce",
         "time_of_day": "lunch",
         "calories": "36",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -27,6 +30,7 @@
         "name": "6\" Flour Tortilla Shell",
         "time_of_day": "lunch",
         "calories": "90",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -35,6 +39,7 @@
         "name": "Cumin & Roasted Red Pepper Rice",
         "time_of_day": "lunch",
         "calories": "137",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Savor",
         "venue": "Savor"
@@ -43,6 +48,7 @@
         "name": "Yellow Tortilla Chips",
         "time_of_day": "lunch",
         "calories": "140",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Savor",
         "venue": "Savor"
@@ -51,6 +57,7 @@
         "name": "Nacho Cheese Sauce",
         "time_of_day": "lunch",
         "calories": "64",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Savor",
         "venue": "Savor"
@@ -59,6 +66,7 @@
         "name": "Mild Cheddar Cheese",
         "time_of_day": "lunch",
         "calories": "28",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -67,6 +75,7 @@
         "name": "Guacamole Dip",
         "time_of_day": "lunch",
         "calories": "24",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -75,6 +84,7 @@
         "name": "Shredded Lettuce",
         "time_of_day": "lunch",
         "calories": "2",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -83,6 +93,7 @@
         "name": "Sliced Jalapeno Peppers",
         "time_of_day": "lunch",
         "calories": "1",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -91,6 +102,7 @@
         "name": "Medium Salsa",
         "time_of_day": "lunch",
         "calories": "5",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -99,6 +111,7 @@
         "name": "Sour Cream Sauce",
         "time_of_day": "lunch",
         "calories": "35",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -107,6 +120,7 @@
         "name": "Stir Fry Beef Teriyaki",
         "time_of_day": "lunch",
         "calories": "184",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Slice",
         "venue": "Slice"
@@ -115,6 +129,7 @@
         "name": "Tofu Veggie Stir Fry",
         "time_of_day": "lunch",
         "calories": "134",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Slice",
         "venue": "Slice"
@@ -123,6 +138,7 @@
         "name": "Nishiki Brown Rice",
         "time_of_day": "lunch",
         "calories": "128",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Slice",
         "venue": "Slice"
@@ -131,6 +147,7 @@
         "name": "Shredded Green Cabbage",
         "time_of_day": "lunch",
         "calories": "2",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Slice",
         "venue": "Slice"
@@ -139,6 +156,7 @@
         "name": "Shredded Carrots",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Slice",
         "venue": "Slice"
@@ -147,6 +165,7 @@
         "name": "RES Yum Yum Sauce",
         "time_of_day": "lunch",
         "calories": "79",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Slice",
         "venue": "Slice"
@@ -155,6 +174,7 @@
         "name": "Gluten Free Soy Sauce",
         "time_of_day": "lunch",
         "calories": "10",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Slice",
         "venue": "Slice"
@@ -163,6 +183,7 @@
         "name": "Chili Vinaigrette",
         "time_of_day": "lunch",
         "calories": "24",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Slice",
         "venue": "Slice"
@@ -171,6 +192,7 @@
         "name": "Lemon Spiced Baked Cod",
         "time_of_day": "lunch",
         "calories": "197",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Zest",
         "venue": "Zest"
@@ -179,6 +201,7 @@
         "name": "Roasted Corn and Poblano Peppers",
         "time_of_day": "lunch",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Zest",
         "venue": "Zest"
@@ -187,6 +210,7 @@
         "name": "Long Grain White Rice",
         "time_of_day": "lunch",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Zest",
         "venue": "Zest"
@@ -195,6 +219,7 @@
         "name": "Tartar Sauce",
         "time_of_day": "lunch",
         "calories": "70",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Zest",
         "venue": "Zest"
@@ -203,6 +228,7 @@
         "name": "Lemon Wedges",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Zest",
         "venue": "Zest"
@@ -211,6 +237,7 @@
         "name": "Chopped Romaine Lettuce",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -219,6 +246,7 @@
         "name": "Spring Lettuce Mix",
         "time_of_day": "lunch",
         "calories": "3",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -227,6 +255,7 @@
         "name": "Shredded Carrots",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -235,6 +264,7 @@
         "name": "Grape Tomatoes",
         "time_of_day": "lunch",
         "calories": "5",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -243,6 +273,7 @@
         "name": "Sliced Cucumbers",
         "time_of_day": "lunch",
         "calories": "6",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -251,6 +282,7 @@
         "name": "Chopped Broccoli",
         "time_of_day": "lunch",
         "calories": "12",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -259,6 +291,7 @@
         "name": "Sliced Red Onions",
         "time_of_day": "lunch",
         "calories": "6",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -267,6 +300,7 @@
         "name": "Chopped Eggs",
         "time_of_day": "lunch",
         "calories": "16",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -275,6 +309,7 @@
         "name": "Mild Cheddar Cheese",
         "time_of_day": "lunch",
         "calories": "28",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -283,6 +318,7 @@
         "name": "Classic Hummus",
         "time_of_day": "lunch",
         "calories": "40",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -291,6 +327,7 @@
         "name": "Butter Garlic Croutons",
         "time_of_day": "lunch",
         "calories": "121",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -299,6 +336,7 @@
         "name": "Cubed Cantaloupe",
         "time_of_day": "lunch",
         "calories": "29",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -307,6 +345,7 @@
         "name": "Cubed Honeydew",
         "time_of_day": "lunch",
         "calories": "31",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -315,6 +354,7 @@
         "name": "Unsweetened Applesauce",
         "time_of_day": "lunch",
         "calories": "60",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -323,6 +363,7 @@
         "name": "Vanilla Greek Yogurt",
         "time_of_day": "lunch",
         "calories": "98",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -331,6 +372,7 @@
         "name": "Strawberry Yogurt",
         "time_of_day": "lunch",
         "calories": "110",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -339,6 +381,7 @@
         "name": "Lowfat Cottage Cheese 2%",
         "time_of_day": "lunch",
         "calories": "90",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -347,6 +390,7 @@
         "name": "Hard Cooked Egg",
         "time_of_day": "lunch",
         "calories": "68",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -355,6 +399,7 @@
         "name": "Lay's Classic Potato Chips",
         "time_of_day": "lunch",
         "calories": "160",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -363,6 +408,7 @@
         "name": "Cheese Pizza",
         "time_of_day": "lunch",
         "calories": "191",
+        "calorieError": 0,
         "category": "Pizza",
         "station": "Slice",
         "venue": "Pizza"
@@ -371,6 +417,7 @@
         "name": "Italian Sausage Pizza",
         "time_of_day": "lunch",
         "calories": "259",
+        "calorieError": 0,
         "category": "Pizza",
         "station": "Slice",
         "venue": "Pizza"
@@ -379,6 +426,7 @@
         "name": "Sugar Cookie",
         "time_of_day": "lunch",
         "calories": "178",
+        "calorieError": 0,
         "category": "Desserts",
         "station": "Delish",
         "venue": "Delish"
@@ -387,6 +435,7 @@
         "name": "Fruity Pebbles Bar",
         "time_of_day": "lunch",
         "calories": "96",
+        "calorieError": 0,
         "category": "Desserts",
         "station": "Delish",
         "venue": "Delish"
@@ -395,6 +444,7 @@
         "name": "Minestrone Soup",
         "time_of_day": "lunch",
         "calories": "63",
+        "calorieError": 0,
         "category": "Soups",
         "station": "Simmer",
         "venue": "Simmer"
@@ -403,6 +453,7 @@
         "name": "Beef Taco Meat",
         "time_of_day": "dinner",
         "calories": "127",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -411,6 +462,7 @@
         "name": "Diced Chipotle Tofu",
         "time_of_day": "dinner",
         "calories": "80",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -419,6 +471,7 @@
         "name": "Nacho Cheese Chips",
         "time_of_day": "dinner",
         "calories": "150",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -427,6 +480,7 @@
         "name": "Blanco Cheese Sauce",
         "time_of_day": "dinner",
         "calories": "91",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -435,6 +489,7 @@
         "name": "Fiesta Rice",
         "time_of_day": "dinner",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Savor",
         "venue": "Savor"
@@ -443,6 +498,7 @@
         "name": "Mild Cheddar Cheese",
         "time_of_day": "dinner",
         "calories": "28",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -451,6 +507,7 @@
         "name": "Guacamole Dip",
         "time_of_day": "dinner",
         "calories": "24",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -459,6 +516,7 @@
         "name": "Shredded Lettuce",
         "time_of_day": "dinner",
         "calories": "2",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -467,6 +525,7 @@
         "name": "Sliced Jalapeno Peppers",
         "time_of_day": "dinner",
         "calories": "1",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -475,6 +534,7 @@
         "name": "Medium Salsa",
         "time_of_day": "dinner",
         "calories": "5",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -483,6 +543,7 @@
         "name": "Sour Cream Sauce",
         "time_of_day": "dinner",
         "calories": "35",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Savor",
         "venue": "Savor"
@@ -491,6 +552,7 @@
         "name": "Chicken Tenders",
         "time_of_day": "dinner",
         "calories": "528",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Slice",
         "venue": "Slice"
@@ -499,6 +561,7 @@
         "name": "Breaded Gardein Tenders",
         "time_of_day": "dinner",
         "calories": "148",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Slice",
         "venue": "Slice"
@@ -507,6 +570,7 @@
         "name": "Roasted Garlic Broccoli",
         "time_of_day": "dinner",
         "calories": "79",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Slice",
         "venue": "Slice"
@@ -515,6 +579,7 @@
         "name": "Mashed Potatoes",
         "time_of_day": "dinner",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Slice",
         "venue": "Slice"
@@ -523,6 +588,7 @@
         "name": "Country Gravy",
         "time_of_day": "dinner",
         "calories": "17",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Slice",
         "venue": "Slice"
@@ -531,6 +597,7 @@
         "name": "Dijon Honey Mustard Dressing",
         "time_of_day": "dinner",
         "calories": "65",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Slice",
         "venue": "Slice"
@@ -539,6 +606,7 @@
         "name": "Ranch Dressing",
         "time_of_day": "dinner",
         "calories": "50",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Slice",
         "venue": "Slice"
@@ -547,6 +615,7 @@
         "name": "Sweet Baby Ray's BBQ Sauce",
         "time_of_day": "dinner",
         "calories": "34",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Slice",
         "venue": "Slice"
@@ -555,6 +624,7 @@
         "name": "Sesame Sweet Chili Salmon",
         "time_of_day": "dinner",
         "calories": "366",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Zest",
         "venue": "Zest"
@@ -563,6 +633,7 @@
         "name": "Sweet Chili Crispy Tofu",
         "time_of_day": "dinner",
         "calories": "392",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Zest",
         "venue": "Zest"
@@ -571,6 +642,7 @@
         "name": "Long Grain White Rice",
         "time_of_day": "dinner",
         "calories": "107",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Zest",
         "venue": "Zest"
@@ -579,6 +651,7 @@
         "name": "Vegetable Spring Roll",
         "time_of_day": "dinner",
         "calories": "104",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Zest",
         "venue": "Zest"
@@ -587,6 +660,7 @@
         "name": "Shredded Carrots",
         "time_of_day": "dinner",
         "calories": "4",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Zest",
         "venue": "Zest"
@@ -595,6 +669,7 @@
         "name": "Shredded Green Cabbage",
         "time_of_day": "dinner",
         "calories": "2",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Zest",
         "venue": "Zest"
@@ -603,6 +678,7 @@
         "name": "Gluten Free Soy Sauce",
         "time_of_day": "dinner",
         "calories": "10",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Zest",
         "venue": "Zest"
@@ -611,6 +687,7 @@
         "name": "Kikkoman Sweet and Sour Sauce",
         "time_of_day": "dinner",
         "calories": "20",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Zest",
         "venue": "Zest"
@@ -619,6 +696,7 @@
         "name": "RES Yum Yum Sauce",
         "time_of_day": "dinner",
         "calories": "79",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Zest",
         "venue": "Zest"
@@ -627,6 +705,7 @@
         "name": "Chili Vinaigrette",
         "time_of_day": "dinner",
         "calories": "24",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Zest",
         "venue": "Zest"
@@ -635,6 +714,7 @@
         "name": "Chopped Romaine Lettuce",
         "time_of_day": "dinner",
         "calories": "4",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -643,6 +723,7 @@
         "name": "Spring Lettuce Mix",
         "time_of_day": "dinner",
         "calories": "3",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -651,6 +732,7 @@
         "name": "Shredded Carrots",
         "time_of_day": "dinner",
         "calories": "4",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -659,6 +741,7 @@
         "name": "Grape Tomatoes",
         "time_of_day": "dinner",
         "calories": "5",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -667,6 +750,7 @@
         "name": "Sliced Cucumbers",
         "time_of_day": "dinner",
         "calories": "6",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -675,6 +759,7 @@
         "name": "Chopped Broccoli",
         "time_of_day": "dinner",
         "calories": "12",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -683,6 +768,7 @@
         "name": "Sliced Red Onions",
         "time_of_day": "dinner",
         "calories": "6",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -691,6 +777,7 @@
         "name": "Chopped Eggs",
         "time_of_day": "dinner",
         "calories": "16",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -699,6 +786,7 @@
         "name": "Mild Cheddar Cheese",
         "time_of_day": "dinner",
         "calories": "28",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -707,6 +795,7 @@
         "name": "Classic Hummus",
         "time_of_day": "dinner",
         "calories": "40",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -715,6 +804,7 @@
         "name": "Butter Garlic Croutons",
         "time_of_day": "dinner",
         "calories": "121",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -723,6 +813,7 @@
         "name": "Cubed Cantaloupe",
         "time_of_day": "dinner",
         "calories": "29",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -731,6 +822,7 @@
         "name": "Cubed Honeydew",
         "time_of_day": "dinner",
         "calories": "31",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -739,6 +831,7 @@
         "name": "Unsweetened Applesauce",
         "time_of_day": "dinner",
         "calories": "60",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -747,6 +840,7 @@
         "name": "Vanilla Greek Yogurt",
         "time_of_day": "dinner",
         "calories": "98",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -755,6 +849,7 @@
         "name": "Strawberry Yogurt",
         "time_of_day": "dinner",
         "calories": "110",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -763,6 +858,7 @@
         "name": "Lowfat Cottage Cheese 2%",
         "time_of_day": "dinner",
         "calories": "90",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -771,6 +867,7 @@
         "name": "Hard Cooked Egg",
         "time_of_day": "dinner",
         "calories": "68",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -779,6 +876,7 @@
         "name": "Lay's Classic Potato Chips",
         "time_of_day": "dinner",
         "calories": "160",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Chopped",
         "venue": "Chopped"
@@ -787,6 +885,7 @@
         "name": "Cheese Pizza",
         "time_of_day": "dinner",
         "calories": "191",
+        "calorieError": 0,
         "category": "Pizza",
         "station": "Slice",
         "venue": "Pizza"
@@ -795,6 +894,7 @@
         "name": "Pepperoni Pizza",
         "time_of_day": "dinner",
         "calories": "210",
+        "calorieError": 0,
         "category": "Pizza",
         "station": "Slice",
         "venue": "Pizza"
@@ -803,6 +903,7 @@
         "name": "Chocolate Chip Cookie",
         "time_of_day": "dinner",
         "calories": "188",
+        "calorieError": 0,
         "category": "Desserts",
         "station": "Delish",
         "venue": "Delish"
@@ -811,6 +912,7 @@
         "name": "Rice Krispie Bar",
         "time_of_day": "dinner",
         "calories": "92",
+        "calorieError": 0,
         "category": "Desserts",
         "station": "Delish",
         "venue": "Delish"
@@ -819,6 +921,7 @@
         "name": "Minestrone Soup",
         "time_of_day": "dinner",
         "calories": "63",
+        "calorieError": 0,
         "category": "Soups",
         "station": "Simmer",
         "venue": "Simmer"
@@ -827,6 +930,7 @@
         "name": "Sausage Gravy",
         "time_of_day": "breakfast",
         "calories": "123",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -835,6 +939,7 @@
         "name": "Biscuit",
         "time_of_day": "breakfast",
         "calories": "200",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -843,6 +948,7 @@
         "name": "Southwestern Tofu Hash Scramble",
         "time_of_day": "breakfast",
         "calories": "95",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -851,6 +957,7 @@
         "name": "Turkey Bacon",
         "time_of_day": "breakfast",
         "calories": "24",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Savor",
         "venue": "Savor"
@@ -859,6 +966,7 @@
         "name": "Roasted Red Potatoes",
         "time_of_day": "breakfast",
         "calories": "105",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Savor",
         "venue": "Savor"
@@ -867,6 +975,7 @@
         "name": "Scrambled Eggs",
         "time_of_day": "breakfast",
         "calories": "68",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Slice",
         "venue": "Slice"
@@ -875,6 +984,7 @@
         "name": "Turkey Bacon",
         "time_of_day": "breakfast",
         "calories": "24",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Slice",
         "venue": "Slice"
@@ -883,6 +993,7 @@
         "name": "Potato Rounds",
         "time_of_day": "breakfast",
         "calories": "307",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Slice",
         "venue": "Slice"
@@ -891,6 +1002,7 @@
         "name": "Scrambled Eggs",
         "time_of_day": "breakfast",
         "calories": "68",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Zest",
         "venue": "Zest"
@@ -899,6 +1011,7 @@
         "name": "Turkey Bacon",
         "time_of_day": "breakfast",
         "calories": "24",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Zest",
         "venue": "Zest"
@@ -907,6 +1020,7 @@
         "name": "Roasted Red Potatoes",
         "time_of_day": "breakfast",
         "calories": "105",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Zest",
         "venue": "Zest"
@@ -915,6 +1029,7 @@
         "name": "Blueberry Muffin",
         "time_of_day": "breakfast",
         "calories": "218",
+        "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Delish",
         "venue": "Delish"
@@ -923,6 +1038,7 @@
         "name": "Lemon Strawberry Bread",
         "time_of_day": "breakfast",
         "calories": "249",
+        "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Delish",
         "venue": "Delish"
@@ -931,6 +1047,7 @@
         "name": "Glazed Yeast Donut Holes",
         "time_of_day": "breakfast",
         "calories": "87",
+        "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Delish",
         "venue": "Delish"
@@ -939,6 +1056,7 @@
         "name": "Plain Bagel",
         "time_of_day": "breakfast",
         "calories": "269",
+        "calorieError": 0,
         "category": "Bagels",
         "station": "Delish",
         "venue": "Delish"
@@ -947,6 +1065,7 @@
         "name": "Parmesan Herb Bagel",
         "time_of_day": "breakfast",
         "calories": "348",
+        "calorieError": 0,
         "category": "Bagels",
         "station": "Delish",
         "venue": "Delish"
@@ -955,6 +1074,7 @@
         "name": "Whipped Cream Cheese",
         "time_of_day": "breakfast",
         "calories": "36",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Delish",
         "venue": "Delish"

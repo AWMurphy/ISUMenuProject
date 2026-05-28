@@ -6,6 +6,7 @@ import datetime
 
 # using defs from other files to keep code clean
 import dataExtraction
+import dataDatabase
 
 # construct the file path (go up one folder in the warren rework folder)
 filePath = os.path.join('Warren_Rework', 'DiningHallLinks.json')
@@ -39,16 +40,22 @@ for place, url in links.items():
                 with open('FW.txt', 'w') as t:
                     print(json.dumps(finalizedData, indent=4), file=t)
 
+                dataDatabase.save_to_database_per_location(finalizedData, place)
+
             elif place == "Seasons Marketplace":
                 menu_json = response.json()
 
+                """
                 with open('output.txt', 'w') as f:
                     print(json.dumps(menu_json, indent=4), file=f) # json.dumps() used to clean print the information
+                """
 
                 finalizedData = dataExtraction.extract_food_data_SM(menu_json)
 
                 with open('SM.txt', 'w') as t:
                     print(json.dumps(finalizedData, indent=4), file=t)
+
+                dataDatabase.save_to_database_per_location(finalizedData, place)
 
             elif place == "Union Drive Marketplace":
                 menu_json = response.json()
@@ -58,9 +65,11 @@ for place, url in links.items():
                 with open('UDCC.txt', 'w') as t:
                     print(json.dumps(finalizedData, indent=4), file=t)
 
+                dataDatabase.save_to_database_per_location(finalizedData, place)
+
             else:
 
-                print("Correctly obtained!")
+                print("Correctly obtained!") # should never run
 
         else:
             print(f"Failed to fetch data. Status code: {response.status_code}") # since this should always return status code 200, if the response doesn't understand that it's wrong

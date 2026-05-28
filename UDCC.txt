@@ -3,6 +3,7 @@
         "name": "Sausage Gravy",
         "time_of_day": "breakfast",
         "calories": "123",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -11,6 +12,7 @@
         "name": "Biscuit",
         "time_of_day": "breakfast",
         "calories": "200",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -19,6 +21,7 @@
         "name": "Southwestern Tofu Hash Scramble",
         "time_of_day": "breakfast",
         "calories": "95",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -27,6 +30,7 @@
         "name": "Turkey Bacon",
         "time_of_day": "breakfast",
         "calories": "24",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -35,6 +39,7 @@
         "name": "Roasted Red Potatoes",
         "time_of_day": "breakfast",
         "calories": "105",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Sear",
         "venue": "Sear"
@@ -43,6 +48,7 @@
         "name": "Scrambled Eggs",
         "time_of_day": "breakfast",
         "calories": "68",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
         "venue": "Fuse"
@@ -51,6 +57,7 @@
         "name": "Turkey Bacon",
         "time_of_day": "breakfast",
         "calories": "24",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
         "venue": "Fuse"
@@ -59,6 +66,7 @@
         "name": "Potato Rounds",
         "time_of_day": "breakfast",
         "calories": "307",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Fuse",
         "venue": "Fuse"
@@ -67,6 +75,7 @@
         "name": "Scrambled Eggs",
         "time_of_day": "breakfast",
         "calories": "68",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Dash",
         "venue": "Dash"
@@ -75,6 +84,7 @@
         "name": "Turkey Bacon",
         "time_of_day": "breakfast",
         "calories": "24",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Dash",
         "venue": "Dash"
@@ -83,6 +93,7 @@
         "name": "Potato Rounds",
         "time_of_day": "breakfast",
         "calories": "307",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Dash",
         "venue": "Dash"
@@ -91,6 +102,7 @@
         "name": "Sausage Gravy",
         "time_of_day": "breakfast",
         "calories": "123",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
         "venue": "Parma"
@@ -99,6 +111,7 @@
         "name": "Biscuit",
         "time_of_day": "breakfast",
         "calories": "200",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
         "venue": "Parma"
@@ -107,6 +120,7 @@
         "name": "Southwestern Tofu Hash Scramble",
         "time_of_day": "breakfast",
         "calories": "95",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
         "venue": "Parma"
@@ -115,6 +129,7 @@
         "name": "Roasted Red Potatoes",
         "time_of_day": "breakfast",
         "calories": "105",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Parma",
         "venue": "Parma"
@@ -123,6 +138,7 @@
         "name": "Old Fashioned Cottage Cheese 4%",
         "time_of_day": "breakfast",
         "calories": "110",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Sprout",
         "venue": "Sprout"
@@ -131,6 +147,7 @@
         "name": "Hard Cooked Egg",
         "time_of_day": "breakfast",
         "calories": "68",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Sprout",
         "venue": "Sprout"
@@ -139,6 +156,7 @@
         "name": "Blueberry Muffin",
         "time_of_day": "breakfast",
         "calories": "218",
+        "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
@@ -147,6 +165,7 @@
         "name": "Lemon Strawberry Bread",
         "time_of_day": "breakfast",
         "calories": "249",
+        "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
@@ -155,6 +174,7 @@
         "name": "Glazed Yeast Donut Holes",
         "time_of_day": "breakfast",
         "calories": "87",
+        "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
@@ -163,6 +183,7 @@
         "name": "Plain Bagel",
         "time_of_day": "breakfast",
         "calories": "269",
+        "calorieError": 0,
         "category": "Bagels",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
@@ -171,6 +192,7 @@
         "name": "Parmesan Herb Bagel",
         "time_of_day": "breakfast",
         "calories": "348",
+        "calorieError": 0,
         "category": "Bagels",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
@@ -179,6 +201,7 @@
         "name": "Jerk Chicken Thigh",
         "time_of_day": "lunch",
         "calories": "555",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -187,6 +210,7 @@
         "name": "Jerk Tofu",
         "time_of_day": "lunch",
         "calories": "65",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -195,6 +219,7 @@
         "name": "Jerk Sauce",
         "time_of_day": "lunch",
         "calories": "36",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -203,6 +228,7 @@
         "name": "6\" Flour Tortilla Shell",
         "time_of_day": "lunch",
         "calories": "90",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -211,6 +237,7 @@
         "name": "Cumin & Roasted Red Pepper Rice",
         "time_of_day": "lunch",
         "calories": "137",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Sear",
         "venue": "Sear"
@@ -219,6 +246,7 @@
         "name": "Yellow Tortilla Chips",
         "time_of_day": "lunch",
         "calories": "140",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Sear",
         "venue": "Sear"
@@ -227,6 +255,7 @@
         "name": "Nacho Cheese Sauce",
         "time_of_day": "lunch",
         "calories": "32",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Sear",
         "venue": "Sear"
@@ -235,6 +264,7 @@
         "name": "Mild Cheddar Cheese",
         "time_of_day": "lunch",
         "calories": "28",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -243,6 +273,7 @@
         "name": "Guacamole Dip",
         "time_of_day": "lunch",
         "calories": "24",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -251,6 +282,7 @@
         "name": "Shredded Lettuce",
         "time_of_day": "lunch",
         "calories": "2",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -259,6 +291,7 @@
         "name": "Sliced Black Olives",
         "time_of_day": "lunch",
         "calories": "12",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -267,6 +300,7 @@
         "name": "Sliced Jalapeno Peppers",
         "time_of_day": "lunch",
         "calories": "1",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -275,6 +309,7 @@
         "name": "Medium Salsa",
         "time_of_day": "lunch",
         "calories": "5",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -283,6 +318,7 @@
         "name": "Sour Cream Sauce",
         "time_of_day": "lunch",
         "calories": "35",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -291,6 +327,7 @@
         "name": "Stir Fry Beef Teriyaki",
         "time_of_day": "lunch",
         "calories": "184",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
         "venue": "Fuse"
@@ -299,6 +336,7 @@
         "name": "Tofu Veggie Stir Fry",
         "time_of_day": "lunch",
         "calories": "134",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
         "venue": "Fuse"
@@ -307,6 +345,7 @@
         "name": "Nishiki Brown Rice",
         "time_of_day": "lunch",
         "calories": "128",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
         "venue": "Fuse"
@@ -315,6 +354,7 @@
         "name": "Shredded Green Cabbage",
         "time_of_day": "lunch",
         "calories": "2",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -323,6 +363,7 @@
         "name": "Shredded Carrots",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -331,6 +372,7 @@
         "name": "Gluten Free Soy Sauce",
         "time_of_day": "lunch",
         "calories": "10",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -339,6 +381,7 @@
         "name": "RES Yum Yum Sauce",
         "time_of_day": "lunch",
         "calories": "79",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -347,6 +390,7 @@
         "name": "Chili Vinaigrette",
         "time_of_day": "lunch",
         "calories": "24",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -355,6 +399,7 @@
         "name": "Lemon Spiced Baked Cod",
         "time_of_day": "lunch",
         "calories": "197",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Dash",
         "venue": "Dash"
@@ -363,6 +408,7 @@
         "name": "Rotini Mac and Cheese",
         "time_of_day": "lunch",
         "calories": "275",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Dash",
         "venue": "Dash"
@@ -371,6 +417,7 @@
         "name": "Roasted Corn and Poblano Peppers",
         "time_of_day": "lunch",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Dash",
         "venue": "Dash"
@@ -379,6 +426,7 @@
         "name": "Krinkle Kut Fries",
         "time_of_day": "lunch",
         "calories": "254",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Dash",
         "venue": "Dash"
@@ -387,6 +435,7 @@
         "name": "Lemon Wedges",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Dash",
         "venue": "Dash"
@@ -395,6 +444,7 @@
         "name": "Tartar Sauce",
         "time_of_day": "lunch",
         "calories": "70",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Dash",
         "venue": "Dash"
@@ -403,6 +453,7 @@
         "name": "Lemon Spiced Baked Cod",
         "time_of_day": "lunch",
         "calories": "197",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
         "venue": "Parma"
@@ -411,6 +462,7 @@
         "name": "Cheese Pizza",
         "time_of_day": "lunch",
         "calories": "159",
+        "calorieError": 0,
         "category": "Pizza",
         "station": "Parma",
         "venue": "Parma"
@@ -419,6 +471,7 @@
         "name": "Italian Sausage Pizza",
         "time_of_day": "lunch",
         "calories": "205",
+        "calorieError": 0,
         "category": "Pizza",
         "station": "Parma",
         "venue": "Parma"
@@ -427,6 +480,7 @@
         "name": "Roasted Corn and Poblano Peppers",
         "time_of_day": "lunch",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Parma",
         "venue": "Parma"
@@ -435,6 +489,7 @@
         "name": "Rotini Mac and Cheese",
         "time_of_day": "lunch",
         "calories": "275",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Parma",
         "venue": "Parma"
@@ -443,6 +498,7 @@
         "name": "Lemon Wedges",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Parma",
         "venue": "Parma"
@@ -451,6 +507,7 @@
         "name": "Tartar Sauce",
         "time_of_day": "lunch",
         "calories": "70",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Parma",
         "venue": "Parma"
@@ -459,6 +516,7 @@
         "name": "Minestrone Soup",
         "time_of_day": "lunch",
         "calories": "63",
+        "calorieError": 0,
         "category": "Soups",
         "station": "Sprout",
         "venue": "Sprout"
@@ -467,6 +525,7 @@
         "name": "Chopped Romaine Lettuce",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -475,6 +534,7 @@
         "name": "Spring Lettuce Mix",
         "time_of_day": "lunch",
         "calories": "3",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -483,6 +543,7 @@
         "name": "Shredded Carrots",
         "time_of_day": "lunch",
         "calories": "4",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -491,6 +552,7 @@
         "name": "Grape Tomatoes",
         "time_of_day": "lunch",
         "calories": "5",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -499,6 +561,7 @@
         "name": "Sliced Cucumbers",
         "time_of_day": "lunch",
         "calories": "6",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -507,6 +570,7 @@
         "name": "Chopped Broccoli",
         "time_of_day": "lunch",
         "calories": "12",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -515,6 +579,7 @@
         "name": "Sliced Red Onions",
         "time_of_day": "lunch",
         "calories": "6",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -523,6 +588,7 @@
         "name": "Chopped Eggs",
         "time_of_day": "lunch",
         "calories": "16",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -531,6 +597,7 @@
         "name": "Mild Cheddar Cheese",
         "time_of_day": "lunch",
         "calories": "28",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -539,6 +606,7 @@
         "name": "Classic Hummus",
         "time_of_day": "lunch",
         "calories": "40",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -547,6 +615,7 @@
         "name": "Butter Garlic Croutons",
         "time_of_day": "lunch",
         "calories": "121",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -555,6 +624,7 @@
         "name": "Vanilla Greek Yogurt",
         "time_of_day": "lunch",
         "calories": "98",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -563,6 +633,7 @@
         "name": "Strawberry Yogurt",
         "time_of_day": "lunch",
         "calories": "110",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -571,6 +642,7 @@
         "name": "Lowfat Cottage Cheese 2%",
         "time_of_day": "lunch",
         "calories": "90",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -579,6 +651,7 @@
         "name": "Hard Cooked Egg",
         "time_of_day": "lunch",
         "calories": "68",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -587,6 +660,7 @@
         "name": "Lay's Classic Potato Chips",
         "time_of_day": "lunch",
         "calories": "160",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -595,6 +669,7 @@
         "name": "Cubed Cantaloupe",
         "time_of_day": "lunch",
         "calories": "29",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -603,6 +678,7 @@
         "name": "Cubed Honeydew",
         "time_of_day": "lunch",
         "calories": "31",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -611,6 +687,7 @@
         "name": "Pineapple Tidbits",
         "time_of_day": "lunch",
         "calories": "80",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -619,6 +696,7 @@
         "name": "Sugar Cookie",
         "time_of_day": "lunch",
         "calories": "178",
+        "calorieError": 0,
         "category": "Desserts",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
@@ -627,6 +705,7 @@
         "name": "Fruity Pebbles Bar",
         "time_of_day": "lunch",
         "calories": "96",
+        "calorieError": 0,
         "category": "Desserts",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
@@ -635,6 +714,7 @@
         "name": "Beef Taco Meat",
         "time_of_day": "dinner",
         "calories": "127",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -643,6 +723,7 @@
         "name": "Nacho Cheese Chips",
         "time_of_day": "dinner",
         "calories": "150",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -651,6 +732,7 @@
         "name": "Blanco Cheese Sauce",
         "time_of_day": "dinner",
         "calories": "91",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Sear",
         "venue": "Sear"
@@ -659,6 +741,7 @@
         "name": "Fiesta Rice",
         "time_of_day": "dinner",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Sear",
         "venue": "Sear"
@@ -667,6 +750,7 @@
         "name": "Mild Cheddar Cheese",
         "time_of_day": "dinner",
         "calories": "28",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -675,6 +759,7 @@
         "name": "Guacamole Dip",
         "time_of_day": "dinner",
         "calories": "24",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -683,6 +768,7 @@
         "name": "Shredded Lettuce",
         "time_of_day": "dinner",
         "calories": "2",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -691,6 +777,7 @@
         "name": "Sliced Jalapeno Peppers",
         "time_of_day": "dinner",
         "calories": "1",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -699,6 +786,7 @@
         "name": "Medium Salsa",
         "time_of_day": "dinner",
         "calories": "5",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -707,6 +795,7 @@
         "name": "Sour Cream Sauce",
         "time_of_day": "dinner",
         "calories": "35",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Sear",
         "venue": "Sear"
@@ -715,6 +804,7 @@
         "name": "Sesame Sweet Chili Salmon",
         "time_of_day": "dinner",
         "calories": "366",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
         "venue": "Fuse"
@@ -723,6 +813,7 @@
         "name": "Sweet Chili Crispy Tofu",
         "time_of_day": "dinner",
         "calories": "392",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
         "venue": "Fuse"
@@ -731,6 +822,7 @@
         "name": "Long Grain White Rice",
         "time_of_day": "dinner",
         "calories": "107",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
         "venue": "Fuse"
@@ -739,6 +831,7 @@
         "name": "Vegetable Spring Roll",
         "time_of_day": "dinner",
         "calories": "104",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Fuse",
         "venue": "Fuse"
@@ -747,6 +840,7 @@
         "name": "Shredded Green Cabbage",
         "time_of_day": "dinner",
         "calories": "2",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -755,6 +849,7 @@
         "name": "Shredded Carrots",
         "time_of_day": "dinner",
         "calories": "4",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -763,6 +858,7 @@
         "name": "Gluten Free Soy Sauce",
         "time_of_day": "dinner",
         "calories": "10",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -771,6 +867,7 @@
         "name": "Kikkoman Sweet and Sour Sauce",
         "time_of_day": "dinner",
         "calories": "20",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -779,6 +876,7 @@
         "name": "RES Yum Yum Sauce",
         "time_of_day": "dinner",
         "calories": "79",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -787,6 +885,7 @@
         "name": "Chili Vinaigrette",
         "time_of_day": "dinner",
         "calories": "24",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Fuse",
         "venue": "Fuse"
@@ -795,6 +894,7 @@
         "name": "Chicken Tenders",
         "time_of_day": "dinner",
         "calories": "528",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Dash",
         "venue": "Dash"
@@ -803,6 +903,7 @@
         "name": "Breaded Gardein Tenders",
         "time_of_day": "dinner",
         "calories": "148",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Dash",
         "venue": "Dash"
@@ -811,6 +912,7 @@
         "name": "Roasted Garlic Broccoli",
         "time_of_day": "dinner",
         "calories": "79",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Dash",
         "venue": "Dash"
@@ -819,6 +921,7 @@
         "name": "Mashed Potatoes",
         "time_of_day": "dinner",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Dash",
         "venue": "Dash"
@@ -827,6 +930,7 @@
         "name": "Country Gravy",
         "time_of_day": "dinner",
         "calories": "17",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Dash",
         "venue": "Dash"
@@ -835,6 +939,7 @@
         "name": "Dijon Honey Mustard Dressing",
         "time_of_day": "dinner",
         "calories": "65",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Dash",
         "venue": "Dash"
@@ -843,6 +948,7 @@
         "name": "Ranch Dressing",
         "time_of_day": "dinner",
         "calories": "50",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Dash",
         "venue": "Dash"
@@ -851,6 +957,7 @@
         "name": "Sweet Baby Ray's BBQ Sauce",
         "time_of_day": "dinner",
         "calories": "34",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Dash",
         "venue": "Dash"
@@ -859,6 +966,7 @@
         "name": "Chicken Tenders",
         "time_of_day": "dinner",
         "calories": "528",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
         "venue": "Parma"
@@ -867,6 +975,7 @@
         "name": "Breaded Gardein Tenders",
         "time_of_day": "dinner",
         "calories": "148",
+        "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
         "venue": "Parma"
@@ -875,6 +984,7 @@
         "name": "Cheese Pizza",
         "time_of_day": "dinner",
         "calories": "159",
+        "calorieError": 0,
         "category": "Pizza",
         "station": "Parma",
         "venue": "Parma"
@@ -883,6 +993,7 @@
         "name": "Italian Sausage Pizza",
         "time_of_day": "dinner",
         "calories": "205",
+        "calorieError": 0,
         "category": "Pizza",
         "station": "Parma",
         "venue": "Parma"
@@ -891,6 +1002,7 @@
         "name": "Roasted Garlic Broccoli",
         "time_of_day": "dinner",
         "calories": "79",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Parma",
         "venue": "Parma"
@@ -899,6 +1011,7 @@
         "name": "Mashed Potatoes",
         "time_of_day": "dinner",
         "calories": "107",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Parma",
         "venue": "Parma"
@@ -907,6 +1020,7 @@
         "name": "Country Gravy",
         "time_of_day": "dinner",
         "calories": "17",
+        "calorieError": 0,
         "category": "Sides",
         "station": "Parma",
         "venue": "Parma"
@@ -915,6 +1029,7 @@
         "name": "Dijon Honey Mustard Dressing",
         "time_of_day": "dinner",
         "calories": "65",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Parma",
         "venue": "Parma"
@@ -923,6 +1038,7 @@
         "name": "Ranch Dressing",
         "time_of_day": "dinner",
         "calories": "50",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Parma",
         "venue": "Parma"
@@ -931,6 +1047,7 @@
         "name": "Sweet Baby Ray's BBQ Sauce",
         "time_of_day": "dinner",
         "calories": "34",
+        "calorieError": 0,
         "category": "Condiments",
         "station": "Parma",
         "venue": "Parma"
@@ -939,6 +1056,7 @@
         "name": "Minestrone Soup",
         "time_of_day": "dinner",
         "calories": "63",
+        "calorieError": 0,
         "category": "Soups",
         "station": "Sprout",
         "venue": "Sprout"
@@ -947,6 +1065,7 @@
         "name": "Chopped Romaine Lettuce",
         "time_of_day": "dinner",
         "calories": "4",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -955,6 +1074,7 @@
         "name": "Spring Lettuce Mix",
         "time_of_day": "dinner",
         "calories": "3",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -963,6 +1083,7 @@
         "name": "Shredded Carrots",
         "time_of_day": "dinner",
         "calories": "4",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -971,6 +1092,7 @@
         "name": "Grape Tomatoes",
         "time_of_day": "dinner",
         "calories": "5",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -979,6 +1101,7 @@
         "name": "Sliced Cucumbers",
         "time_of_day": "dinner",
         "calories": "6",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -987,6 +1110,7 @@
         "name": "Chopped Broccoli",
         "time_of_day": "dinner",
         "calories": "12",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -995,6 +1119,7 @@
         "name": "Sliced Red Onions",
         "time_of_day": "dinner",
         "calories": "6",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1003,6 +1128,7 @@
         "name": "Chopped Eggs",
         "time_of_day": "dinner",
         "calories": "16",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1011,6 +1137,7 @@
         "name": "Mild Cheddar Cheese",
         "time_of_day": "dinner",
         "calories": "28",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1019,6 +1146,7 @@
         "name": "Classic Hummus",
         "time_of_day": "dinner",
         "calories": "40",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1027,6 +1155,7 @@
         "name": "Butter Garlic Croutons",
         "time_of_day": "dinner",
         "calories": "121",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1035,6 +1164,7 @@
         "name": "Vanilla Greek Yogurt",
         "time_of_day": "dinner",
         "calories": "98",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1043,6 +1173,7 @@
         "name": "Strawberry Yogurt",
         "time_of_day": "dinner",
         "calories": "110",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1051,6 +1182,7 @@
         "name": "Lowfat Cottage Cheese 2%",
         "time_of_day": "dinner",
         "calories": "90",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1059,6 +1191,7 @@
         "name": "Hard Cooked Egg",
         "time_of_day": "dinner",
         "calories": "68",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1067,6 +1200,7 @@
         "name": "Lay's Classic Potato Chips",
         "time_of_day": "dinner",
         "calories": "160",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1075,6 +1209,7 @@
         "name": "Cubed Cantaloupe",
         "time_of_day": "dinner",
         "calories": "29",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1083,6 +1218,7 @@
         "name": "Cubed Honeydew",
         "time_of_day": "dinner",
         "calories": "31",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1091,6 +1227,7 @@
         "name": "Pineapple Tidbits",
         "time_of_day": "dinner",
         "calories": "80",
+        "calorieError": 0,
         "category": "Salads",
         "station": "Sprout",
         "venue": "Sprout"
@@ -1099,6 +1236,7 @@
         "name": "Chocolate Chip Cookie",
         "time_of_day": "dinner",
         "calories": "188",
+        "calorieError": 0,
         "category": "Desserts",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
@@ -1107,6 +1245,7 @@
         "name": "Rice Krispie Bar",
         "time_of_day": "dinner",
         "calories": "92",
+        "calorieError": 0,
         "category": "Desserts",
         "station": "Sugar Sugar",
         "venue": "Sugar Sugar"
