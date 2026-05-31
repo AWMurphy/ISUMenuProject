@@ -27,14 +27,42 @@ def save_to_database_per_location(appropriate_data, location_name):
                         timeOfDay TEXT,
                         venue TEXT,
                         station TEXT,
-                        category TEXT
+                        category TEXT,
+                        isHalal INTEGER CHECK (isHalal IN (0,1)),
+                        isVegan INTEGER CHECK (isVegan IN (0,1)),
+                        isVegetarian INTEGER CHECK (isVegetarian IN (0,1)),
+                        containsDairy INTEGER CHECK (containsDairy IN (0,1)),
+                        containsEggs INTEGER CHECK (containsEggs IN (0,1)),
+                        containsFish INTEGER CHECK (containsFish IN (0,1)),
+                        containsPeanuts INTEGER CHECK (containsPeanuts IN (0,1)),
+                        containsShellfish INTEGER CHECK (containsShellfish IN (0,1)),
+                        containsSoy INTEGER CHECK (containsSoy IN (0,1)),
+                        containsSesame INTEGER CHECK (containsSesame IN (0,1)),
+                        containsTreeNuts INTEGER CHECK (containsTreeNuts IN (0,1)),
+                        containsWheatGluten INTEGER CHECK (containsWheatGluten IN (0,1))
                     )
                     """)
     
     # take our data from the json and put it into our database
     for item_id, details in appropriate_data.items():
-        cursor.execute(f"""INSERT INTO {table_name} (item_id, name, calories, calorieError, timeOfDay, venue, station, category) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-                        """, (item_id, details["name"], details["calories"], details["calorieError"], details["time_of_day"], details["venue"], details["station"], details["category"]))
+        cursor.execute(f"""INSERT INTO {table_name}
+                       (item_id, name, calories, calorieError, timeOfDay, venue, station, category,
+                       isHalal, isVegan, isVegetarian,
+                       containsDairy, containsEggs, containsFish, containsPeanuts,
+                       containsShellfish, containsSoy, containsSesame, containsTreeNuts,
+                       containsWheatGluten)
+                       VALUES
+                       (?, ?, ?, ?, ?, ?, ?, ?,
+                        ?, ?, ?,
+                        ?, ?, ?, ?,
+                        ?, ?, ?, ?,
+                        ?)
+                       """,
+                       (item_id, details["name"], details["calories"], details["calorieError"], details["time_of_day"], details["venue"], details["station"], details["category"],
+                        details["isHalal"], details["isVegan"], details["isVegetarian"],
+                        details["containsDairy"], details["containsEggs"], details["containsFish"], details["containsPeanuts"],
+                        details["containsShellfish"], details["containsSoy"], details["containsSesame"], details["containsTreeNuts"],
+                        details["containsWheatGluten"]))
         
     # commit changes
     conn.commit()

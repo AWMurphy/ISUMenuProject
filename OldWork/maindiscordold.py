@@ -1,4 +1,4 @@
-# all the fucking imports
+# all the imports
 from typing import Final
 import os
 import discord

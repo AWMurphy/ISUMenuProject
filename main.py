@@ -28,14 +28,18 @@ for place, url in links.items():
     print(f"Fetching data for: {place}")
     try:
         response = requests.get(url + today.strftime("%Y-%m-%d"), headers=headers) # use the headers above along with the url from the dining halls json
-        # response.raise_for_status()
 
         if response.status_code == 200:
 
             if place == "Friley Windows":
                 menu_json = response.json()
 
-                finalizedData = dataExtraction.extract_food_data_FW(menu_json)
+                """
+                with open('output.txt', 'w') as f:
+                    print(json.dumps(menu_json, indent=4), file=f) # json.dumps() used to clean print the information
+                """
+
+                finalizedData = dataExtraction.extract_food_data(menu_json)
 
                 with open('FW.txt', 'w') as t:
                     print(json.dumps(finalizedData, indent=4), file=t)
@@ -44,13 +48,8 @@ for place, url in links.items():
 
             elif place == "Seasons Marketplace":
                 menu_json = response.json()
-
-                """
-                with open('output.txt', 'w') as f:
-                    print(json.dumps(menu_json, indent=4), file=f) # json.dumps() used to clean print the information
-                """
-
-                finalizedData = dataExtraction.extract_food_data_SM(menu_json)
+                
+                finalizedData = dataExtraction.extract_food_data(menu_json)
 
                 with open('SM.txt', 'w') as t:
                     print(json.dumps(finalizedData, indent=4), file=t)
@@ -60,7 +59,7 @@ for place, url in links.items():
             elif place == "Union Drive Marketplace":
                 menu_json = response.json()
 
-                finalizedData = dataExtraction.extract_food_data_UDCC(menu_json)
+                finalizedData = dataExtraction.extract_food_data(menu_json)
             
                 with open('UDCC.txt', 'w') as t:
                     print(json.dumps(finalizedData, indent=4), file=t)

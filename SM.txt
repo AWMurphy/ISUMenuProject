@@ -1,1541 +1,569 @@
 {
-    "281562695": {
+    "281562761": {
         "name": "Scrambled Eggs",
         "time_of_day": "breakfast",
         "calories": "68",
         "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
-        "venue": "Fuse at Seasons"
+        "venue": "Fuse at Seasons",
+        "isHalal": 1,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281562696": {
-        "name": "Turkey Bacon",
+    "285751271": {
+        "name": "Caramel French Toast Casserole",
         "time_of_day": "breakfast",
-        "calories": "24",
+        "calories": "139",
         "calorieError": 0,
         "category": "Entree",
         "station": "Fuse",
-        "venue": "Fuse at Seasons"
+        "venue": "Fuse at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
     },
-    "281562697": {
+    "281562760": {
+        "name": "Canadian Bacon",
+        "time_of_day": "breakfast",
+        "calories": "83",
+        "calorieError": 0,
+        "category": "Entree",
+        "station": "Fuse",
+        "venue": "Fuse at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 0,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
+    },
+    "281562763": {
         "name": "Roasted Red Potatoes",
         "time_of_day": "breakfast",
         "calories": "105",
         "calorieError": 0,
         "category": "Sides",
         "station": "Fuse",
-        "venue": "Fuse at Seasons"
+        "venue": "Fuse at Seasons",
+        "isHalal": 1,
+        "isVegan": 1,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281563219": {
+    "281563355": {
         "name": "Blueberry Muffin",
         "time_of_day": "breakfast",
         "calories": "218",
         "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
     },
-    "281563217": {
-        "name": "Lemon Strawberry Bread",
+    "281563348": {
+        "name": "Orange Bread",
         "time_of_day": "breakfast",
-        "calories": "249",
+        "calories": "275",
         "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
     },
-    "281563218": {
-        "name": "Glazed Yeast Donut Holes",
+    "281563349": {
+        "name": "Chocolate Iced Cake Donut",
         "time_of_day": "breakfast",
-        "calories": "87",
+        "calories": "317",
         "calorieError": 0,
         "category": "Muffins, Breads, and Pastries",
         "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
     },
-    "281563216": {
-        "name": "Plain Bagel",
+    "281563350": {
+        "name": "Glazed Cake Donut",
         "time_of_day": "breakfast",
-        "calories": "269",
+        "calories": "321",
         "calorieError": 0,
-        "category": "Bagels",
+        "category": "Muffins, Breads, and Pastries",
         "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
     },
-    "281563215": {
+    "281563351": {
+        "name": "Plain Cake Donut",
+        "time_of_day": "breakfast",
+        "calories": "274",
+        "calorieError": 0,
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
+    },
+    "281563352": {
+        "name": "Chocolate Iced Cake Donut with Sprinkles",
+        "time_of_day": "breakfast",
+        "calories": "343",
+        "calorieError": 0,
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
+    },
+    "281563353": {
+        "name": "White Iced Cake Donut with Sprinkles",
+        "time_of_day": "breakfast",
+        "calories": "353",
+        "calorieError": 0,
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
+    },
+    "281563354": {
+        "name": "White Iced Cake Donut",
+        "time_of_day": "breakfast",
+        "calories": "328",
+        "calorieError": 0,
+        "category": "Muffins, Breads, and Pastries",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
+    },
+    "281563346": {
         "name": "Parmesan Herb Bagel",
         "time_of_day": "breakfast",
         "calories": "348",
         "calorieError": 0,
         "category": "Bagels",
         "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 1,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
     },
-    "281563104": {
+    "281563347": {
+        "name": "Plain Bagel",
+        "time_of_day": "breakfast",
+        "calories": "269",
+        "calorieError": 0,
+        "category": "Bagels",
+        "station": "Sugar Sugar",
+        "venue": "Sugar Sugar at Seasons",
+        "isHalal": 1,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
+    },
+    "281563175": {
         "name": "Scrambled Eggs",
         "time_of_day": "breakfast",
         "calories": "68",
         "calorieError": 0,
         "category": "Entree",
         "station": "Smoke",
-        "venue": "Smoke"
+        "venue": "Smoke",
+        "isHalal": 1,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281563105": {
-        "name": "Turkey Bacon",
+    "281563176": {
+        "name": "Tofu Scramble",
         "time_of_day": "breakfast",
-        "calories": "24",
+        "calories": "145",
         "calorieError": 0,
         "category": "Entree",
         "station": "Smoke",
-        "venue": "Smoke"
+        "venue": "Smoke",
+        "isHalal": 1,
+        "isVegan": 1,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281563106": {
+    "281563174": {
+        "name": "Canadian Bacon",
+        "time_of_day": "breakfast",
+        "calories": "83",
+        "calorieError": 0,
+        "category": "Entree",
+        "station": "Smoke",
+        "venue": "Smoke",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 0,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
+    },
+    "281563177": {
         "name": "Roasted Red Potatoes",
         "time_of_day": "breakfast",
         "calories": "105",
         "calorieError": 0,
         "category": "Sides",
         "station": "Smoke",
-        "venue": "Smoke"
+        "venue": "Smoke",
+        "isHalal": 1,
+        "isVegan": 1,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281562995": {
-        "name": "Sausage Gravy",
+    "281563066": {
+        "name": "Vegetable Cheese Strata",
         "time_of_day": "breakfast",
-        "calories": "123",
+        "calories": "83",
         "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
-        "venue": "Parma at Seasons"
+        "venue": "Parma at Seasons",
+        "isHalal": 1,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
     },
-    "281562994": {
-        "name": "Biscuit",
+    "281563065": {
+        "name": "Tofu Scramble",
         "time_of_day": "breakfast",
-        "calories": "200",
+        "calories": "145",
         "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
-        "venue": "Parma at Seasons"
+        "venue": "Parma at Seasons",
+        "isHalal": 1,
+        "isVegan": 1,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281562996": {
-        "name": "Southwestern Tofu Hash Scramble",
+    "281563064": {
+        "name": "Canadian Bacon",
         "time_of_day": "breakfast",
-        "calories": "95",
+        "calories": "83",
         "calorieError": 0,
         "category": "Entree",
         "station": "Parma",
-        "venue": "Parma at Seasons"
+        "venue": "Parma at Seasons",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 0,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281562997": {
-        "name": "Turkey Bacon",
-        "time_of_day": "breakfast",
-        "calories": "24",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281562998": {
+    "281563067": {
         "name": "Potato Rounds",
         "time_of_day": "breakfast",
         "calories": "307",
         "calorieError": 0,
         "category": "Sides",
         "station": "Parma",
-        "venue": "Parma at Seasons"
+        "venue": "Parma at Seasons",
+        "isHalal": 0,
+        "isVegan": 1,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281562582": {
-        "name": "Sausage Gravy",
+    "281562657": {
+        "name": "Scrambled Eggs",
         "time_of_day": "breakfast",
-        "calories": "123",
+        "calories": "68",
         "calorieError": 0,
         "category": "Entree",
         "station": "Flame",
-        "venue": "Flame"
+        "venue": "Flame",
+        "isHalal": 1,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281562581": {
-        "name": "Biscuit",
+    "281562659": {
+        "name": "Tofu Scramble",
         "time_of_day": "breakfast",
-        "calories": "200",
+        "calories": "145",
         "calorieError": 0,
         "category": "Entree",
         "station": "Flame",
-        "venue": "Flame"
+        "venue": "Flame",
+        "isHalal": 1,
+        "isVegan": 1,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 1,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281562583": {
-        "name": "Southwestern Tofu Hash Scramble",
+    "281562658": {
+        "name": "Buttermilk Pancakes",
         "time_of_day": "breakfast",
-        "calories": "95",
+        "calories": "169",
         "calorieError": 0,
         "category": "Entree",
         "station": "Flame",
-        "venue": "Flame"
+        "venue": "Flame",
+        "isHalal": 1,
+        "isVegan": 0,
+        "isVegetarian": 1,
+        "containsDairy": 1,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 1
     },
-    "281562584": {
-        "name": "Turkey Bacon",
+    "281562656": {
+        "name": "Canadian Bacon",
         "time_of_day": "breakfast",
-        "calories": "24",
+        "calories": "83",
         "calorieError": 0,
         "category": "Entree",
         "station": "Flame",
-        "venue": "Flame"
+        "venue": "Flame",
+        "isHalal": 0,
+        "isVegan": 0,
+        "isVegetarian": 0,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     },
-    "281562585": {
+    "281562660": {
         "name": "Potato Rounds",
         "time_of_day": "breakfast",
         "calories": "307",
         "calorieError": 0,
         "category": "Sides",
         "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562700": {
-        "name": "Tofu Veggie Stir Fry",
-        "time_of_day": "lunch",
-        "calories": "134",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562699": {
-        "name": "Stir Fry Beef Teriyaki",
-        "time_of_day": "lunch",
-        "calories": "184",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562698": {
-        "name": "Nishiki Brown Rice",
-        "time_of_day": "lunch",
-        "calories": "128",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562701": {
-        "name": "Shredded Green Cabbage",
-        "time_of_day": "lunch",
-        "calories": "2",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562702": {
-        "name": "Shredded Carrots",
-        "time_of_day": "lunch",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562703": {
-        "name": "Gluten Free Soy Sauce",
-        "time_of_day": "lunch",
-        "calories": "10",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562704": {
-        "name": "RES Yum Yum Sauce",
-        "time_of_day": "lunch",
-        "calories": "79",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562705": {
-        "name": "Chili Vinaigrette",
-        "time_of_day": "lunch",
-        "calories": "24",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562851": {
-        "name": "Minestrone Soup",
-        "time_of_day": "lunch",
-        "calories": "63",
-        "calorieError": 0,
-        "category": "Soups",
-        "station": "Simmer",
-        "venue": "North Venues"
-    },
-    "281562842": {
-        "name": "Chopped Romaine Lettuce",
-        "time_of_day": "lunch",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562843": {
-        "name": "Spring Lettuce Mix",
-        "time_of_day": "lunch",
-        "calories": "3",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562836": {
-        "name": "Shredded Carrots",
-        "time_of_day": "lunch",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562845": {
-        "name": "Grape Tomatoes",
-        "time_of_day": "lunch",
-        "calories": "5",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562839": {
-        "name": "Sliced Cucumbers",
-        "time_of_day": "lunch",
-        "calories": "6",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562835": {
-        "name": "Chopped Broccoli",
-        "time_of_day": "lunch",
-        "calories": "12",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562844": {
-        "name": "Sliced Red Onions",
-        "time_of_day": "lunch",
-        "calories": "6",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562840": {
-        "name": "Chopped Eggs",
-        "time_of_day": "lunch",
-        "calories": "132",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562837": {
-        "name": "Mild Cheddar Cheese",
-        "time_of_day": "lunch",
-        "calories": "28",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562841": {
-        "name": "Classic Hummus",
-        "time_of_day": "lunch",
-        "calories": "40",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562838": {
-        "name": "Butter Garlic Croutons",
-        "time_of_day": "lunch",
-        "calories": "121",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562833": {
-        "name": "Vanilla Greek Yogurt",
-        "time_of_day": "lunch",
-        "calories": "98",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562834": {
-        "name": "Strawberry Yogurt",
-        "time_of_day": "lunch",
-        "calories": "110",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562830": {
-        "name": "Lowfat Cottage Cheese 2%",
-        "time_of_day": "lunch",
-        "calories": "90",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562832": {
-        "name": "Hard Cooked Egg",
-        "time_of_day": "lunch",
-        "calories": "68",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562831": {
-        "name": "Lay's Classic Potato Chips",
-        "time_of_day": "lunch",
-        "calories": "160",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562847": {
-        "name": "Cubed Cantaloupe",
-        "time_of_day": "lunch",
-        "calories": "29",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562848": {
-        "name": "Cubed Honeydew",
-        "time_of_day": "lunch",
-        "calories": "31",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562846": {
-        "name": "Unsweetened Applesauce",
-        "time_of_day": "lunch",
-        "calories": "60",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281563222": {
-        "name": "Sugar Cookie",
-        "time_of_day": "lunch",
-        "calories": "178",
-        "calorieError": 0,
-        "category": "Desserts",
-        "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
-    },
-    "281563221": {
-        "name": "Fruity Pebbles Bar",
-        "time_of_day": "lunch",
-        "calories": "96",
-        "calorieError": 0,
-        "category": "Desserts",
-        "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
-    },
-    "285512154": {
-        "name": "Lemon Herb Shrimp",
-        "time_of_day": "lunch",
-        "calories": 0,
-        "calorieError": 1,
-        "category": "Entree",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563108": {
-        "name": "Rotini Mac and Cheese",
-        "time_of_day": "lunch",
-        "calories": "275",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563109": {
-        "name": "Roasted Corn and Poblano Peppers",
-        "time_of_day": "lunch",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563110": {
-        "name": "Long Grain White Rice",
-        "time_of_day": "lunch",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563111": {
-        "name": "Lemon Wedges",
-        "time_of_day": "lunch",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563112": {
-        "name": "Tartar Sauce",
-        "time_of_day": "lunch",
-        "calories": "70",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285511821": {
-        "name": "Lemon Herb Shrimp",
-        "time_of_day": "lunch",
-        "calories": 0,
-        "calorieError": 1,
-        "category": "Entree",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563004": {
-        "name": "Cheese Pizza",
-        "time_of_day": "lunch",
-        "calories": "191",
-        "calorieError": 0,
-        "category": "Pizza",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563005": {
-        "name": "Pepperoni Pizza",
-        "time_of_day": "lunch",
-        "calories": "210",
-        "calorieError": 0,
-        "category": "Pizza",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563002": {
-        "name": "Krinkle Kut Fries",
-        "time_of_day": "lunch",
-        "calories": "254",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563003": {
-        "name": "Rotini Mac and Cheese",
-        "time_of_day": "lunch",
-        "calories": "275",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563001": {
-        "name": "Roasted Corn and Poblano Peppers",
-        "time_of_day": "lunch",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563006": {
-        "name": "Lemon Wedges",
-        "time_of_day": "lunch",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563007": {
-        "name": "Tartar Sauce",
-        "time_of_day": "lunch",
-        "calories": "70",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281562586": {
-        "name": "Jerk Chicken Thigh",
-        "time_of_day": "lunch",
-        "calories": "555",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562589": {
-        "name": "Jerk Tofu",
-        "time_of_day": "lunch",
-        "calories": "65",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562587": {
-        "name": "Jerk Sauce",
-        "time_of_day": "lunch",
-        "calories": "36",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562588": {
-        "name": "6\" Flour Tortilla Shell",
-        "time_of_day": "lunch",
-        "calories": "90",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562591": {
-        "name": "Cumin & Roasted Red Pepper Rice",
-        "time_of_day": "lunch",
-        "calories": "137",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562590": {
-        "name": "Yellow Tortilla Chips",
-        "time_of_day": "lunch",
-        "calories": "140",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562592": {
-        "name": "Nacho Cheese Sauce",
-        "time_of_day": "lunch",
-        "calories": "64",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562593": {
-        "name": "Mild Cheddar Cheese",
-        "time_of_day": "lunch",
-        "calories": "28",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562594": {
-        "name": "Guacamole Dip",
-        "time_of_day": "lunch",
-        "calories": "24",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562595": {
-        "name": "Shredded Lettuce",
-        "time_of_day": "lunch",
-        "calories": "2",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562596": {
-        "name": "Sliced Jalapeno Peppers",
-        "time_of_day": "lunch",
-        "calories": "1",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562597": {
-        "name": "Medium Salsa",
-        "time_of_day": "lunch",
-        "calories": "5",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562598": {
-        "name": "Sour Cream Sauce",
-        "time_of_day": "lunch",
-        "calories": "35",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562707": {
-        "name": "Chicken Tenders",
-        "time_of_day": "dinner",
-        "calories": "528",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128004": {
-        "name": "Beef Taco Meat",
-        "time_of_day": "dinner",
-        "calories": "127",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562708": {
-        "name": "Breaded Gardein Tenders",
-        "time_of_day": "dinner",
-        "calories": "148",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128005": {
-        "name": "6\" Flour Tortilla Shell",
-        "time_of_day": "dinner",
-        "calories": "90",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562709": {
-        "name": "Roasted Garlic Broccoli",
-        "time_of_day": "dinner",
-        "calories": "79",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562711": {
-        "name": "Mashed Potatoes",
-        "time_of_day": "dinner",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128007": {
-        "name": "Parmesan Lime Corn",
-        "time_of_day": "dinner",
-        "calories": "109",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562710": {
-        "name": "Country Gravy",
-        "time_of_day": "dinner",
-        "calories": "17",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128006": {
-        "name": "Yellow Tortilla Chips",
-        "time_of_day": "dinner",
-        "calories": "140",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128008": {
-        "name": "Nacho Cheese Sauce",
-        "time_of_day": "dinner",
-        "calories": "64",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562712": {
-        "name": "Dijon Honey Mustard Dressing",
-        "time_of_day": "dinner",
-        "calories": "65",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128009": {
-        "name": "Mild Cheddar Cheese",
-        "time_of_day": "dinner",
-        "calories": "28",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562713": {
-        "name": "Ranch Dressing",
-        "time_of_day": "dinner",
-        "calories": "50",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128010": {
-        "name": "Guacamole Dip",
-        "time_of_day": "dinner",
-        "calories": "24",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562714": {
-        "name": "Sweet Baby Ray's BBQ Sauce",
-        "time_of_day": "dinner",
-        "calories": "34",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562715": {
-        "name": "SauceCraft Teriyaki Sauce",
-        "time_of_day": "dinner",
-        "calories": "24",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128011": {
-        "name": "Shredded Lettuce",
-        "time_of_day": "dinner",
-        "calories": "2",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128012": {
-        "name": "Sliced Black Olives",
-        "time_of_day": "dinner",
-        "calories": "12",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128013": {
-        "name": "Sliced Jalapeno Peppers",
-        "time_of_day": "dinner",
-        "calories": "1",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128014": {
-        "name": "Medium Salsa",
-        "time_of_day": "dinner",
-        "calories": "5",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "285128015": {
-        "name": "Sour Cream Sauce",
-        "time_of_day": "dinner",
-        "calories": "35",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Fuse",
-        "venue": "Fuse at Seasons"
-    },
-    "281562873": {
-        "name": "Minestrone Soup",
-        "time_of_day": "dinner",
-        "calories": "63",
-        "calorieError": 0,
-        "category": "Soups",
-        "station": "Simmer",
-        "venue": "North Venues"
-    },
-    "281562864": {
-        "name": "Chopped Romaine Lettuce",
-        "time_of_day": "dinner",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562865": {
-        "name": "Spring Lettuce Mix",
-        "time_of_day": "dinner",
-        "calories": "3",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562858": {
-        "name": "Shredded Carrots",
-        "time_of_day": "dinner",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562867": {
-        "name": "Grape Tomatoes",
-        "time_of_day": "dinner",
-        "calories": "5",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562861": {
-        "name": "Sliced Cucumbers",
-        "time_of_day": "dinner",
-        "calories": "6",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562857": {
-        "name": "Chopped Broccoli",
-        "time_of_day": "dinner",
-        "calories": "12",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562866": {
-        "name": "Sliced Red Onions",
-        "time_of_day": "dinner",
-        "calories": "6",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562862": {
-        "name": "Chopped Eggs",
-        "time_of_day": "dinner",
-        "calories": "132",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562859": {
-        "name": "Mild Cheddar Cheese",
-        "time_of_day": "dinner",
-        "calories": "28",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562863": {
-        "name": "Classic Hummus",
-        "time_of_day": "dinner",
-        "calories": "40",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562860": {
-        "name": "Butter Garlic Croutons",
-        "time_of_day": "dinner",
-        "calories": "121",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562855": {
-        "name": "Vanilla Greek Yogurt",
-        "time_of_day": "dinner",
-        "calories": "98",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562856": {
-        "name": "Strawberry Yogurt",
-        "time_of_day": "dinner",
-        "calories": "110",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562852": {
-        "name": "Lowfat Cottage Cheese 2%",
-        "time_of_day": "dinner",
-        "calories": "90",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562854": {
-        "name": "Hard Cooked Egg",
-        "time_of_day": "dinner",
-        "calories": "68",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562853": {
-        "name": "Lay's Classic Potato Chips",
-        "time_of_day": "dinner",
-        "calories": "160",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562869": {
-        "name": "Cubed Cantaloupe",
-        "time_of_day": "dinner",
-        "calories": "29",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562868": {
-        "name": "Unsweetened Applesauce",
-        "time_of_day": "dinner",
-        "calories": "60",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281562870": {
-        "name": "Cubed Honeydew",
-        "time_of_day": "dinner",
-        "calories": "31",
-        "calorieError": 0,
-        "category": "Salads",
-        "station": "Sprout",
-        "venue": "North Venues"
-    },
-    "281563229": {
-        "name": "Chocolate Chip Cookie",
-        "time_of_day": "dinner",
-        "calories": "188",
-        "calorieError": 0,
-        "category": "Desserts",
-        "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
-    },
-    "281563228": {
-        "name": "Rice Krispie Bar",
-        "time_of_day": "dinner",
-        "calories": "92",
-        "calorieError": 0,
-        "category": "Desserts",
-        "station": "Sugar Sugar",
-        "venue": "Sugar Sugar at Seasons"
-    },
-    "281563113": {
-        "name": "Chicken Tenders",
-        "time_of_day": "dinner",
-        "calories": "528",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563114": {
-        "name": "Breaded Gardein Tenders",
-        "time_of_day": "dinner",
-        "calories": "148",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525406": {
-        "name": "Sesame Sweet Chili Salmon",
-        "time_of_day": "dinner",
-        "calories": "366",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525407": {
-        "name": "Sweet Chili Crispy Tofu",
-        "time_of_day": "dinner",
-        "calories": "392",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525404": {
-        "name": "Long Grain White Rice",
-        "time_of_day": "dinner",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563115": {
-        "name": "Roasted Garlic Broccoli",
-        "time_of_day": "dinner",
-        "calories": "79",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563117": {
-        "name": "Mashed Potatoes",
-        "time_of_day": "dinner",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525410": {
-        "name": "Baby Bok Choy",
-        "time_of_day": "dinner",
-        "calories": "10",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563116": {
-        "name": "Country Gravy",
-        "time_of_day": "dinner",
-        "calories": "17",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525408": {
-        "name": "Vegetable Spring Roll",
-        "time_of_day": "dinner",
-        "calories": "104",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563118": {
-        "name": "Dijon Honey Mustard Dressing",
-        "time_of_day": "dinner",
-        "calories": "65",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563119": {
-        "name": "Ranch Dressing",
-        "time_of_day": "dinner",
-        "calories": "50",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525411": {
-        "name": "Shredded Green Cabbage",
-        "time_of_day": "dinner",
-        "calories": "2",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525412": {
-        "name": "Shredded Carrots",
-        "time_of_day": "dinner",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "281563120": {
-        "name": "Sweet Baby Ray's BBQ Sauce",
-        "time_of_day": "dinner",
-        "calories": "34",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525414": {
-        "name": "Gluten Free Soy Sauce",
-        "time_of_day": "dinner",
-        "calories": "10",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525415": {
-        "name": "Kikkoman Sweet and Sour Sauce",
-        "time_of_day": "dinner",
-        "calories": "20",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525416": {
-        "name": "RES Yum Yum Sauce",
-        "time_of_day": "dinner",
-        "calories": "79",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525417": {
-        "name": "Chili Vinaigrette",
-        "time_of_day": "dinner",
-        "calories": "24",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Smoke",
-        "venue": "Smoke"
-    },
-    "285525452": {
-        "name": "Chicken Tenders",
-        "time_of_day": "dinner",
-        "calories": "528",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525722": {
-        "name": "Breaded Gardein Tenders",
-        "time_of_day": "dinner",
-        "calories": "148",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563010": {
-        "name": "Sesame Sweet Chili Salmon",
-        "time_of_day": "dinner",
-        "calories": "366",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563011": {
-        "name": "Sweet Chili Crispy Tofu",
-        "time_of_day": "dinner",
-        "calories": "392",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563009": {
-        "name": "Long Grain White Rice",
-        "time_of_day": "dinner",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525443": {
-        "name": "Cheese Pizza",
-        "time_of_day": "dinner",
-        "calories": "191",
-        "calorieError": 0,
-        "category": "Pizza",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525444": {
-        "name": "Pepperoni Pizza",
-        "time_of_day": "dinner",
-        "calories": "210",
-        "calorieError": 0,
-        "category": "Pizza",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563014": {
-        "name": "Cheese Pizza",
-        "time_of_day": "dinner",
-        "calories": "191",
-        "calorieError": 0,
-        "category": "Pizza",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563015": {
-        "name": "Pepperoni Pizza",
-        "time_of_day": "dinner",
-        "calories": "210",
-        "calorieError": 0,
-        "category": "Pizza",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525723": {
-        "name": "Roasted Garlic Broccoli",
-        "time_of_day": "dinner",
-        "calories": "79",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525725": {
-        "name": "Mashed Potatoes",
-        "time_of_day": "dinner",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563013": {
-        "name": "Baby Bok Choy",
-        "time_of_day": "dinner",
-        "calories": "10",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525724": {
-        "name": "Country Gravy",
-        "time_of_day": "dinner",
-        "calories": "17",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563012": {
-        "name": "Vegetable Spring Roll",
-        "time_of_day": "dinner",
-        "calories": "104",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525726": {
-        "name": "Dijon Honey Mustard Dressing",
-        "time_of_day": "dinner",
-        "calories": "65",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525727": {
-        "name": "Ranch Dressing",
-        "time_of_day": "dinner",
-        "calories": "50",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563016": {
-        "name": "Shredded Green Cabbage",
-        "time_of_day": "dinner",
-        "calories": "2",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563017": {
-        "name": "Shredded Carrots",
-        "time_of_day": "dinner",
-        "calories": "4",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "285525728": {
-        "name": "Sweet Baby Ray's BBQ Sauce",
-        "time_of_day": "dinner",
-        "calories": "34",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563018": {
-        "name": "Gluten Free Soy Sauce",
-        "time_of_day": "dinner",
-        "calories": "10",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563019": {
-        "name": "Kikkoman Sweet and Sour Sauce",
-        "time_of_day": "dinner",
-        "calories": "20",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563020": {
-        "name": "RES Yum Yum Sauce",
-        "time_of_day": "dinner",
-        "calories": "79",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281563021": {
-        "name": "Chili Vinaigrette",
-        "time_of_day": "dinner",
-        "calories": "24",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Parma",
-        "venue": "Parma at Seasons"
-    },
-    "281562600": {
-        "name": "Chicken Tenders",
-        "time_of_day": "dinner",
-        "calories": "528",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562601": {
-        "name": "Breaded Gardein Tenders",
-        "time_of_day": "dinner",
-        "calories": "148",
-        "calorieError": 0,
-        "category": "Entree",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562602": {
-        "name": "Roasted Garlic Broccoli",
-        "time_of_day": "dinner",
-        "calories": "79",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562604": {
-        "name": "Mashed Potatoes",
-        "time_of_day": "dinner",
-        "calories": "107",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562603": {
-        "name": "Country Gravy",
-        "time_of_day": "dinner",
-        "calories": "17",
-        "calorieError": 0,
-        "category": "Sides",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562605": {
-        "name": "Dijon Honey Mustard Dressing",
-        "time_of_day": "dinner",
-        "calories": "65",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562606": {
-        "name": "Ranch Dressing",
-        "time_of_day": "dinner",
-        "calories": "50",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
-    },
-    "281562607": {
-        "name": "Sweet Baby Ray's BBQ Sauce",
-        "time_of_day": "dinner",
-        "calories": "34",
-        "calorieError": 0,
-        "category": "Condiments",
-        "station": "Flame",
-        "venue": "Flame"
+        "venue": "Flame",
+        "isHalal": 0,
+        "isVegan": 1,
+        "isVegetarian": 1,
+        "containsDairy": 0,
+        "containsEggs": 0,
+        "containsFish": 0,
+        "containsPeanuts": 0,
+        "containsShellfish": 0,
+        "containsSoy": 0,
+        "containsSesame": 0,
+        "containsTreeNuts": 0,
+        "containsWheatGluten": 0
     }
 }
