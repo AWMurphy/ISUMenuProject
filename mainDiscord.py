@@ -40,7 +40,6 @@ async def on_ready() -> None:
         
     #check_menu_time.start()
 
-
 # STEP 3: CREATING THE SLASH COMMANDS ("Fill in the blanks")
 
 # Example 1: A simple /ping command
@@ -360,13 +359,15 @@ Paginator for the actual menus.
 """
 
 class MenuPaginator(discord.ui.View):
-    def __init__(self, items: list, givenTime: str, firstPlace: str, items_per_page: int = 5):
+
+    def __init__(self, items: list, givenTime: str, firstPlace: str, mainUser: discord.user, items_per_page: int = 5):
         super().__init__(timeout=180) # Timeout after 3 minutes of inactivity
         self.items = items
         self.items_per_page = items_per_page
         self.current_page = 0
         self.timeOfDay = givenTime
         self.currentLocation = firstPlace
+        self.mainUser = mainUser.id
         
         # Calculate total pages dynamically
         self.total_pages = (len(items) + items_per_page - 1) // items_per_page
@@ -389,6 +390,10 @@ class MenuPaginator(discord.ui.View):
                 self.items[number] = food[1] + " | " + food[6] + " | No Calories Given"
 
         self.current_page = 0
+
+        self.total_pages = (len(self.items) + self.items_per_page - 1) // self.items_per_page
+        if self.total_pages == 0:
+            self.total_pages = 1
 
     def get_page_content(self) -> str:
         """Slices the main list to get only the items for the current page."""
@@ -442,48 +447,48 @@ class MenuPaginator(discord.ui.View):
     @discord.ui.button(label="Breakfast🥞", style=discord.ButtonStyle.blurple, row=1)
     async def breakfast_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "breakfast"
+        self.reget_data(self.mainUser)
         self.update_button_states()
-        self.reget_data(interaction.user.id)
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
     @discord.ui.button(label="Lunch🍔", style=discord.ButtonStyle.blurple, row=1)
     async def lunch_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "lunch"
+        self.reget_data(self.mainUser)
         self.update_button_states()
-        self.reget_data(interaction.user.id)
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
     @discord.ui.button(label="Dinner🍗", style=discord.ButtonStyle.blurple, row=1)
     async def dinner_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "dinner"
+        self.reget_data(self.mainUser)
         self.update_button_states()
-        self.reget_data(interaction.user.id)
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
     @discord.ui.button(label="Friley Windows", style=discord.ButtonStyle.blurple, row=0)
     async def friley_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Friley"
+        self.reget_data(self.mainUser)
         self.update_button_states()
-        self.reget_data(interaction.user.id)
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
     @discord.ui.button(label="Seasons Marketplace", style=discord.ButtonStyle.blurple, row=0)
     async def seasons_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Seasons"
+        self.reget_data(self.mainUser)
         self.update_button_states()
-        self.reget_data(interaction.user.id)
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
     @discord.ui.button(label="Union Drive Marketplace", style=discord.ButtonStyle.blurple, row=0)
     async def union_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Union"
+        self.reget_data(self.mainUser)
         self.update_button_states()
-        self.reget_data(interaction.user.id)
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
@@ -521,7 +526,7 @@ async def show_menu(interaction: discord.Interaction):
         return
 
     # Instantiate our view class handler
-    paginator_view = MenuPaginator(items=items_list, givenTime="breakfast", firstPlace=firstPlace, items_per_page=10)
+    paginator_view = MenuPaginator(items=items_list, givenTime="breakfast", firstPlace=firstPlace, mainUser=interaction.user, items_per_page=10)
     
     # Grab the initial page text string setup
     initial_text = paginator_view.get_page_content()
