@@ -320,8 +320,6 @@ def findFirstPlace(user_id):
     
     specificPersonList = cursorUser.fetchall()
 
-    print(specificPersonList)
-
     firstPlace = ""
 
     if specificPersonList[0][2] == 1:
@@ -331,15 +329,13 @@ def findFirstPlace(user_id):
     elif specificPersonList[0][4] == 1:
         firstPlace = "Union"
 
-    print(firstPlace)
-
     return firstPlace
 
 """
 Fetch all of the data for a specific user. Works for intro & furthermore.
 """
 # SELECT item_name FROM menu_items WHERE
-def findData_forUser(user_id, username, location, time):
+def findData_forUser(user_id, location, time):
 
     # create or connect to our database
     connUser = sqlite3.connect("UserData.db")
@@ -352,21 +348,159 @@ def findData_forUser(user_id, username, location, time):
 
     # the cursor allows us to use sql commands
     cursorDining = connDining.cursor()
+    
+    table_name = ""
 
-    table_name = "user_data"
+    match location:
+        case "Friley":
+            table_name = "friley_windows"
+        case "Seasons":
+            table_name = "seasons_marketplace"
+        case "Union":
+            table_name = "union_drive_marketplace"
+
+    table_names = "user_data"
 
     cursorUser.execute(f"""
-                       SELECT *
-                       FROM {table_name}
-                       WHERE user_id = {user_id}
-                       """)
+                        SELECT *
+                        FROM {table_names}
+                        WHERE user_id = {user_id}
+                        """)
     
     specificPersonList = cursorUser.fetchall()
 
-    print(specificPersonList)
+    cursorDining.execute(f"""
+                          PRAGMA table_info({table_name})
+                          """)
+    
+    columnNameList = cursorDining.fetchall()
 
-    firstPlace = specificPersonList[0][3]
+    sortingText = "" + "timeOfDay = '" + str(time).lower() + "'"
 
-    print(firstPlace)
+    i = 5
+    j = 8
+    
+    while(j <= 19):
 
+        columnName = columnNameList[j][1]
 
+        if j < 11:
+            if specificPersonList[0][i] == 1:
+                sortingText = sortingText + str(f" AND {columnName} = 1")
+        else:
+            if specificPersonList[0][i] == 1:
+                sortingText = sortingText + str(f" AND {columnName} = 0")
+
+        i += 1
+        j += 1
+    
+    cursorDining.execute(f"""
+                          SELECT *
+                          FROM {table_name}
+                          WHERE {sortingText}
+                          """)
+    
+    fullFoodList = cursorDining.fetchall()
+
+    return fullFoodList
+
+"""
+Checks the open times for the given location.
+"""
+def openTimes(location):
+
+    # create or connect to our other database
+    connDining = sqlite3.connect("DiningHalls.db")
+
+    # the cursor allows us to use sql commands
+    cursorDining = connDining.cursor()
+
+    table_name = ""
+
+    match location:
+        case "Friley":
+            table_name = "friley_windows"
+        case "Seasons":
+            table_name = "seasons_marketplace"
+        case "Union":
+            table_name = "union_drive_marketplace"
+
+    cursorDining.execute(f"""
+                          SELECT *
+                          FROM {table_name}
+                          WHERE timeOfDay = 'breakfast'
+                          """)
+    
+    breakfastList = cursorDining.fetchall()
+
+    cursorDining.execute(f"""
+                          SELECT *
+                          FROM {table_name}
+                          WHERE timeOfDay = 'lunch'
+                          """)
+    
+    lunchList = cursorDining.fetchall()
+
+    cursorDining.execute(f"""
+                          SELECT *
+                          FROM {table_name}
+                          WHERE timeOfDay = 'dinner'
+                          """)
+    
+    dinnerList = cursorDining.fetchall()
+
+    timeList = [0] * 3
+ 
+    if len(breakfastList) != 0:
+        timeList[0] = 1
+    if len(lunchList) != 0:
+        timeList[1] = 1
+    if len(dinnerList) != 0:
+        timeList[2] = 1
+
+    return timeList
+
+"""
+Checks the open times for the given location.
+"""
+def openLocations():
+
+    # create or connect to our other database
+    connDining = sqlite3.connect("DiningHalls.db")
+
+    # the cursor allows us to use sql commands
+    cursorDining = connDining.cursor()
+
+    table_name = ""
+
+    cursorDining.execute(f"""
+                          SELECT *
+                          FROM 'friley_windows'
+                          """)
+    
+    frileyList = cursorDining.fetchall()
+
+    cursorDining.execute(f"""
+                          SELECT *
+                          FROM 'seasons_marketplace'
+                          """)
+    
+    seasonsList = cursorDining.fetchall()
+
+    cursorDining.execute(f"""
+                          SELECT *
+                          FROM 'union_drive_marketplace'
+                          """)
+    
+    unionList = cursorDining.fetchall()
+
+    timeList = [0] * 3
+ 
+    if len(frileyList) != 0:
+        timeList[0] = 1
+    if len(seasonsList) != 0:
+        timeList[1] = 1
+    if len(unionList) != 0:
+        timeList[2] = 1
+
+    return timeList

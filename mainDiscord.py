@@ -79,40 +79,7 @@ async def before_check_menu_time():
 """
 
 """
-# 2. THE MENU COMMAND: Upgraded to make the location option strictly optional
-@bot.tree.command(name="menu", description="Check what's cooking! Defaults to your saved location.")
-@app_commands.describe(location="Optional: Look up a specific hall instead of your default choice")
-@app_commands.choices(location=[
-    app_commands.Choice(name="Friley Windows", value="Friley"),
-    app_commands.Choice(name="Conversations", value="Conversations"),
-    app_commands.Choice(name="Union Drive Marketplace (UDCC)", value="UDCC")
-])
-@app_commands.allowed_installs(guilds=True, users=True)
-@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
-async def menu(interaction: discord.Interaction, location: str = None): # Default location to None
-    user_id = interaction.user.id
-    
-    # If the user left the fill-in-the-blank empty, look them up in the DB!
-    if location is None:
-        # Fetch the preference (Change this to a SQL SELECT query later)
-        location = USER_PREFERENCES_DB.get(user_id)
-        
-        # If they haven't set a default yet, gently push them to fix it
-        if location is None:
-            await interaction.response.send_message(
-                "❌ You haven't set a favorite location yet! "
-                "Please specify one in the command box or set your default using `/set_location`.",
-                ephemeral=True
-            )
-            return
-            
-    # If we made it here, we have a valid location! Let's pull the data.
-    await interaction.response.defer(ephemeral=False)
-"""
-
-
-"""
-Selecting Dining Halls Menu
+Selecting Dining Halls Menu.
 """
 
 class MenuSelectInterface(discord.ui.View):
@@ -192,7 +159,6 @@ class MenuSelectInterface(discord.ui.View):
                 ephemeral=True
             )
 
-# 3. The Slash Command setup to call it
 @bot.tree.command(name="set_dining_halls", description="Select multiple dining halls to receive.")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
@@ -205,7 +171,7 @@ async def get_menus(interaction: discord.Interaction):
     )
 
 """
-Selecting Food Types Menu
+Selecting Food Types Menu.
 """
 
 class DietSelectInferface(discord.ui.View):
@@ -287,7 +253,6 @@ class DietSelectInferface(discord.ui.View):
                 ephemeral=True
             )
 
-# 3. The Slash Command setup to call it
 @bot.tree.command(name="set_diet_preferences", description="Select your diet preferences.")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
@@ -300,7 +265,7 @@ async def get_menus(interaction: discord.Interaction):
     )
 
 """
-Select Allergy Types Menu
+Select Allergy Types Menu.
 """
 
 class AllergySelectInterface(discord.ui.View):
@@ -379,7 +344,6 @@ class AllergySelectInterface(discord.ui.View):
                 ephemeral=True
             )
 
-# 3. The Slash Command setup to call it
 @bot.tree.command(name="set_allergies", description="Select your diet preferences.")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
@@ -392,21 +356,39 @@ async def get_menus(interaction: discord.Interaction):
     )
 
 """
-Paginator
+Paginator for the actual menus.
 """
 
 class MenuPaginator(discord.ui.View):
-    def __init__(self, items: list, items_per_page: int = 5):
+    def __init__(self, items: list, givenTime: str, firstPlace: str, items_per_page: int = 5):
         super().__init__(timeout=180) # Timeout after 3 minutes of inactivity
         self.items = items
         self.items_per_page = items_per_page
         self.current_page = 0
+        self.timeOfDay = givenTime
+        self.currentLocation = firstPlace
         
         # Calculate total pages dynamically
         self.total_pages = (len(items) + items_per_page - 1) // items_per_page
         
         # Update button visual states on initialization
         self.update_button_states()
+
+    def reget_data(self, user_id):
+
+        foodList = discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
+
+        print(len(foodList))
+
+        self.items = [""] * len(foodList) 
+
+        for number, food in enumerate(foodList):
+            if food[3] == 0:
+                self.items[number] = food[1] + " | " + food[6] + " | Calories Per Serving: " + str(food[2])
+            else:
+                self.items[number] = food[1] + " | " + food[6] + " | No Calories Given"
+
+        self.current_page = 0
 
     def get_page_content(self) -> str:
         """Slices the main list to get only the items for the current page."""
@@ -429,7 +411,17 @@ class MenuPaginator(discord.ui.View):
         # Disable "Next" if on the last page
         self.next_button.disabled = self.current_page >= self.total_pages - 1
 
-    @discord.ui.button(label="⬅️ Previous", style=discord.ButtonStyle.blurple)
+        openArray = discordDatabase.openTimes(self.currentLocation)
+        self.breakfast_button.disabled = openArray[0] == 0
+        self.lunch_button.disabled = openArray[1] == 0
+        self.dinner_button.disabled = openArray[2] == 0
+
+        otherArray = discordDatabase.openLocations()
+        self.friley_button.disabled = otherArray[0] == 0
+        self.seasons_button.disabled = otherArray[1] == 0
+        self.union_button.disabled = otherArray[2] == 0
+
+    @discord.ui.button(label="⬅️ Previous", style=discord.ButtonStyle.blurple, row=2)
     async def prev_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         if self.current_page > 0:
             self.current_page -= 1
@@ -438,12 +430,60 @@ class MenuPaginator(discord.ui.View):
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
-    @discord.ui.button(label="Next ➡️", style=discord.ButtonStyle.blurple)
+    @discord.ui.button(label="Next ➡️", style=discord.ButtonStyle.blurple, row=2)
     async def next_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         if self.current_page < self.total_pages - 1:
             self.current_page += 1
             
         self.update_button_states()
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(content=self.get_page_content(), view=self)
+
+    @discord.ui.button(label="Breakfast🥞", style=discord.ButtonStyle.blurple, row=1)
+    async def breakfast_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.timeOfDay = "breakfast"
+        self.update_button_states()
+        self.reget_data(interaction.user.id)
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(content=self.get_page_content(), view=self)
+
+    @discord.ui.button(label="Lunch🍔", style=discord.ButtonStyle.blurple, row=1)
+    async def lunch_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.timeOfDay = "lunch"
+        self.update_button_states()
+        self.reget_data(interaction.user.id)
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(content=self.get_page_content(), view=self)
+
+    @discord.ui.button(label="Dinner🍗", style=discord.ButtonStyle.blurple, row=1)
+    async def dinner_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.timeOfDay = "dinner"
+        self.update_button_states()
+        self.reget_data(interaction.user.id)
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(content=self.get_page_content(), view=self)
+
+    @discord.ui.button(label="Friley Windows", style=discord.ButtonStyle.blurple, row=0)
+    async def friley_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.currentLocation = "Friley"
+        self.update_button_states()
+        self.reget_data(interaction.user.id)
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(content=self.get_page_content(), view=self)
+
+    @discord.ui.button(label="Seasons Marketplace", style=discord.ButtonStyle.blurple, row=0)
+    async def seasons_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.currentLocation = "Seasons"
+        self.update_button_states()
+        self.reget_data(interaction.user.id)
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(content=self.get_page_content(), view=self)
+
+    @discord.ui.button(label="Union Drive Marketplace", style=discord.ButtonStyle.blurple, row=0)
+    async def union_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.currentLocation = "Union"
+        self.update_button_states()
+        self.reget_data(interaction.user.id)
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
@@ -457,26 +497,31 @@ class MenuPaginator(discord.ui.View):
         # or leave it as-is (they will just be unclickable grey buttons).
 
 @bot.tree.command(name="show_menu", description="Browse items across multiple pages!")
+@app_commands.allowed_installs(guilds=True, users=True)
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 async def show_menu(interaction: discord.Interaction):
     await interaction.response.defer() # Prevent 3-second timeouts while database reads happen
-    
-    # --- Example Database Call Simulation ---
-    # raw_db_rows = cursor.execute("SELECT item_name FROM menu_items WHERE ...").fetchall()
-    # items_list = [row[0] for row in raw_db_rows]
 
-    discordDatabase.findFirstPlace(interaction.user.id)
+    firstPlace = discordDatabase.findFirstPlace(interaction.user.id)
 
-    discordDatabase.findData_forUser(interaction.user.id, interaction.user.name)
+    foodList = discordDatabase.findData_forUser(interaction.user.id, firstPlace, "breakfast")
 
-    # For testing, let's pretend your database returned 30 food entries:
-    items_list = [f"Food Item ABC #{i}" for i in range(1, 31)] 
+    print(len(foodList))
+
+    items_list = [""] * len(foodList) 
+
+    for number, food in enumerate(foodList):
+        if food[3] == 0:
+            items_list[number] = food[1] + " | " + food[6] + " | Calories Per Serving: " + str(food[2])
+        else:
+            items_list[number] = food[1] + " | " + food[6] + " | No Calories Given"
     
     if not items_list:
         await interaction.followup.send("No items found in the database.")
         return
 
     # Instantiate our view class handler
-    paginator_view = MenuPaginator(items=items_list, items_per_page=5)
+    paginator_view = MenuPaginator(items=items_list, givenTime="breakfast", firstPlace=firstPlace, items_per_page=10)
     
     # Grab the initial page text string setup
     initial_text = paginator_view.get_page_content()
