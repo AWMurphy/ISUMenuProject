@@ -94,6 +94,29 @@ def isInDatabase(user_id):
     # find the table name according to the location name, makes it safe for table names as well
     table_name = "user_data"
 
+    # create new table if it doesn't exist (shouldn't happen more than once)
+    cursor.execute(f"""
+                    CREATE TABLE IF NOT EXISTS {table_name} (
+                        user_id TEXT PRIMARY KEY,
+                        username TEXT,
+                        frileySelect INTEGER CHECK (frileySelect IN (0,1)),
+                        seasonsSelect INTEGER CHECK (seasonsSelect IN (0,1)),
+                        unionSelect INTEGER CHECK (unionSelect IN (0,1)),
+                        halalDiet INTEGER CHECK (halalDiet IN (0,1)),
+                        veganDiet INTEGER CHECK (veganDiet IN (0,1)),
+                        vegetarianDiet INTEGER CHECK (vegetarianDiet IN (0,1)),
+                        allergicDairy INTEGER CHECK (allergicDairy IN (0,1)),
+                        allergicEggs INTEGER CHECK (allergicEggs IN (0,1)),
+                        allergicFish INTEGER CHECK (allergicFish IN (0,1)),
+                        allergicPeanuts INTEGER CHECK (allergicPeanuts IN (0,1)),
+                        allergicShellfish INTEGER CHECK (allergicShellfish IN (0,1)),
+                        allergicSoy INTEGER CHECK (allergicSoy IN (0,1)),
+                        allergicSesame INTEGER CHECK (allergicSesame IN (0,1)),
+                        allergicTreeNuts INTEGER CHECK (allergicTreeNuts IN (0,1)),
+                        allergicWheatGluten INTEGER CHECK (allergicWheatGluten IN (0,1))
+                    )
+                    """)
+
     # see if we can find 
     cursor.execute(f"""
                     SELECT * FROM {table_name}
@@ -322,12 +345,18 @@ def findFirstPlace(user_id):
 
     firstPlace = ""
 
-    if specificPersonList[0][2] == 1:
+    locationArray = openLocations()
+
+    print(specificPersonList)
+
+    if specificPersonList[0][2] == 1 and locationArray[0] == 1:
         firstPlace = "Friley"
-    elif specificPersonList[0][3] == 1:
+    elif specificPersonList[0][3] == 1 and locationArray[1] == 1:
         firstPlace = "Seasons"
-    elif specificPersonList[0][4] == 1:
+    elif specificPersonList[0][4] == 1 and locationArray[2] == 1:
         firstPlace = "Union"
+
+    print(firstPlace + "this")
 
     return firstPlace
 
@@ -504,3 +533,31 @@ def openLocations():
         timeList[2] = 1
 
     return timeList
+
+"""
+Return list of places the user wants to see in menu.
+"""
+def listofPlaces(user_id):
+
+    # create or connect to our database
+    connUser = sqlite3.connect("UserData.db")
+
+    # the cursor allows us to use sql commands
+    cursorUser = connUser.cursor()
+
+    table_name = "user_data"
+
+    cursorUser.execute(f"""
+                       SELECT *
+                       FROM {table_name}
+                       WHERE user_id = {user_id}
+                       """)
+    
+    specificPersonList = cursorUser.fetchall()
+
+    output = [0] * 3
+    output[0] = specificPersonList[0][2]
+    output[1] = specificPersonList[0][3]
+    output[2] = specificPersonList[0][4]
+
+    return output

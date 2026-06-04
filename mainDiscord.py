@@ -7,10 +7,12 @@ from discord import app_commands
 from discord.ext import commands, tasks
 from discord.utils import get
 from dotenv import load_dotenv
+import collections
 
 # Custom Imports
 import discordResponses
 import discordDatabase
+import jsonRequests
 
 # STEP 0: LOAD ENVIRONMENT VARIABLES
 load_dotenv()
@@ -30,6 +32,10 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 @bot.event
 async def on_ready() -> None:
     print(f'{bot.user} is now running!')
+
+    if not daily_menu_blast.is_running():
+        daily_menu_blast.start()
+        print("Daily menu blast task has been started successfully!")
     
     # CRITICAL: This "registers" your slash commands with Discord's servers.
     try:
@@ -39,8 +45,6 @@ async def on_ready() -> None:
         print(f"Failed to sync slash commands: {e}")
         
     #check_menu_time.start()
-
-# STEP 3: CREATING THE SLASH COMMANDS ("Fill in the blanks")
 
 # Example 1: A simple /ping command
 @bot.tree.command(name="ping", description="Check if the food bot is alive!")
@@ -76,6 +80,30 @@ async def check_menu_time():
 async def before_check_menu_time():
     await bot.wait_until_ready()
 """
+
+@tasks.loop(count=1) # Run this loop logic once on startup
+async def daily_menu_blast():
+    """
+    while True:
+
+        now = datetime.now()
+        # Target today at 8:00 AM
+        target = now.replace(hour=8, minute=0, second=0, microsecond=0)
+        
+        # If it's already past 8:00 AM today, target 8:00 AM tomorrow
+        if now >= target:
+            target += datetime.timedelta(days=1)
+            
+        # Calculate exactly how many seconds to wait
+        seconds_to_wait = (target - now).total_seconds()
+        
+        # Sleep until the exact target time
+        await asyncio.sleep(10)
+        
+        # --- RUN YOUR MENU CODE HERE ---
+        print("It's 8:00 AM! Fetching menus...")
+    """
+
 
 """
 Selecting Dining Halls Menu.
@@ -358,9 +386,10 @@ async def get_menus(interaction: discord.Interaction):
 Paginator for the actual menus.
 """
 
+"""
 class MenuPaginator(discord.ui.View):
 
-    def __init__(self, items: list, givenTime: str, firstPlace: str, mainUser: discord.user, items_per_page: int = 5):
+    def __init__(self, items: list, givenTime: str, firstPlace: str, mainUser: discord.user, openLocations: list, openTimes: list, wantList: list, items_per_page: int = 5):
         super().__init__(timeout=180) # Timeout after 3 minutes of inactivity
         self.items = items
         self.items_per_page = items_per_page
@@ -368,26 +397,62 @@ class MenuPaginator(discord.ui.View):
         self.timeOfDay = givenTime
         self.currentLocation = firstPlace
         self.mainUser = mainUser.id
+        self.mainUsername = mainUser.name
+        self.emptyFood = 0
+        self.openLocations = openLocations
+        self.openTimes = openTimes
+        self.wantList = wantList
         
         # Calculate total pages dynamically
         self.total_pages = (len(items) + items_per_page - 1) // items_per_page
+
+        # update button colors
+        self.changeButtonColors()
         
         # Update button visual states on initialization
         self.update_button_states()
+
+    def changeButtonColors(self):
+        # Reset all meal buttons to a default secondary (gray)
+        self.breakfast_button.style = discord.ButtonStyle.grey
+        self.lunch_button.style = discord.ButtonStyle.grey
+        self.dinner_button.style = discord.ButtonStyle.grey
+
+        self.friley_button.style = discord.ButtonStyle.grey
+        self.seasons_button.style = discord.ButtonStyle.grey
+        self.union_button.style = discord.ButtonStyle.grey
+
+        match self.timeOfDay:
+            case "breakfast":
+                self.breakfast_button.style = discord.ButtonStyle.green
+            case "lunch":
+                self.lunch_button.style = discord.ButtonStyle.green
+            case "dinner":
+                self.dinner_button.style = discord.ButtonStyle.green
+
+        match self.currentLocation:
+            case "Friley":
+                self.friley_button.style = discord.ButtonStyle.green
+            case "Seasons":
+                self.seasons_button.style = discord.ButtonStyle.green
+            case "Union":
+                self.union_button.style = discord.ButtonStyle.green
 
     def reget_data(self, user_id):
 
         foodList = discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
 
-        print(len(foodList))
+        self.items = [
+            f"{food[1]} | {food[6]} | Calories Per Serving: {food[2]}" if food[3] == 0
+            else f"{food[1]} | {food[6]} | No Calories Given" 
+            for food in foodList
+            ]
 
-        self.items = [""] * len(foodList) 
-
-        for number, food in enumerate(foodList):
-            if food[3] == 0:
-                self.items[number] = food[1] + " | " + food[6] + " | Calories Per Serving: " + str(food[2])
-            else:
-                self.items[number] = food[1] + " | " + food[6] + " | No Calories Given"
+        if not self.items:
+            self.emptyFood = 1
+        else:
+            self.emptyFood = 0
+            
 
         self.current_page = 0
 
@@ -396,37 +461,108 @@ class MenuPaginator(discord.ui.View):
             self.total_pages = 1
 
     def get_page_content(self) -> str:
-        """Slices the main list to get only the items for the current page."""
+        #Slices the main list to get only the items for the current page.
         start_index = self.current_page * self.items_per_page
         end_index = start_index + self.items_per_page
         page_items = self.items[start_index:end_index]
+
+        match self.currentLocation:
+            case "Friley":
+                locationFix = "Friley Windows"
+            case "Seasons":
+                locationFix = "Seasons Marketplace"
+            case "Union":
+                locationFix = "Union Drive Marketplace"
         
         # Format the items into a clean string layout
-        content = f"**📋 Dining Menu (Page {self.current_page + 1}/{self.total_pages})**\n\n"
-        for idx, item in enumerate(page_items, start=start_index + 1):
-            content += f"{idx}. {item}\n"
+        content = f"**Dining Menu (Page {self.current_page + 1}/{self.total_pages})**\n"
+        content += f"***Showing menu for {locationFix} during {str(self.timeOfDay).capitalize()}! [Based off {self.mainUsername}'s preferences.]***\n"
+        content += "```"
+
+        if self.emptyFood == 0:
+            for idx, item in enumerate(page_items, start=start_index + 1):
+                content += f"{idx}. {item}\n"
+        else:
+            content += "No item in this place at this time.\n"
             
+        content += "```"
+
         return content
 
+    # code below would be HELLA cooked but i can try and clean it up later
     def update_button_states(self):
-        """Disables buttons if there are no more pages in that direction."""
-        # Disable "Previous" if on the first page
-        self.prev_button.disabled = self.current_page == 0
+        #Dynamically adds or removes buttons based on database status.
+
+        if self.next_button not in self.children:
+            self.add_item(self.next_button)
+
+        # --- PAGINATION BUTTON VISIBILITY ---
+        if self.total_pages <= 1:
+            self.remove_item(self.prev_button)
+            self.remove_item(self.next_button)
+        elif self.current_page == self.total_pages - 1:
+            self.remove_item(self.next_button)
+        elif self.current_page == 0:
+            self.remove_item(self.prev_button)
+        else:
+            # ONLY add if they aren't already visible in children
+            if self.prev_button not in self.children:
+                self.remove_item(self.next_button)
+                self.add_item(self.prev_button)
+                self.add_item(self.next_button)
+            if self.next_button not in self.children:
+                self.add_item(self.next_button)
+                
+            self.prev_button.disabled = self.current_page == 0
+            self.next_button.disabled = self.current_page >= self.total_pages - 1
+
+        # --- MEAL TIMES VISIBILITY ---
+        match self.currentLocation:
+            case "Friley":
+                openArray = self.openTimes[0]
+            case "Seasons":
+                openArray = self.openTimes[1]
+            case "Union":
+                openArray = self.openTimes[2]
         
-        # Disable "Next" if on the last page
-        self.next_button.disabled = self.current_page >= self.total_pages - 1
+        # Breakfast
+        if openArray[0] == 0:
+            self.remove_item(self.breakfast_button)
+        elif self.breakfast_button not in self.children:
+            self.add_item(self.breakfast_button)
 
-        openArray = discordDatabase.openTimes(self.currentLocation)
-        self.breakfast_button.disabled = openArray[0] == 0
-        self.lunch_button.disabled = openArray[1] == 0
-        self.dinner_button.disabled = openArray[2] == 0
+        # Lunch
+        if openArray[1] == 0:
+            self.remove_item(self.lunch_button)
+        elif self.lunch_button not in self.children:
+            self.add_item(self.lunch_button)
 
-        otherArray = discordDatabase.openLocations()
-        self.friley_button.disabled = otherArray[0] == 0
-        self.seasons_button.disabled = otherArray[1] == 0
-        self.union_button.disabled = otherArray[2] == 0
+        # Dinner
+        if openArray[2] == 0:
+            self.remove_item(self.dinner_button)
+        elif self.dinner_button not in self.children:
+            self.add_item(self.dinner_button)
 
-    @discord.ui.button(label="⬅️ Previous", style=discord.ButtonStyle.blurple, row=2)
+        # --- LOCATIONS VISIBILITY ---
+        # Friley
+        if self.openLocations[0] == 0 or self.wantList[0] == 0:
+            self.remove_item(self.friley_button)
+        elif self.friley_button not in self.children:
+            self.add_item(self.friley_button)
+
+        # Seasons
+        if self.openLocations[1] == 0 or self.wantList[1] == 0:
+            self.remove_item(self.seasons_button)
+        elif self.seasons_button not in self.children:
+            self.add_item(self.seasons_button)
+
+        # Union
+        if self.openLocations[2] == 0 or self.wantList[2] == 0:
+            self.remove_item(self.union_button)
+        elif self.union_button not in self.children:
+            self.add_item(self.union_button)
+
+    @discord.ui.button(label="⬅️ Previous", style=discord.ButtonStyle.red, row=2)
     async def prev_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         if self.current_page > 0:
             self.current_page -= 1
@@ -435,7 +571,7 @@ class MenuPaginator(discord.ui.View):
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
-    @discord.ui.button(label="Next ➡️", style=discord.ButtonStyle.blurple, row=2)
+    @discord.ui.button(label="Next ➡️", style=discord.ButtonStyle.green, row=2)
     async def next_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         if self.current_page < self.total_pages - 1:
             self.current_page += 1
@@ -444,95 +580,543 @@ class MenuPaginator(discord.ui.View):
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
-    @discord.ui.button(label="Breakfast🥞", style=discord.ButtonStyle.blurple, row=1)
+    @discord.ui.button(label="Breakfast🥞", style=discord.ButtonStyle.gray, row=1)
     async def breakfast_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "breakfast"
         self.reget_data(self.mainUser)
         self.update_button_states()
+        self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
-    @discord.ui.button(label="Lunch🍔", style=discord.ButtonStyle.blurple, row=1)
+    @discord.ui.button(label="Lunch🍔", style=discord.ButtonStyle.gray, row=1)
     async def lunch_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "lunch"
         self.reget_data(self.mainUser)
         self.update_button_states()
+        self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
-    @discord.ui.button(label="Dinner🍗", style=discord.ButtonStyle.blurple, row=1)
+    @discord.ui.button(label="Dinner🍗", style=discord.ButtonStyle.gray, row=1)
     async def dinner_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "dinner"
         self.reget_data(self.mainUser)
         self.update_button_states()
+        self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
-    @discord.ui.button(label="Friley Windows", style=discord.ButtonStyle.blurple, row=0)
+    @discord.ui.button(label="Friley Windows 🖼️", style=discord.ButtonStyle.gray, row=0)
     async def friley_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Friley"
         self.reget_data(self.mainUser)
         self.update_button_states()
+        self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
-    @discord.ui.button(label="Seasons Marketplace", style=discord.ButtonStyle.blurple, row=0)
+    @discord.ui.button(label="Seasons Marketplace 🍂", style=discord.ButtonStyle.gray, row=0)
     async def seasons_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Seasons"
         self.reget_data(self.mainUser)
         self.update_button_states()
+        self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
-    @discord.ui.button(label="Union Drive Marketplace", style=discord.ButtonStyle.blurple, row=0)
+    @discord.ui.button(label="Union Drive Marketplace 🚗", style=discord.ButtonStyle.gray, row=0)
     async def union_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Union"
         self.reget_data(self.mainUser)
         self.update_button_states()
+        self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(content=self.get_page_content(), view=self)
 
     async def on_timeout(self):
-        """Fires automatically when the timeout expires to clean up UI artifacts."""
+        #Fires automatically when the timeout expires to clean up UI artifacts.
         # Optional: Disable all buttons when the command expires so users can't click dead buttons
         for item in self.children:
             if isinstance(item, discord.ui.Button):
                 item.disabled = True
         # Note: You'll need to save the original message object to edit it on timeout, 
         # or leave it as-is (they will just be unclickable grey buttons).
+"""
 
+class MenuPaginator(discord.ui.View):
+    
+    # initialization unit for the embed
+    def __init__(self, items, givenTime, firstPlace, mainUser, openLocations, openTimes, wantList, items_per_page=10):
+
+        # Timeout after 3 minutes of inactivity
+        super().__init__(timeout=180)
+
+        # holds full list of items for the location
+        self.fullitems = dict(items)
+        
+        print("\n\n\n\n\n\nbelow\n")
+        print(self.fullitems)
+        self.StationIterator = iter(self.fullitems)
+
+        # hold the current station of the original array
+        self.currentStation = next(iter(items))
+
+        # holds the items for the current station
+        self.items = items[self.currentStation]
+
+        print("\n\n\n\n\n\nbelow\n")
+        print(self.items)
+
+        # sets the time of day (breakfast, lunch, dinner) according to the selection
+        self.timeOfDay = givenTime
+
+        # holds the current selected location | sets it to the first place this person can see
+        self.currentLocation = firstPlace
+
+        # the user_id (int) of the user who called the interaction
+        self.mainUser = mainUser.id
+
+        # the username of the user who called the interaction
+        self.mainUsername = mainUser.name
+
+        # holds the main user that called the interaction
+        self.ogUser = mainUser
+
+        # holds the array for open locations
+        self.openLocations = openLocations
+
+        # holds the 2d array for open times depending on locations
+        self.openTimes = openTimes
+
+        # the list of places the person wants to see
+        self.wantList = wantList
+
+        # set the maximum number of items per page
+        self.items_per_page = items_per_page
+
+        # current page value of the group
+        self.current_page = 0
+
+        # Calculate total pages dynamically based on how many items are in the list
+        self.total_pages = (len(items) + items_per_page - 1) // items_per_page
+        if self.total_pages == 0:
+            self.total_pages = 1
+
+        # self.total_pages = (sum(len(row) for row in items) + items_per_page - 1) // items_per_page
+
+        # calculate the total number of pages for the range of all items at that station
+        self.total_pages = len(self.fullitems)
+
+        self.changeButtonColors()
+
+        self.update_button_states()
+
+    def reget_data(self, user_id):
+
+        """
+        foodList = discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
+
+        currentStation = ""
+
+        items_list = []
+        food_list_section = []
+
+        curplace = 0
+
+        for number, food in enumerate(foodList):
+            print(food[6])
+            print(currentStation)
+            if (currentStation != food[6]):
+                if (currentStation != ""):
+                    print(food_list_section)
+                    items_list.append(food_list_section)
+                    print(len(items_list))
+                    food_list_section = []
+                    curplace += 1
+
+                currentStation = food[6]
+            
+            food_list_section.append(f"{food[1]} | {food[6]} | Calories Per Serving: {food[2]}" if food[3] == 0
+            else f"{food[1]} | {food[6]} | No Calories Given")
+
+            if (number == len(foodList) - 1):
+                items_list.append(food_list_section)
+
+        self.fullitems = items_list
+        self.items = items_list[0]
+        self.total_pages = len(self.fullitems)
+        self.current_page = 0
+        """
+
+        foodList = discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
+
+        station_dict = collections.defaultdict(list)
+    
+        # go through all food acquired in foodList
+        for food in foodList:
+
+            # extract fields for readability
+            food_name = food[1]
+            calories = food[2]
+            calorieError = food[3]
+            station_name = food[6]
+
+            # format the food string based on calorie error variable
+            if calorieError == 0:
+                food_string = f"{food_name} | Calories Per Serving: {calories} | {station_name}"
+            else:
+                food_string = f"{food_name} | No Calories Given | {station_name}"
+
+            # add a formatted string directly to that station's list
+            station_dict[station_name].append(food_string)
+
+        # convert back to a standard dict
+        final_menu_dict = dict(station_dict)
+
+        self.fullitems = final_menu_dict
+        self.current_page = 0
+        self.total_pages = len(self.fullitems)
+        self.currentStation = self.getKeyAtIndex(self.fullitems, self.current_page)
+
+    def get_page_embed(self) -> discord.Embed:
+        """Generates a Last.fm-style clean embed layout for the current page."""
+        # 1. Slice the items for our specific page range
+        self.items = self.fullitems[self.currentStation]
+
+        start = self.current_page * self.items_per_page
+        end = start + self.items_per_page
+        page_items = self.items[start:end]
+
+        # 2. Build the structured Last.fm-style markdown list
+        description_lines = []
+        description_lines.append(f"==========***{self.currentStation}***==========")
+        for index, item in enumerate(self.items, start=start + 1):
+            # Formats single digits cleanly like '01.', '02.' to keep the grid perfectly vertical
+            line = f"`{index:02d}.` **{item}**"
+            description_lines.append(line)
+
+        match self.currentLocation:
+            case "Friley":
+                locationFix = "Friley Windows"
+            case "Seasons":
+                locationFix = "Seasons Marketplace"
+            case "Union":
+                locationFix = "Union Drive Marketplace"
+
+        # 3. Create a clean, focused embed panel
+        # Setting a nice title referencing the location and meal period
+        embed = discord.Embed(
+            title=f"| {locationFix.upper()} — {self.timeOfDay.capitalize()} Menu | {self.currentStation.capitalize()}",
+            description="\n".join(description_lines) if description_lines else "*No items listed for this meal.*",
+            color=0xD51007  # Iconic Last.fm signature red
+        )
+
+        embed.set_author(
+            name=f"{self.ogUser.display_name}'s Request", 
+            icon_url=self.ogUser.display_avatar.url
+        )
+
+        # 4. Inject matching structured metadata at the footer (tracking page numbers)
+        embed.set_footer(
+            text=f"Page {self.current_page + 1} of {self.total_pages} • Total Items: {len(self.items)}"
+        )
+        return embed
+
+    def update_button_states(self):
+
+        # dynamically adds or removes buttons based page status
+
+        if self.next_button not in self.children:
+            self.add_item(self.next_button)
+
+        if self.total_pages <= 1:
+            self.remove_item(self.prev_button)
+            self.remove_item(self.next_button)
+        elif self.current_page == self.total_pages - 1:
+            self.remove_item(self.next_button)
+        elif self.current_page == 0:
+            self.remove_item(self.prev_button)
+        else:
+            # ONLY add if they aren't already visible in children
+            if self.prev_button not in self.children:
+                self.remove_item(self.next_button)
+                self.add_item(self.prev_button)
+                self.add_item(self.next_button)
+            if self.next_button not in self.children:
+                self.add_item(self.next_button)
+
+            self.prev_button.disabled = self.current_page == 0
+            self.next_button.disabled = self.current_page >= self.total_pages - 1
+                
+        
+        self.remove_item(self.close_button)
+        self.add_item(self.close_button)
+
+        match self.currentLocation:
+            case "Friley":
+                openArray = self.openTimes[0]
+            case "Seasons":
+                openArray = self.openTimes[1]
+            case "Union":
+                openArray = self.openTimes[2]
+        
+        # Breakfast
+        if openArray[0] == 0:
+            self.remove_item(self.breakfast_button)
+        elif self.breakfast_button not in self.children:
+            self.add_item(self.breakfast_button)
+
+        # Lunch
+        if openArray[1] == 0:
+            self.remove_item(self.lunch_button)
+        elif self.lunch_button not in self.children:
+            self.add_item(self.lunch_button)
+
+        # Dinner
+        if openArray[2] == 0:
+            self.remove_item(self.dinner_button)
+        elif self.dinner_button not in self.children:
+            self.add_item(self.dinner_button)
+
+        # Friley
+        if self.openLocations[0] == 0 or self.wantList[0] == 0:
+            self.remove_item(self.friley_button)
+        elif self.friley_button not in self.children:
+            self.add_item(self.friley_button)
+
+        # Seasons
+        if self.openLocations[1] == 0 or self.wantList[1] == 0:
+            self.remove_item(self.seasons_button)
+        elif self.seasons_button not in self.children:
+            self.add_item(self.seasons_button)
+
+        # Union
+        if self.openLocations[2] == 0 or self.wantList[2] == 0:
+            self.remove_item(self.union_button)
+        elif self.union_button not in self.children:
+            self.add_item(self.union_button)
+
+    def changeButtonColors(self):
+        # Reset all meal buttons to a default secondary (gray)
+        self.breakfast_button.style = discord.ButtonStyle.grey
+        self.lunch_button.style = discord.ButtonStyle.grey
+        self.dinner_button.style = discord.ButtonStyle.grey
+
+        self.friley_button.style = discord.ButtonStyle.grey
+        self.seasons_button.style = discord.ButtonStyle.grey
+        self.union_button.style = discord.ButtonStyle.grey
+
+        match self.timeOfDay:
+            case "breakfast":
+                self.breakfast_button.style = discord.ButtonStyle.green
+            case "lunch":
+                self.lunch_button.style = discord.ButtonStyle.green
+            case "dinner":
+                self.dinner_button.style = discord.ButtonStyle.green
+
+        match self.currentLocation:
+            case "Friley":
+                self.friley_button.style = discord.ButtonStyle.green
+            case "Seasons":
+                self.seasons_button.style = discord.ButtonStyle.green
+            case "Union":
+                self.union_button.style = discord.ButtonStyle.green
+
+    def getValueAtIndex(self, dictionary, index, default=None):
+        iterator = iter(dictionary.values())
+        for _ in range(index):
+            next(iterator, None) # Skip preceding items
+        return next(iterator, default)
+        
+    def getKeyAtIndex(self, dictionary, index, default=None):
+        iterator = iter(dictionary)
+        for _ in range(index):
+            next(iterator, None) # Skip preceding items
+        return next(iterator, default)
+
+    @discord.ui.button(label="◀ Previous", style=discord.ButtonStyle.secondary, row=2)
+    async def prev_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        # Security: Check if the person clicking the button is the one who ran the slash command
+        if self.current_page > 0:
+            self.current_page -= 1
+            self.currentStation = self.getKeyAtIndex(self.fullitems, self.current_page)
+            self.update_button_states()
+            # Edit the message directly with the updated embed panel
+            await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    @discord.ui.button(label="Next ▶", style=discord.ButtonStyle.secondary, row=2)
+    async def next_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        # Security check
+        if self.current_page < self.total_pages - 1:
+            self.current_page += 1
+            self.currentStation = self.getKeyAtIndex(self.fullitems, self.current_page)
+            self.update_button_states()
+            # Edit the message directly with the updated embed panel
+            await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    @discord.ui.button(label="🗑️ Close", style=discord.ButtonStyle.danger, row=2)
+    async def close_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if interaction.user != self.mainUser:
+            await interaction.response.send_message("You cannot close this menu.", ephemeral=True)
+            return
+        # Clean up the UI components entirely so buttons can't be spammed later
+        await interaction.response.edit_message(view=None)
+
+    @discord.ui.button(label="Breakfast🥞", style=discord.ButtonStyle.gray, row=1)
+    async def breakfast_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.timeOfDay = "breakfast"
+        self.reget_data(self.mainUser)
+        self.update_button_states()
+        self.changeButtonColors()
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    @discord.ui.button(label="Lunch🍔", style=discord.ButtonStyle.gray, row=1)
+    async def lunch_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.timeOfDay = "lunch"
+        self.reget_data(self.mainUser)
+        self.update_button_states()
+        self.changeButtonColors()
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    @discord.ui.button(label="Dinner🍗", style=discord.ButtonStyle.gray, row=1)
+    async def dinner_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.timeOfDay = "dinner"
+        self.reget_data(self.mainUser)
+        self.update_button_states()
+        self.changeButtonColors()
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    @discord.ui.button(label="Friley Windows 🖼️", style=discord.ButtonStyle.gray, row=0)
+    async def friley_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.currentLocation = "Friley"
+        self.reget_data(self.mainUser)
+        self.update_button_states()
+        self.changeButtonColors()
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    @discord.ui.button(label="Seasons Marketplace 🍂", style=discord.ButtonStyle.gray, row=0)
+    async def seasons_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.currentLocation = "Seasons"
+        self.reget_data(self.mainUser)
+        self.update_button_states()
+        self.changeButtonColors()
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    @discord.ui.button(label="Union Drive Marketplace 🚗", style=discord.ButtonStyle.gray, row=0)
+    async def union_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.currentLocation = "Union"
+        self.reget_data(self.mainUser)
+        self.update_button_states()
+        self.changeButtonColors()
+        # Edit the existing message with new slice of data and updated buttons
+        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+        
 @bot.tree.command(name="show_menu", description="Browse items across multiple pages!")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 async def show_menu(interaction: discord.Interaction):
-    await interaction.response.defer() # Prevent 3-second timeouts while database reads happen
 
+    # Prevent 3-second timeouts while database reads happen < this line is currently broken, figure out why it is and what is happening
+    await interaction.response.defer()
+
+    # in case you are in a server and it doesn't want to break the code (has you as a member instead of a user) do this
+    user_id = int(interaction.user.id)
+    print("waht")
+    # if the person isn't in the database, don't allow them to use the part of the code, send back the line below and exit the function
+    if not discordDatabase.isInDatabase(user_id):
+        await interaction.followup.send("You are not in the database, run one of the other set commands first to establish a connection.", ephemeral=True)
+        return
+    print("here too waht")
+    # find the first place they can look at [if any] according to their set up dining hall requirements (accounts for closed locations)
     firstPlace = discordDatabase.findFirstPlace(interaction.user.id)
 
-    foodList = discordDatabase.findData_forUser(interaction.user.id, firstPlace, "breakfast")
-
-    print(len(foodList))
-
-    items_list = [""] * len(foodList) 
-
-    for number, food in enumerate(foodList):
-        if food[3] == 0:
-            items_list[number] = food[1] + " | " + food[6] + " | Calories Per Serving: " + str(food[2])
-        else:
-            items_list[number] = food[1] + " | " + food[6] + " | No Calories Given"
-    
-    if not items_list:
-        await interaction.followup.send("No items found in the database.")
+    # if you don't find anything in first place, tell them and exit the function
+    if firstPlace == "":
+        await interaction.followup.send("No items found in the database for your selected dining halls (they might be closed).", ephemeral=True)
         return
 
-    # Instantiate our view class handler
-    paginator_view = MenuPaginator(items=items_list, givenTime="breakfast", firstPlace=firstPlace, mainUser=interaction.user, items_per_page=10)
+    # get the associated list of food from the place for the time selected (need to replace "breakfast" with a variable from another function later)
+    foodList = discordDatabase.findData_forUser(interaction.user.id, firstPlace, "breakfast")
+
+    # TODO: remove this lines for testing purpose later on
+    print(foodList)
+
+    # make a dictionary list object using collections for easier appending for each station
+    station_dict = collections.defaultdict(list)
     
-    # Grab the initial page text string setup
-    initial_text = paginator_view.get_page_content()
+    # go through all food acquired in foodList
+    for food in foodList:
+
+        # extract fields for readability
+        food_name = food[1]
+        calories = food[2]
+        calorieError = food[3]
+        station_name = food[6]
+
+        # format the food string based on calorie error variable
+        if calorieError == 0:
+            food_string = f"{food_name} | Calories Per Serving: {calories} | {station_name}"
+        else:
+            food_string = f"{food_name} | No Calories Given | {station_name}"
+
+        # add a formatted string directly to that station's list
+        station_dict[station_name].append(food_string)
+
+    # convert back to a standard dict
+    final_menu_dict = dict(station_dict)
     
-    # Send the final response attaching the UI buttons view!
-    await interaction.followup.send(content=initial_text, view=paginator_view)       
+    # if final menu dict is empty then tell that and end the function
+    if not final_menu_dict:
+        await interaction.followup.send("No items found in the database.", ephemeral=True)
+        return
+    
+    # get a list of places wanted from the user
+    wantList = discordDatabase.listofPlaces(interaction.user.id)
+
+    # get a list of places that are open
+    otherArray = discordDatabase.openLocations()
+
+    # get a list of times that each place is open (a 2d array) arranged [friley array, seasons array, union array]
+    timeList = [None] * 3
+    timeList[0] = discordDatabase.openTimes("Friley")
+    timeList[1] = discordDatabase.openTimes("Seasons")
+    timeList[2] = discordDatabase.openTimes("Union")
+
+    # TODO: remove this lines for testing purpose later on
+    print(final_menu_dict)
+
+    # instantiate our embed view handler
+    paginator_view = MenuPaginator(items=final_menu_dict, givenTime="breakfast", firstPlace=firstPlace, mainUser=interaction.user, openLocations=otherArray, openTimes=timeList, wantList=wantList, items_per_page=10)
+    
+    # run the update button states to update the green and grey ones
+    # paginator_view.update_button_states() # < we might no need this (put in init?)
+    
+    # send using the embed= and not content= since we are doing an embed & not just text
+    await interaction.followup.send(embed=paginator_view.get_page_embed(), view=paginator_view)
+
+'''
+Code to reset the menus in dining halls.db
+'''
+@bot.tree.command(name="reset_menudb", description="Send json requests and reset the daily data for the dining halls.")
+@app_commands.allowed_installs(guilds=True, users=True)
+@app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
+async def reset_dininghalls(interaction: discord.Interaction):
+    await interaction.response.defer(ephemeral=True)
+
+    if interaction.user.id != 466679296417595403:
+        await interaction.followup.send(f"yeah lil bro don't even try to use this if you ain't me", ephemeral=True)
+        return
+
+    jsonRequests.refresh_DiningHalls()
+
+    await interaction.followup.send(f"Finished, all done.", ephemeral=True)
 
 # STEP 5: MAIN ENTRY POINT
 def main() -> None:
