@@ -20,13 +20,13 @@ def save_user_data(user_id, username, selected_locations):
     frileyWant = seasonsWant = UDCCwant = 0
 
     # below lines work on the incoming selected locations array, check each possible input to see what they selected
-    if "Friley" in selected_locations:
+    if selected_locations[0] == 1:
         frileyWant = 1
 
-    if "Seasons" in selected_locations:
+    if selected_locations[1] == 1:
         seasonsWant = 1
 
-    if "UDCC" in selected_locations:
+    if selected_locations[2] == 1:
         UDCCwant = 1
 
 
@@ -83,7 +83,7 @@ def save_user_data(user_id, username, selected_locations):
 """
 Checks if the current person is in the database.
 """
-def isInDatabase(user_id):
+def isInDatabase(user_id) -> bool:
 
     # create or connect to our database
     conn = sqlite3.connect("UserData.db")
@@ -146,20 +146,20 @@ def save_user_diets(user_id, username, selected_diets):
     # the cursor allows us to use sql commands
     cursor = conn.cursor()
 
-    # find the table name according to the location name, makes it safe for table names as well
+    # find the table name according to the diet name, makes it safe for table names as well
     table_name = "user_data"
 
     # set all to 0 for now assuming they want none
     halalDiet = veganDiet = vegetarianDiet = 0
 
-    # below lines work on the incoming selected locations array, check each possible input to see what they selected
-    if "Halal" in selected_diets:
+    # below lines work on the incoming selected diet array, check each possible input to see what they selected
+    if selected_diets[0] == 1:
         halalDiet = 1
 
-    if "Vegan" in selected_diets:
+    if selected_diets[1] == 1:
         veganDiet = 1
 
-    if "Vegetarian" in selected_diets:
+    if selected_diets[2] == 1:
         vegetarianDiet = 1
 
 
@@ -239,23 +239,23 @@ def save_user_allergens(user_id, username, selected_allergens):
     allergyWheatGluten = 0
 
     # below lines work on the incoming selected locations array, check each possible input to see what they selected
-    if "dairy" in selected_allergens:
+    if selected_allergens[0] == 1:
         allergyDairy = 1
-    if "egg" in selected_allergens:
+    if selected_allergens[1] == 1:
         allergyEgg = 1
-    if "fish" in selected_allergens:
+    if selected_allergens[2] == 1:
         allergyFish = 1
-    if "peanuts" in selected_allergens:
+    if selected_allergens[3] == 1:
         allergyPeanuts = 1
-    if "shellfish" in selected_allergens:
+    if selected_allergens[4] == 1:
         allergyShellfish = 1
-    if "soy" in selected_allergens:
+    if selected_allergens[5] == 1:
         allergySoy = 1
-    if "sesame_tahini" in selected_allergens:
+    if selected_allergens[6] == 1:
         allergySesame = 1
-    if "wheat_gluten" in selected_allergens:
+    if selected_allergens[7] == 1:
         allergyWheatGluten = 1
-    if "tree_nuts" in selected_allergens:
+    if selected_allergens[8] == 1:
         allergyTreeNuts = 1
 
 
@@ -537,7 +537,7 @@ def openLocations():
 """
 Return list of places the user wants to see in menu.
 """
-def listofPlaces(user_id):
+def listofPlaces(user_id) -> list:
 
     # create or connect to our database
     connUser = sqlite3.connect("UserData.db")
@@ -559,5 +559,67 @@ def listofPlaces(user_id):
     output[0] = specificPersonList[0][2]
     output[1] = specificPersonList[0][3]
     output[2] = specificPersonList[0][4]
+
+    return output
+
+"""
+Return list of diets the user wants to see in menu.
+"""
+def listofDiets(user_id) -> list:
+
+    # create or connect to our database
+    connUser = sqlite3.connect("UserData.db")
+
+    # the cursor allows us to use sql commands
+    cursorUser = connUser.cursor()
+
+    table_name = "user_data"
+
+    cursorUser.execute(f"""
+                       SELECT *
+                       FROM {table_name}
+                       WHERE user_id = {user_id}
+                       """)
+    
+    specificPersonList = cursorUser.fetchall()
+
+    output = [0] * 3
+    output[0] = specificPersonList[0][5]
+    output[1] = specificPersonList[0][6]
+    output[2] = specificPersonList[0][7]
+
+    return output
+
+"""
+Return list of allergens the user DOESN'T want to see in menu.
+"""
+def listofAllergens(user_id) -> list:
+
+    # create or connect to our database
+    connUser = sqlite3.connect("UserData.db")
+
+    # the cursor allows us to use sql commands
+    cursorUser = connUser.cursor()
+
+    table_name = "user_data"
+
+    cursorUser.execute(f"""
+                       SELECT *
+                       FROM {table_name}
+                       WHERE user_id = {user_id}
+                       """)
+    
+    specificPersonList = cursorUser.fetchall()
+
+    output = [0] * 9
+    output[0] = specificPersonList[0][8]
+    output[1] = specificPersonList[0][9]
+    output[2] = specificPersonList[0][10]
+    output[3] = specificPersonList[0][11]
+    output[4] = specificPersonList[0][12]
+    output[5] = specificPersonList[0][13]
+    output[6] = specificPersonList[0][14]
+    output[7] = specificPersonList[0][15]
+    output[8] = specificPersonList[0][16]
 
     return output
