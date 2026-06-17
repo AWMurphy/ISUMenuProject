@@ -10,11 +10,13 @@ from discord.ext import commands, tasks
 from discord.utils import get
 from dotenv import load_dotenv
 import collections
+import aiorwlock
 
 # Custom Imports
 import discordResponses
 import discordDatabase
 import jsonRequests
+
 # endregion
 
 # region Original Setup
@@ -31,6 +33,10 @@ intents.message_content = True
 intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
+
+# Global lock to prevent database race conditions
+db_rwlock = aiorwlock.RWLock()
+
 # endregion
 
 # region On Ready
@@ -840,19 +846,19 @@ class MenuPaginator(discord.ui.View):
     
         #region Initialization
     # initialization unit for the embed
-    def __init__(self, items, givenTime, firstPlace, mainUser, openLocations, openTimes, wantList, items_per_page=10):
+    def __init__(self, items, givenTime, firstPlace, mainUser, openLocations, openTimes, wantList, pageList, items_per_page=10):
 
         # Timeout after 3 minutes of inactivity
         super().__init__(timeout=180)
 
         # holds full list of items for the location
-        self.fullitems = dict(items)
+        self.fullitems = items
 
         # hold the current station of the original array
-        self.currentStation = next(iter(items))
+        self.currentStation = self.fullitems[0][-1]
 
         # holds the items for the current station
-        self.items = items[self.currentStation]
+        self.items = items[0]
 
         # sets the time of day (breakfast, lunch, dinner) according to the selection
         self.timeOfDay = givenTime
@@ -884,6 +890,8 @@ class MenuPaginator(discord.ui.View):
         # current page value of the group
         self.current_page = 0
 
+        self.pageList = pageList
+
         # calculate the total number of pages for the range of all items the place
         self.total_pages = len(self.fullitems)
 
@@ -893,9 +901,19 @@ class MenuPaginator(discord.ui.View):
         #endregion
 
         #region Update States & Embed
-    def reget_data(self, user_id):
+    async def reget_data(self, user_id):
 
-        foodList = discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
+        print(f"[READER] User {self.mainUsername} is requesting the lock...")
+
+        async with db_rwlock.reader:
+            print(f"[READER] Lock acquired for {self.mainUsername}!")
+            return discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
+
+        print(f"[READER] Lock released by {self.mainUsername}.")
+
+        # foodList = discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
+
+        foodList = loop.run_until_complete(locked_fetch()) if not loop.is_running() else asyncio.run_coroutine_threadsafe(locked_fetch(), loop).result()
 
         station_dict = collections.defaultdict(list)
     
@@ -919,27 +937,95 @@ class MenuPaginator(discord.ui.View):
 
         # convert back to a standard dict
         final_menu_dict = dict(station_dict)
+        
+        final_menu_arr = []
+        final_menu_num = []
+        temp_arr = []
+        indexNum = 0
 
-        self.fullitems = final_menu_dict
+        for station, items in station_dict.items():
+
+            print(f"Station: {station}")
+
+            # final_menu_num.append(indexNum)
+
+            for index, item in enumerate(items):
+
+                print(f"  - {item}")
+
+                temp_arr.append(item)
+
+                if (index + 1) % self.items_per_page == 0:
+
+                    temp_arr.append(station)
+
+                    final_menu_arr.append(temp_arr)
+
+                    temp_arr = []
+
+                    final_menu_num.append(indexNum)
+
+                    print("  --- End of Page ---")
+
+            if (len(temp_arr) > 0):
+
+                print("hit here for some reason")
+
+                temp_arr.append(station)
+
+                final_menu_arr.append(temp_arr)
+
+                final_menu_num.append(indexNum)
+
+                temp_arr = []
+
+                print(temp_arr)
+
+            indexNum += 1
+
+        self.fullitems = final_menu_arr
+
+        for index, page in enumerate(self.fullitems):
+            # print(f"Page {index + 1}:")
+            pass    
+        
+            for item in page:
+                #print(f"  - {item}")
+                pass
+
+        # print(final_menu_num)
+
+        # print(self.fullitems)
+        # print(len(self.fullitems))
         self.current_page = 0
+        self.pageList = final_menu_num
+        self.items = self.fullitems[self.current_page]
         self.total_pages = len(self.fullitems)
-        self.currentStation = self.getKeyAtIndex(self.fullitems, self.current_page)
+        self.currentStation = self.fullitems[self.current_page][-1]
 
     def get_page_embed(self) -> discord.Embed:
         """Generates a Last.fm-style clean embed layout for the current page."""
         # 1. Slice the items for our specific page range
-        self.items = self.fullitems[self.currentStation]
+        # self.items = self.fullitems[self.currentStation]
 
-        start = self.current_page * self.items_per_page
-        end = start + self.items_per_page
-        page_items = self.items[start:end]
+        # 1. Look up the current station number block (e.g., 0, 1, 2...)
+        current_station_id = self.pageList[self.current_page]
 
-        start = 0
+        # 2. Find the VERY FIRST time this station ID appeared in the list
+        first_occurrence = self.pageList.index(current_station_id)
+
+        # 3. Calculate how many pages deep we are into THIS specific station
+        # Page 1 of Dash: 0 - 0 = 0 pages prior
+        # Page 2 of Dash: 1 - 0 = 1 page prior
+        pages_prior_for_this_station = self.current_page - first_occurrence
+
+        # 4. Multiply by items_per_page to get your vertical numbering offset
+        start = pages_prior_for_this_station * self.items_per_page
 
         # 2. Build the structured Last.fm-style markdown list
         description_lines = []
         description_lines.append(f"----------**{self.currentStation}**----------")
-        for index, item in enumerate(self.items, start=start + 1):
+        for index, item in enumerate(self.items[:-1], start=start + 1):
             # Formats single digits cleanly like '01.', '02.' to keep the grid perfectly vertical
             line = f"`{index:02d}.` **{item}**"
             description_lines.append(line)
@@ -1093,7 +1179,8 @@ class MenuPaginator(discord.ui.View):
         # Security: Check if the person clicking the button is the one who ran the slash command
         if self.current_page > 0:
             self.current_page -= 1
-            self.currentStation = self.getKeyAtIndex(self.fullitems, self.current_page)
+            self.currentStation = self.fullitems[self.current_page][-1]
+            self.items = self.fullitems[self.current_page]
             self.update_button_states()
             # Edit the message directly with the updated embed panel
             await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
@@ -1103,14 +1190,15 @@ class MenuPaginator(discord.ui.View):
         # Security check
         if self.current_page < self.total_pages - 1:
             self.current_page += 1
-            self.currentStation = self.getKeyAtIndex(self.fullitems, self.current_page)
+            self.currentStation = self.fullitems[self.current_page][-1]
+            self.items = self.fullitems[self.current_page]
             self.update_button_states()
             # Edit the message directly with the updated embed panel
             await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
 
     @discord.ui.button(label="🗑️ Close", style=discord.ButtonStyle.danger, row=2)
     async def close_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        if interaction.user != self.mainUser:
+        if interaction.user.name != self.mainUser:
             await interaction.response.send_message("You cannot close this menu.", ephemeral=True)
             return
         # Clean up the UI components entirely so buttons can't be spammed later
@@ -1119,7 +1207,7 @@ class MenuPaginator(discord.ui.View):
     @discord.ui.button(label="Breakfast🥞", style=discord.ButtonStyle.gray, row=1)
     async def breakfast_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "breakfast"
-        self.reget_data(self.mainUser)
+        await self.reget_data(self.mainUser)
         self.update_button_states()
         self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
@@ -1128,7 +1216,7 @@ class MenuPaginator(discord.ui.View):
     @discord.ui.button(label="Lunch🍔", style=discord.ButtonStyle.gray, row=1)
     async def lunch_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "lunch"
-        self.reget_data(self.mainUser)
+        await self.reget_data(self.mainUser)
         self.update_button_states()
         self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
@@ -1137,7 +1225,7 @@ class MenuPaginator(discord.ui.View):
     @discord.ui.button(label="Dinner🍗", style=discord.ButtonStyle.gray, row=1)
     async def dinner_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.timeOfDay = "dinner"
-        self.reget_data(self.mainUser)
+        await self.reget_data(self.mainUser)
         self.update_button_states()
         self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
@@ -1147,7 +1235,7 @@ class MenuPaginator(discord.ui.View):
     async def friley_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Friley"
         self.timeOfDay = "breakfast"
-        self.reget_data(self.mainUser)
+        await self.reget_data(self.mainUser)
         self.update_button_states()
         self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
@@ -1157,7 +1245,7 @@ class MenuPaginator(discord.ui.View):
     async def seasons_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Seasons"
         self.timeOfDay = "breakfast"
-        self.reget_data(self.mainUser)
+        await self.reget_data(self.mainUser)
         self.update_button_states()
         self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
@@ -1167,7 +1255,7 @@ class MenuPaginator(discord.ui.View):
     async def union_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.currentLocation = "Union"
         self.timeOfDay = "breakfast"
-        self.reget_data(self.mainUser)
+        await self.reget_data(self.mainUser)
         self.update_button_states()
         self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
@@ -1189,22 +1277,26 @@ async def show_menu(interaction: discord.Interaction):
     # in case you are in a server and it doesn't want to break the code (has you as a member instead of a user) do this
     user_id = int(interaction.user.id)
 
-    # if the person isn't in the database, don't allow them to use the part of the code, send back the line below and exit the function
-    if not discordDatabase.isInDatabase(user_id):
-        await interaction.followup.send("You are not in the database, run one of the other set commands first to establish a connection.", ephemeral=True)
-        return
+    print(f"[READER] User {interaction.user.name} is requesting the lock...")
+    async with db_rwlock.reader:
+        print(f"[READER] Lock acquired for {interaction.user.name}!")
+        # if the person isn't in the database, don't allow them to use the part of the code, send back the line below and exit the function
+        if not discordDatabase.isInDatabase(user_id):
+            await interaction.followup.send("You are not in the database, run one of the other set commands first to establish a connection.", ephemeral=True)
+            return
 
-    # find the first place they can look at [if any] according to their set up dining hall requirements (accounts for closed locations)
-    firstPlace = discordDatabase.findFirstPlace(interaction.user.id)
+        # find the first place they can look at [if any] according to their set up dining hall requirements (accounts for closed locations)
+        firstPlace = discordDatabase.findFirstPlace(interaction.user.id)
 
-    # if you don't find anything in first place, tell them and exit the function
-    if firstPlace == "":
-        await interaction.followup.send("No items found in the database for your selected dining halls (they might be closed).", ephemeral=True)
-        return
+        # if you don't find anything in first place, tell them and exit the function
+        if firstPlace == "":
+            await interaction.followup.send("No items found in the database for your selected dining halls (they might be closed).", ephemeral=True)
+            return
 
-    # get the associated list of food from the place for the time selected (need to replace "breakfast" with a variable from another function later)
-    foodList = discordDatabase.findData_forUser(interaction.user.id, firstPlace, "breakfast")
+        # get the associated list of food from the place for the time selected (need to replace "breakfast" with a variable from another function later)
+        foodList = discordDatabase.findData_forUser(interaction.user.id, firstPlace, "breakfast")
 
+    print(f"[READER] Lock released by {interaction.user.name}.")
     # make a dictionary list object using collections for easier appending for each station
     station_dict = collections.defaultdict(list)
     
@@ -1234,6 +1326,51 @@ async def show_menu(interaction: discord.Interaction):
         await interaction.followup.send("No items found in the database.", ephemeral=True)
         return
     
+    final_menu_arr = []
+    final_menu_num = []
+    temp_arr = []
+    indexNum = 0
+
+    for station, items in station_dict.items():
+
+        # print(f"Station: {station}")
+
+        # final_menu_num.append(indexNum)
+
+        for index, item in enumerate(items):
+
+            # print(f"  - {item}")
+
+            temp_arr.append(item)
+
+            if (index + 1) % 10 == 0:
+
+                temp_arr.append(station)
+
+                final_menu_arr.append(temp_arr)
+
+                temp_arr = []
+
+                final_menu_num.append(indexNum)
+
+                # print("  --- End of Page ---")
+
+        if (len(temp_arr) > 0):
+
+            # print("hit here for some reason")
+
+            temp_arr.append(station)
+
+            final_menu_arr.append(temp_arr)
+
+            final_menu_num.append(indexNum)
+
+            temp_arr = []
+
+            # print(temp_arr)
+
+        indexNum += 1
+
     # get a list of places wanted from the user
     wantList = discordDatabase.listofPlaces(interaction.user.id)
 
@@ -1247,7 +1384,7 @@ async def show_menu(interaction: discord.Interaction):
     timeList[2] = discordDatabase.openTimes("Union")
 
     # instantiate our embed view handler
-    paginator_view = MenuPaginator(items=final_menu_dict, givenTime="breakfast", firstPlace=firstPlace, mainUser=interaction.user, openLocations=otherArray, openTimes=timeList, wantList=wantList, items_per_page=10)
+    paginator_view = MenuPaginator(items=final_menu_arr, givenTime="breakfast", firstPlace=firstPlace, mainUser=interaction.user, openLocations=otherArray, openTimes=timeList, wantList=wantList, pageList= final_menu_num, items_per_page=10)
     
     # run the update button states to update the green and grey ones
     # paginator_view.update_button_states() # < we might no need this (put in init?)
@@ -1270,8 +1407,16 @@ async def reset_dininghalls(interaction: discord.Interaction):
         await interaction.followup.send(f"yeah lil bro don't even try to use this if you ain't me", ephemeral=True)
         return
 
-    jsonRequests.refresh_DiningHalls()
+    print("[WRITER] Admin update is waiting for existing readers to clear...")
+    # Acquire the lock. If an interactive menu is pulling data, this waits.
+    # Once acquired, it blocks all interactive user queries until completed.
+    async with db_rwlock.writer:
+        # If refresh_DiningHalls is a standard blocking function, it is highly recommended 
+        # to run it inside an executor so it doesn't freeze your entire bot's heartbeat.
+        print("[WRITER] Exclusive lock ACQUIRED. All user commands are now stalled.")
+        await asyncio.to_thread(jsonRequests.refresh_DiningHalls)
 
+    print("[WRITER] Exclusive lock RELEASED. User floodgates opened.")
     await interaction.followup.send(f"Finished, all done.", ephemeral=True)
 # endregion
 
