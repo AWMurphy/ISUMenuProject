@@ -33,6 +33,7 @@ intents.message_content = True
 intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
+# bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 
 # Global lock to prevent database race conditions
 db_rwlock = aiorwlock.RWLock()
@@ -105,68 +106,59 @@ async def daily_menu_blast():
     """
 #endregion
 
-# region Location Selection Menu
+# region Location Selection Menu (FINISHED)
 
-    # region actual menu code
+    # region actual menu code (finished)
 class LocationSelectInterface(discord.ui.View):
 
-        # region Initialization
+        # region Initialization (finished)
     def __init__(self, wantList):
 
         # don't time out the interface
         super().__init__(timeout=180)
 
-        # store the user's location selection (0 = not selected, 1 = selected) [Friley, Seasons, Union]
-        self.selected_locations = [0] * 3
+        # store the user's location selection (0 = not selected, 1 = selected) [Friley, Seasons, Union] (needed for buttons and submission)
+        self.selected_locations = wantList
 
-        # set the list of places the person wants to see
-        self.wantList = wantList
+        # used as a sort of hashmap
+        self.LOCATION_INDEX_MAP = {
+            "Friley": 0, "Seasons": 1, "UDCC": 2
+        }
 
-        # update the selected_locations based on wantList
-        if self.wantList[0] == 1:
-            self.selected_locations[0] = 1
-        if self.wantList[1] == 1:
-            self.selected_locations[1] = 1
-        if self.wantList[2] == 1:
-            self.selected_locations[2] = 1
+        self.dropdown: discord.ui.Select = self.select_callback
+
+        for option in self.dropdown.options:
+
+            index = self.LOCATION_INDEX_MAP[option.value]
+            
+            if self.selected_locations[index] == 1:
+                option.default = True
+            else:
+                option.default = False
 
         self.changeButtonColors()
 
         # endregion
 
-        # region Embed Generation
+        # region Embed Generation (finished)
 
-            # region normal embed generation
+            # region normal embed generation (finished)
     def get_page_embed(self) -> discord.Embed:
 
+        location_names = ["Friley Windows", "Seasons Marketplace", "Union Drive Marketplace"] # holds all possible location names
+
         # this function updates the embed panel to reflect the current location selection state
-        description_lines = []
-        description_lines.append("---**Selected Locations**---")
+        description_lines = ["---**Selected Locations**---"]
+
         index = 1
-        for i in range(len(self.selected_locations)):
-            item = self.selected_locations[i]
-            match item:
-                case 1:
-                    if i == 0:
-                        item = "Friley Windows"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 1:
-                        item = "Seasons Marketplace"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 2:
-                        item = "Union Drive Marketplace"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                case 0:
-                    pass
+        for i, enabled in enumerate(self.selected_locations):
+            if enabled == 1:
+                line = f"`{index:02d}.` **{location_names[i]}**"
+                description_lines.append(line)
+                index += 1
 
         # if no locations are selected, add a placeholder line to the description
-        if not description_lines:
+        if len(description_lines) == 1:  # Only the title line is present
             description_lines.append("*No locations selected.*")
 
         # set up the embed with the description and title
@@ -178,23 +170,19 @@ class LocationSelectInterface(discord.ui.View):
 
         # add a footer to show how many locations are selected out of the total available
         embed.set_footer(
-            text=f"{index - 1} out of {len(self.wantList)}"
+            text=f"{index - 1} out of {len(self.selected_locations)}"
         )
         return embed
 
             # endregion
 
-            # region submission embed generation
+            # region submission embed generation (finished)
     def get_page_embed_sub(self) -> discord.Embed:
-
-        # this function updates the embed panel to reflect the current location selection state
-        description_lines = []
-        description_lines.append("---**LOCATION CHOICES SAVED**---")
 
         # set up the embed with the description and title
         embed = discord.Embed(
             title=f"SAVED!",
-            description="\n".join(description_lines),
+            description="---**LOCATION CHOICES SAVED**---",
             color=0xD51007
         )
 
@@ -207,24 +195,32 @@ class LocationSelectInterface(discord.ui.View):
 
         # endregion
 
-        # region Button Logic
+        # region Button Logic (finished)
     def changeButtonColors(self):
 
-        # Reset all meal buttons to a default secondary (gray)
-        self.friley_button.style = discord.ButtonStyle.grey
-        self.seasons_button.style = discord.ButtonStyle.grey
-        self.union_button.style = discord.ButtonStyle.grey
+        # used for dropdown and resetting
 
+        # friley button logic
         if self.selected_locations[0] == 1:
             self.friley_button.style = discord.ButtonStyle.green
+        else:
+            self.friley_button.style = discord.ButtonStyle.grey
+
+        # seasons button logic
         if self.selected_locations[1] == 1:
             self.seasons_button.style = discord.ButtonStyle.green
+        else:
+            self.seasons_button.style = discord.ButtonStyle.grey
+
+        # UDCC button logic
         if self.selected_locations[2] == 1:
             self.union_button.style = discord.ButtonStyle.green
+        else:
+            self.union_button.style = discord.ButtonStyle.grey
 
         # endregion
 
-        # region Dropdown Logic
+        # region Dropdown Logic (finished)
     @discord.ui.select(
         placeholder="Select an ISU dining location...",
         min_values=1,
@@ -239,73 +235,97 @@ class LocationSelectInterface(discord.ui.View):
     async def select_callback(self, interaction: discord.Interaction, select: discord.ui.Select):
 
         # set according to what they selected in the dropdown
+
+        # friley dropdown logic
         if "Friley" in select.values:
             self.selected_locations[0] = 1
         else:
             self.selected_locations[0] = 0
+
+        # seasons dropdown logic
         if "Seasons" in select.values:
             self.selected_locations[1] = 1
         else:
             self.selected_locations[1] = 0
+
+        # UDCC dropdown logic
         if "UDCC" in select.values:
             self.selected_locations[2] = 1
         else:            
             self.selected_locations[2] = 0
+
+        for option in select.options:
+            option.default = option.value in select.values
         
         # update the button colors to reflect the dropdown selection as well
         self.changeButtonColors()
 
         # update the embed to reflect the new selection state as well
         await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
         # endregion
 
-        # region Buttons
+        # region Buttons (finished)
 
-            # region Location Buttons
+            # region Helper Method for Buttons (finished)
+    async def _toggle_location(self, interaction: discord.Interaction, button: discord.Button, index: int):
+        # Flips 0 to 1, and 1 to 0
+        self.selected_locations[index] = 1 - self.selected_locations[index] 
+        
+        if self.selected_locations[index] == 1:
+            button.style = discord.ButtonStyle.green
+        else:
+            button.style = discord.ButtonStyle.grey
+
+        option = self.dropdown.options[index]
+
+        index = self.LOCATION_INDEX_MAP[option.value]
+            
+        if self.selected_locations[index] == 1:
+            option.default = True
+        else:
+            option.default = False
+
+        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+            # endregion
+
+            # region Location Buttons (finished)
     @discord.ui.button(label="Friley Windows 🖼️", style=discord.ButtonStyle.grey, row=1)
     async def friley_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        if self.selected_locations[0] == 0:
-            self.selected_locations[0] = 1
-        else:
-            self.selected_locations[0] = 0
-        self.changeButtonColors()
-        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+        await self._toggle_location(interaction, button, 0)
 
     @discord.ui.button(label="Seasons Marketplace 🍂", style=discord.ButtonStyle.grey, row=1)
     async def seasons_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        if self.selected_locations[1] == 0:
-            self.selected_locations[1] = 1
-        else:
-            self.selected_locations[1] = 0
-        self.changeButtonColors()
-        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+        await self._toggle_location(interaction, button, 1)
 
     @discord.ui.button(label="Union Drive Marketplace 🚗", style=discord.ButtonStyle.grey, row=1)
     async def union_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        if self.selected_locations[2] == 0:
-            self.selected_locations[2] = 1
-        else:
-            self.selected_locations[2] = 0
-        self.changeButtonColors()
-        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+        await self._toggle_location(interaction, button, 2)
+
             # endregion
 
-            # region Reset Button
+            # region Reset Button (finished)
     @discord.ui.button(label="⟲ Reset All", style=discord.ButtonStyle.blurple, row=2)
     async def reset_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.selected_locations = [0, 0, 0]
+
+        for option in self.dropdown.options:
+            
+            option.default = False
+
         self.changeButtonColors()
         await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
             # endregion
 
-            # region Submit Button
+            # region Submit Button (finished)
     @discord.ui.button(label="✅ Confirm Selection", style=discord.ButtonStyle.green, row=2)
     async def submit_button(self, interaction: discord.Interaction, button: discord.ui.Button):
 
         # make sure they selected at least one location before submitting
         if not any(self.selected_locations):
             await interaction.response.send_message(
-                "❌ Please check at least one dining location from the dropdown first!", 
+                "❌ Please select at least one dining location first!", 
                 ephemeral=True
             )
             return
@@ -317,29 +337,29 @@ class LocationSelectInterface(discord.ui.View):
         try:
             discordDatabase.save_user_data(interaction.user.id, interaction.user.name, self.selected_locations)
         except Exception as e:
-            await interaction.response.send_message(
+            print(f"Error saving user data: {e}")
+            await interaction.followup.send_message(
                 "❌ An error occurred while saving your selection.",
                 ephemeral=True
             )
-            print(f"Error saving user data: {e}")
             return
 
         # edit the original message for confirmation of the submission
-        await interaction.followup.send(embed=self.get_page_embed_sub(), view=self)
+        await interaction.followup.send(embed=self.get_page_embed_sub(), view=self, ephemeral=True)
             # endregion
 
         # endregion
 
     # endregion
 
-    # region slash command set up
+    # region slash command set up (finished)
 @bot.tree.command(name="set_dining_halls", description="Select multiple dining halls to receive.")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 async def get_menus(interaction: discord.Interaction):
     view = LocationSelectInterface(wantList=discordDatabase.listofPlaces(interaction.user.id))
     await interaction.response.send_message(
-        "Please open the dropdown selection box below, check up to 3 dining halls, then click Confirm.",
+        "Please select your dining halls with the buttons or dropdown menu, then click Confirm.",
         embed=view.get_page_embed(),
         view=view,
         ephemeral=True
@@ -348,68 +368,58 @@ async def get_menus(interaction: discord.Interaction):
 
 # endregion
 
-# region Food Diet Selection Menu
+# region Food Diet Selection Menu (FINISHED)
 
-    # region actual menu code
+    # region actual menu code (finished)
 class DietSelectInterface(discord.ui.View):
 
-        # region Initialization
+        # region Initialization (finished)
     def __init__(self, wantList):
 
         # don't time out the interface
         super().__init__(timeout=180)
 
         # store the user's diet selection (0 = not selected, 1 = selected) [Halal, Vegan, Vegetarian]
-        self.selected_diets = [0] * 3
+        self.selected_diets = wantList
 
-        # set the list of diets the person wants to see
-        self.wantList = wantList
+        self.LOCATION_INDEX_MAP = {
+            "Halal": 0, "Vegan": 1, "Vegetarian": 2
+        }
 
-        # update the selected_diets based on wantList
-        if self.wantList[0] == 1:
-            self.selected_diets[0] = 1
-        if self.wantList[1] == 1:
-            self.selected_diets[1] = 1
-        if self.wantList[2] == 1:
-            self.selected_diets[2] = 1
+        self.dropdown: discord.ui.Select = self.select_callback
+
+        for option in self.dropdown.options:
+
+            index = self.LOCATION_INDEX_MAP[option.value]
+            
+            if self.selected_diets[index] == 1:
+                option.default = True
+            else:
+                option.default = False
 
         self.changeButtonColors()
 
         # endregion
 
-        # region Embed Generation
+        # region Embed Generation (finished)
 
-            # region normal embed generation
+            # region normal embed generation (finished)
     def get_page_embed(self) -> discord.Embed:
 
+        diet_names = ["Halal", "Vegan", "Vegetarian"]
+
         # this function updates the embed panel to reflect the current location selection state
-        description_lines = []
-        description_lines.append("---**Selected Diets**---")
+        description_lines = ["---**Selected Diets**---"]
+
         index = 1
-        for i in range(len(self.selected_diets)):
-            item = self.selected_diets[i]
-            match item:
-                case 1:
-                    if i == 0:
-                        item = "Halal"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 1:
-                        item = "Vegan"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 2:
-                        item = "Vegetarian"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                case 0:
-                    pass
+        for i, enabled in enumerate(self.selected_diets):
+            if enabled == 1:
+                line = f"`{index:02d}.` **{diet_names[i]}**"
+                description_lines.append(line)
+                index += 1
 
         # if no locations are selected, add a placeholder line to the description
-        if not description_lines:
+        if len(description_lines) == 1:  # Only the title line is present
             description_lines.append("*No diets selected.*")
 
         # set up the embed with the description and title
@@ -421,27 +431,23 @@ class DietSelectInterface(discord.ui.View):
 
         # add a footer to show how many locations are selected out of the total available
         embed.set_footer(
-            text=f"{index - 1} out of {len(self.wantList)}"
+            text=f"{index - 1} out of {len(self.selected_diets)}"
         )
         return embed
 
             # endregion
 
-            # region submission embed generation
+            # region submission embed generation (finished)
     def get_page_embed_sub(self) -> discord.Embed:
 
         # this function updates the embed panel to reflect the current diet selection state
-        description_lines = []
-        description_lines.append("---**DIET CHOICES SAVED**---")
-
-        # set up the embed with the description and title
         embed = discord.Embed(
             title=f"SAVED!",
-            description="\n".join(description_lines),
+            description="---**DIET CHOICES SAVED**---",
             color=0xD51007
         )
 
-        # add a footer to show how many diets are selected out of the total available
+        # add a footer to show how many locations are selected out of the total available
         embed.set_footer(
             text=f"Properly Saved"
         )
@@ -450,49 +456,55 @@ class DietSelectInterface(discord.ui.View):
 
         # endregion
 
-        # region Button Logic
+        # region Button Logic (finished)
     def changeButtonColors(self):
 
-        # Reset all meal buttons to a default secondary (gray)
-        self.friley_button.style = discord.ButtonStyle.grey
-        self.seasons_button.style = discord.ButtonStyle.grey
-        self.union_button.style = discord.ButtonStyle.grey
-
         if self.selected_diets[0] == 1:
-            self.friley_button.style = discord.ButtonStyle.green
+            self.halal_button.style = discord.ButtonStyle.green
+        else:
+            self.halal_button.style = discord.ButtonStyle.grey
+
         if self.selected_diets[1] == 1:
-            self.seasons_button.style = discord.ButtonStyle.green
+            self.vegan_button.style = discord.ButtonStyle.green
+        else:
+            self.vegan_button.style = discord.ButtonStyle.grey
+
         if self.selected_diets[2] == 1:
-            self.union_button.style = discord.ButtonStyle.green
+            self.vegetarian_button.style = discord.ButtonStyle.green
+        else:
+            self.vegetarian_button.style = discord.ButtonStyle.grey
         # endregion
 
-        # region Dropdown Logic
+        # region Dropdown Logic (finished)
     @discord.ui.select(
         placeholder="Select an ISU dining location...",
         min_values=1,
         max_values=3,
         options=[
-            discord.SelectOption(label="Friley Windows", value="Friley"),
-            discord.SelectOption(label="Seasons Marketplace", value="Seasons"),
-            discord.SelectOption(label="Union Drive Marketplace (UDCC)", value="UDCC")
+            discord.SelectOption(label="Halal", value="Halal"),
+            discord.SelectOption(label="Vegan", value="Vegan"),
+            discord.SelectOption(label="Vegetarian", value="Vegetarian")
         ],
         row=0
     )
     async def select_callback(self, interaction: discord.Interaction, select: discord.ui.Select):
 
         # set according to what they selected in the dropdown
-        if "Friley" in select.values:
-            self.selected_locations[0] = 1
+        if "Halal" in select.values:
+            self.selected_diets[0] = 1
         else:
-            self.selected_locations[0] = 0
-        if "Seasons" in select.values:
-            self.selected_locations[1] = 1
+            self.selected_diets[0] = 0
+        if "Vegan" in select.values:
+            self.selected_diets[1] = 1
         else:
-            self.selected_locations[1] = 0
-        if "UDCC" in select.values:
-            self.selected_locations[2] = 1
+            self.selected_diets[1] = 0
+        if "Vegetarian" in select.values:
+            self.selected_diets[2] = 1
         else:            
-            self.selected_locations[2] = 0
+            self.selected_diets[2] = 0
+
+        for option in select.options:
+            option.default = option.value in select.values
         
         # update the button colors to reflect the dropdown selection as well
         self.changeButtonColors()
@@ -501,46 +513,59 @@ class DietSelectInterface(discord.ui.View):
         await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
         # endregion
 
-        # region Buttons
+        # region Buttons (finished)
 
-            # region Location Buttons
-    @discord.ui.button(label="Halal", style=discord.ButtonStyle.grey, row=1)
-    async def friley_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        if self.selected_diets[0] == 0:
-            self.selected_diets[0] = 1
+            # region Helper Method for Buttons (finished)
+    async def _toggle_location(self, interaction: discord.Interaction, button: discord.Button, index: int):
+        # Flips 0 to 1, and 1 to 0
+        self.selected_diets[index] = 1 - self.selected_diets[index] 
+        
+        if self.selected_diets[index] == 1:
+            button.style = discord.ButtonStyle.green
         else:
-            self.selected_diets[0] = 0
-        self.changeButtonColors()
+            button.style = discord.ButtonStyle.grey
+
+        option = self.dropdown.options[index]
+
+        index = self.LOCATION_INDEX_MAP[option.value]
+            
+        if self.selected_diets[index] == 1:
+            option.default = True
+        else:
+            option.default = False
+
         await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
 
-    @discord.ui.button(label="Vegan", style=discord.ButtonStyle.grey, row=1)
-    async def seasons_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        if self.selected_diets[1] == 0:
-            self.selected_diets[1] = 1
-        else:
-            self.selected_diets[1] = 0
-        self.changeButtonColors()
-        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
-
-    @discord.ui.button(label="Vegetarian", style=discord.ButtonStyle.grey, row=1)
-    async def union_button(self, interaction: discord.Interaction, button: discord.ui.Button):
-        if self.selected_diets[2] == 0:
-            self.selected_diets[2] = 1
-        else:
-            self.selected_diets[2] = 0
-        self.changeButtonColors()
-        await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
             # endregion
 
-            # region Reset Button
+            # region Location Buttons (finished)
+    @discord.ui.button(label="Halal", style=discord.ButtonStyle.grey, row=1)
+    async def halal_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await self._toggle_location(interaction, button, 0)
+
+    @discord.ui.button(label="Vegan", style=discord.ButtonStyle.grey, row=1)
+    async def vegan_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await self._toggle_location(interaction, button, 1)
+
+    @discord.ui.button(label="Vegetarian", style=discord.ButtonStyle.grey, row=1)
+    async def vegetarian_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        await self._toggle_location(interaction, button, 2)
+            # endregion
+
+            # region Reset Button (finished)
     @discord.ui.button(label="⟲ Reset All", style=discord.ButtonStyle.blurple, row=2)
     async def reset_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.selected_diets = [0, 0, 0]
+
+        for option in self.dropdown.options:
+            
+            option.default = False
+
         self.changeButtonColors()
         await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
             # endregion
 
-            # region Submit Button
+            # region Submit Button (finished)
     @discord.ui.button(label="✅ Confirm Selection", style=discord.ButtonStyle.green, row=2)
     async def submit_button(self, interaction: discord.Interaction, button: discord.ui.Button):
 
@@ -551,29 +576,29 @@ class DietSelectInterface(discord.ui.View):
         try:
             discordDatabase.save_user_diets(interaction.user.id, interaction.user.name, self.selected_diets)
         except Exception as e:
-            await interaction.response.send_message(
+            print(f"Error saving user data: {e}")
+            await interaction.followup.send_message(
                 "❌ An error occurred while saving your selection.",
                 ephemeral=True
             )
-            print(f"Error saving user data: {e}")
             return
 
         # edit the original message for confirmation of the submission
-        await interaction.followup.send(embed=self.get_page_embed_sub(), view=self)
+        await interaction.followup.send(embed=self.get_page_embed_sub(), view=self, ephemeral=True)
             # endregion
 
         # endregion
 
     # endregion
 
-    # region slash command set up
+    # region slash command set up (finished)
 @bot.tree.command(name="set_diet_preferences", description="Select your diet preferences.")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 async def get_menus(interaction: discord.Interaction):
     view = DietSelectInterface(wantList=discordDatabase.listofDiets(interaction.user.id))
     await interaction.response.send_message(
-        "Please open the dropdown selection box below, your diet preferences, then click Confirm.",
+        "Please select your diet preferences with the buttons or dropdown menu, then click Confirm.",
         embed=view.get_page_embed(),
         view=view,
         ephemeral=True
@@ -582,46 +607,40 @@ async def get_menus(interaction: discord.Interaction):
 
 # endregion
 
-# region Allergy Selection Menu
+# region Allergy Selection Menu (FINISHED)
 
 class AllergySelectInterface(discord.ui.View):
 
-    # region Initialization
+    # region Initialization (finished)
     def __init__(self, wantList):
 
         # don't time out the interface
         super().__init__(timeout=180)
 
         # store the user's allergy selection (0 = not selected, 1 = selected) [Dairy, Eggs, Fish, Peanuts, Shellfish, Soy, Sesame/Tahini, Wheat Gluten, Tree Nuts]
-        self.selected_allergens = [0] * 9
+        self.selected_allergens = wantList
 
-        # set the list of allergies the person wants to see
-        self.wantList = wantList
+        # used as a sort of hashmap
+        self.ALLERGEN_INDEX_MAP = {
+            "dairy": 0, "egg": 1, "fish": 2, "peanuts": 3, 
+            "shellfish": 4, "soy": 5, "sesame_tahini": 6, 
+            "wheat_gluten": 7, "tree_nuts": 8
+        }
 
-        # update the selected_allergens based on wantList
-        if self.wantList[0] == 1:
-            self.selected_allergens[0] = 1
-        if self.wantList[1] == 1:
-            self.selected_allergens[1] = 1
-        if self.wantList[2] == 1:
-            self.selected_allergens[2] = 1
-        if self.wantList[3] == 1:
-            self.selected_allergens[3] = 1
-        if self.wantList[4] == 1:
-            self.selected_allergens[4] = 1
-        if self.wantList[5] == 1:
-            self.selected_allergens[5] = 1
-        if self.wantList[6] == 1:  
-            self.selected_allergens[6] = 1
-        if self.wantList[7] == 1:
-            self.selected_allergens[7] = 1
-        if self.wantList[8] == 1:
-            self.selected_allergens[8] = 1
+        self.dropdown: discord.ui.Select = self.select_callback
 
-        self.changeButtonColors()
+        for option in self.dropdown.options:
+
+            index = self.ALLERGEN_INDEX_MAP[option.value]
+            
+            if self.selected_allergens[index] == 1:
+                option.default = True
+            else:
+                option.default = False
+
     # endregion
 
-    # region Dropdown Logic
+    # region Dropdown Logic (finished)
     @discord.ui.select(
         placeholder="Select your allergies...",
         min_values=0,
@@ -640,166 +659,86 @@ class AllergySelectInterface(discord.ui.View):
     )
     async def select_callback(self, interaction: discord.Interaction, select: discord.ui.Select):
 
-        # Save the current selection to our view state
-        if "dairy" in select.values:
-            self.selected_allergens[0] = 1
-        else:
-            self.selected_allergens[0] = 0
-        if "egg" in select.values:
-            self.selected_allergens[1] = 1
-        else:
-            self.selected_allergens[1] = 0
-        if "fish" in select.values:
-            self.selected_allergens[2] = 1
-        else:            
-            self.selected_allergens[2] = 0
-        if "peanuts" in select.values:
-            self.selected_allergens[3] = 1
-        else:
-            self.selected_allergens[3] = 0
-        if "shellfish" in select.values:
-            self.selected_allergens[4] = 1
-        else:
-            self.selected_allergens[4] = 0
-        if "soy" in select.values:
-            self.selected_allergens[5] = 1
-        else:
-            self.selected_allergens[5] = 0
-        if "sesame_tahini" in select.values:
-            self.selected_allergens[6] = 1
-        else:
-            self.selected_allergens[6] = 0
-        if "wheat_gluten" in select.values:
-            self.selected_allergens[7] = 1
-        else:
-            self.selected_allergens[7] = 0
-        if "tree_nuts" in select.values:
-            self.selected_allergens[8] = 1
-        else:
-            self.selected_allergens[8] = 0
-        
-        # update the button colors to reflect the dropdown selection as well
-        self.changeButtonColors()
+        self.selected_allergens = [0] * 9
+
+        for val in select.values:
+            self.selected_allergens[self.ALLERGEN_INDEX_MAP[val]] = 1
+
+        for option in select.options:
+            option.default = option.value in select.values
 
         # update the embed to reflect the new selection state as well
         await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
 
     # endregion
 
-    # region Embed Generation
+    # region Embed Generation (finished)
 
-        # region normal embed generation
+        # region normal embed generation (finished)
     def get_page_embed(self) -> discord.Embed:
 
+        diet_names = ["Dairy", "Eggs", "Fish", "Peanuts", "Shellfish", "Soy", "Sesame/Tahini", "Wheat Gluten", "Tree Nuts"]
+
         # this function updates the embed panel to reflect the current location selection state
-        description_lines = []
-        description_lines.append("---**Selected Allergens**---")
+        description_lines = ["---**Selected Allergens**---"]
+        
         index = 1
-        for i in range(len(self.selected_allergens)):
-            item = self.selected_allergens[i]
-            match item:
-                case 1:
-                    if i == 0:
-                        item = "Dairy"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 1:
-                        item = "Eggs"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 2:
-                        item = "Fish"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 3:
-                        item = "Peanuts"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 4:
-                        item = "Shellfish"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 5:
-                        item = "Soy"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 6:
-                        item = "Sesame/Tahini"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 7:
-                        item = "Wheat Gluten"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                    elif i == 8:
-                        item = "Tree Nuts"
-                        line = f"`{index:02d}.` **{item}**"
-                        description_lines.append(line)
-                        index += 1
-                case 0:
-                    pass
+        for i, enabled in enumerate(self.selected_allergens):
+            if enabled == 1:
+                line = f"`{index:02d}.` **{diet_names[i]}**"
+                description_lines.append(line)
+                index += 1
 
         # if no locations are selected, add a placeholder line to the description
-        if not description_lines:
+        if len(description_lines) == 1:
             description_lines.append("*No allergens selected.*")
 
         # set up the embed with the description and title
         embed = discord.Embed(
-            title=f"Select up to 9 allergens using the buttons or dropdown below.",
+            title=f"Select up to 9 allergens using the dropdown below.",
             description="\n".join(description_lines),
             color=0xD51007
         )
 
         # add a footer to show how many locations are selected out of the total available
         embed.set_footer(
-            text=f"{index - 1} out of {len(self.wantList)}"
+            text=f"{index - 1} out of {len(self.selected_allergens)}"
         )
         return embed
 
             # endregion
 
-        # region submission embed generation
+        # region submission embed generation (finished)
     def get_page_embed_sub(self) -> discord.Embed:
-
-        # this function updates the embed panel to reflect the current diet selection state
-        description_lines = []
-        description_lines.append("---**ALLERGEN CHOICES SAVED**---")
 
         # set up the embed with the description and title
         embed = discord.Embed(
             title=f"SAVED!",
-            description="\n".join(description_lines),
+            description="---**ALLERGEN CHOICES SAVED**---",
             color=0xD51007
         )
 
         # add a footer to show how many allergens are selected out of the total available
         embed.set_footer(
-            text=f"Properly Saved"
+            text=f"Properly Saved!"
         )
         return embed
             # endregion
 
     # endregion
 
-    # region Buttons
+    # region Buttons (finished)
 
-        # region Reset Button
+        # region Reset Button (finished)
     @discord.ui.button(label="⟲ Reset All", style=discord.ButtonStyle.blurple, row=2)
     async def reset_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         self.selected_allergens = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-        self.changeButtonColors()
+        for option in self.dropdown.options:
+            option.default = False
         await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
         # endregion
 
-        # region Submit Button
+        # region Submit Button (finished)
     @discord.ui.button(label="✅ Confirm Selection", style=discord.ButtonStyle.green, row=2)
     async def submit_button(self, interaction: discord.Interaction, button: discord.ui.Button):
 
@@ -810,27 +749,27 @@ class AllergySelectInterface(discord.ui.View):
         try:
             discordDatabase.save_user_allergens(interaction.user.id, interaction.user.name, self.selected_allergens)
         except Exception as e:
-            await interaction.response.send_message(
+            print(f"Error saving user data: {e}")
+            await interaction.followup.send_message(
                 "❌ An error occurred while saving your selection.",
                 ephemeral=True
             )
-            print(f"Error saving user data: {e}")
             return
 
         # edit the original message for confirmation of the submission
-        await interaction.followup.send(embed=self.get_page_embed_sub(), view=self)
+        await interaction.followup.send(embed=self.get_page_embed_sub(), view=self, ephemeral=True)
         # endregion
 
     # endregion
 
-    # region slash command set up
+    # region slash command set up (finished)
 @bot.tree.command(name="set_allergies", description="Select your allergies.")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
 async def get_menus(interaction: discord.Interaction):
     view = AllergySelectInterface(wantList=discordDatabase.listofAllergens(interaction.user.id))
     await interaction.response.send_message(
-        "Please open the dropdown selection box below, your allergies, then click Confirm.",
+        "Please select your allergens with the dropdown menu, then click Confirm.",
         view=view,
         embed=view.get_page_embed(),
         ephemeral=True
@@ -907,13 +846,13 @@ class MenuPaginator(discord.ui.View):
 
         async with db_rwlock.reader:
             print(f"[READER] Lock acquired for {self.mainUsername}!")
-            return discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
+            foodList = discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
 
         print(f"[READER] Lock released by {self.mainUsername}.")
 
         # foodList = discordDatabase.findData_forUser(user_id, self.currentLocation, self.timeOfDay)
 
-        foodList = loop.run_until_complete(locked_fetch()) if not loop.is_running() else asyncio.run_coroutine_threadsafe(locked_fetch(), loop).result()
+        # foodList = loop.run_until_complete(locked_fetch()) if not loop.is_running() else asyncio.run_coroutine_threadsafe(locked_fetch(), loop).result()
 
         station_dict = collections.defaultdict(list)
     
@@ -1260,6 +1199,29 @@ class MenuPaginator(discord.ui.View):
         self.changeButtonColors()
         # Edit the existing message with new slice of data and updated buttons
         await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    '''
+    @discord.ui.button(label="Next Station ▶", style=discord.ButtonStyle.gray, row=0)
+    async def nextStation_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        # Security check
+        if self.current_page < self.total_pages - 1:
+            self.current_page += 1
+            self.currentStation = self.fullitems[self.current_page][-1]
+            self.items = self.fullitems[self.current_page]
+            self.update_button_states()
+            # Edit the message directly with the updated embed panel
+            await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+
+    @discord.ui.button(label="◀ Previous Station", style=discord.ButtonStyle.gray, row=0)
+    async def prevStation_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        if self.current_page > 0:
+            self.current_page -= 1
+            self.currentStation = self.fullitems[self.current_page][-1]
+            self.items = self.fullitems[self.current_page]
+            self.update_button_states()
+            # Edit the message directly with the updated embed panel
+            await interaction.response.edit_message(embed=self.get_page_embed(), view=self)
+    '''
     
         #endregion
     
@@ -1420,7 +1382,7 @@ async def reset_dininghalls(interaction: discord.Interaction):
     await interaction.followup.send(f"Finished, all done.", ephemeral=True)
 # endregion
 
-# region Finalization & Startup
+# region Finalization & Startup (FINISHED)
 # STEP 5: MAIN ENTRY POINT
 def main() -> None:
     bot.run(TOKEN)
